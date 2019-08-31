@@ -5,12 +5,12 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://singlemindedt.github.io/"/>
   <updated>2019-08-31T00:49:55.129Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://singlemindedt.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Smtsec</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>newpapername</title>
-    <link href="http://yoursite.com/2019/08/31/newpapername/"/>
-    <id>http://yoursite.com/2019/08/31/newpapername/</id>
+    <link href="https://singlemindedt.github.io/2019/08/31/newpapername/"/>
+    <id>https://singlemindedt.github.io/2019/08/31/newpapername/</id>
     <published>2019-08-31T00:49:55.000Z</published>
     <updated>2019-08-31T00:49:55.129Z</updated>
     
@@ -32,8 +32,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/08/31/hello-world/"/>
-    <id>http://yoursite.com/2019/08/31/hello-world/</id>
+    <link href="https://singlemindedt.github.io/2019/08/31/hello-world/"/>
+    <id>https://singlemindedt.github.io/2019/08/31/hello-world/</id>
     <published>2019-08-30T17:02:28.962Z</published>
     <updated>2019-08-30T17:02:28.962Z</updated>
     
