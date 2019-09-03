@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Smtsec">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Smtsec">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>代码审计 · Smtsec&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Smtsec&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">代码审计</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>Smtsec's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            代码审计
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4k</span>Reading time: <span class="post-count reading-time">16 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="PHP大法"><a href="#PHP大法" class="headerlink" title="PHP大法"></a>PHP大法</h1><p>（来源：实验吧  解题链接： <a href="http://ctf5.shiyanbar.com/DUTCTF/index.php）" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php）</a><br><img src="https://img-blog.csdnimg.cn/20190903224633314.png" alt="在这里插入图片描述"><br>点开链接只有如上一句话。<br>根据提示 直接访问： index.php.txt<br>        （即：<a href="http://ctf5.shiyanbar.com/DUTCTF/index.php.txt）" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php.txt）</a><br>得到如下页面：<br><img src="https://img-blog.csdnimg.cn/20190903224649753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjM4MDA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>分析代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">if</span>(eregi(<span class="string">"hackerDJ"</span>,$_GET[id])) &#123;      <span class="comment">//对id进行字符串匹配，若$_GET[id]中有hacker DJ则</span></span><br><span class="line">    <span class="comment">//出not allowed!并终止正在执行的进程;</span></span><br><span class="line">      <span class="keyword">echo</span>(<span class="string">"&lt;p&gt;not allowed!&lt;/p&gt;"</span>);</span><br><span class="line">      <span class="keyword">exit</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    $_GET[id] = urldecode($_GET[id]);    <span class="comment">//urldecode对字符串进行URL解码;将解码后的//$_GET[id]赋值给$_GET[id];</span></span><br><span class="line">    <span class="keyword">if</span>($_GET[id] == <span class="string">"hackerDJ"</span>)            <span class="comment">//若$_GET[id]的值等于hackerDJ，输出Access granted! //并给出flag: *****************&#125;</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">echo</span> <span class="string">"&lt;p&gt;Access granted!&lt;/p&gt;"</span>;</span><br><span class="line">      <span class="keyword">echo</span> <span class="string">"&lt;p&gt;flag: *****************&#125; &lt;/p&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;br&gt;&lt;br&gt;</span><br><span class="line">Can you authenticate to this website?</span><br></pre></td></tr></table></figure>
+
+<hr>
+   <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$_GET</span><br><span class="line">说明</span><br><span class="line">通过 URL 参数传递给当前脚本的变量的数组</span><br><span class="line">Example <span class="comment">#1$_GET范例</span></span><br><span class="line">     <span class="meta">&lt;?php</span>          <span class="keyword">echo</span> <span class="string">'Hello '</span> . htmlspecialchars($_GET[<span class="string">"name"</span>]) . <span class="string">'!'</span>;     <span class="meta">?&gt;</span></span><br><span class="line">假设用户访问的是 http:<span class="comment">//example.com/?name=Hannes</span></span><br><span class="line">以上例程的输出类似于：</span><br><span class="line">                       Hello Hannes!</span><br></pre></td></tr></table></figure>
+
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>有$_GET[id] 所以应该是可以用 ?id= 来构造URL<br>id变量是一个url解码函数前不包含hackerDJ，url解码函数后为hackerDJ的变量，即id在进入url解码函数前必须是hackerDJ的url编码形式</p>
+<p> <strong>注意：</strong>由于在浏览器输入url后会进行一次decode，这段代码中又进行一次decode，所以应对hackerDJ进行两次encode。只进行一次encode，浏览器自动解码后即为hackerDJ,被eregi()拦住，所以要进行二次编码，即对%68%61%63%6B%65%72%44%4A进行url编码。</p>
+<p>①　<a href="http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%68%61%63%6B%65%72%44%4A" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%68%61%63%6B%65%72%44%4A</a></p>
+<p>②　<a href="http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%25%36%38%25%36%31%25%36%33%25%36%42%25%36%35%25%37%32%25%34%34%25%34%41" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%25%36%38%25%36%31%25%36%33%25%36%42%25%36%35%25%37%32%25%34%34%25%34%41</a> </p>
+<p>或者直接对其中的一个字母进行二次编码： h –&gt; %68 –&gt; %2568<br>构造url: index.php?id=%2568ackerDJ</p>
+<hr>
+<h1 id="Very-easy"><a href="#Very-easy" class="headerlink" title="Very easy"></a>Very easy</h1><p>打开链接直接得到如下代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$what=$_GET[<span class="string">'what'</span>];</span><br><span class="line"><span class="keyword">echo</span> $what;</span><br><span class="line"><span class="keyword">if</span>($what==<span class="string">'flag'</span>)</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'flag&#123;****&#125;'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>分析：如果$what等于flag,则给出flag。<br>解决：<a href="http://123.206.87.240:8002/get/?what=flag" target="_blank" rel="noopener">http://123.206.87.240:8002/get/?what=flag</a> 得到flag。</p>
+<hr>
+<h1 id="Experiment-1"><a href="#Experiment-1" class="headerlink" title="Experiment 1"></a>Experiment 1</h1><p>打开链接直接出现PHP代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">include</span> <span class="string">"flag.php"</span>;</span><br><span class="line">    highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'money'</span>])) &#123;</span><br><span class="line">        $money=$_GET[<span class="string">'money'</span>];</span><br><span class="line">        <span class="keyword">if</span>(strlen($money)&lt;=<span class="number">4</span>&amp;&amp;$money&gt;time()&amp;&amp;!is_array($money))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">echo</span> $flag;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;!--By:daoyuan--&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">"Wrong Answer!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">"Wrong Answer!"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h2><p>第一行:告诉我们flag应该就在flag.php中<br>第二行：highlight_file() 函数对文件进行 PHP 语法高亮显示。语法通过使用 HTML 标签进行高亮。</p>
+<p>提示：用于高亮的颜色可通过 php.ini 文件进行设置或者通过调用 ini_set() 函数进行设置。</p>
+<p>注释：当使用该函数时，整个文件都将被显示，包括密码和其他敏感信息！</p>
+<p>==语法：highlight_file(filename,return)<br>filename    必需。规定要显示的文件。<br>return    可选。==<br>如果该参数设置为 TRUE，该函数将以字符串形式返回高亮显示的代码，而不是直接进行输出。<br>默认是 FALSE。<br>返回值<br>如果 return 参数设置为 TRUE，该函数将以字符串形式返回高亮显示的代码，而不是直接进行输出。<br>否则，如果成功则返回 TRUE，如果失败则返回 FALSE。<br><strong>If条件：$money的长度&lt;=4；同时&gt;time()；同时不是数组</strong><br>{<br>time() 函数返回自 Unix 纪元（January 1 1970 00:00:00 GMT）起的当前时间的秒数。<strong>此处我们直接将其理解为一个很大的数</strong><br>}<br>==PHP中，字符串开头以xex开头，x代表数字。会被转换成科学计数法。  如1e9 == 1×10^9==<br><strong>解决：直接用xex格式如：<a href="http://119.23.73.3:5001/web6/==?money=10e9==" target="_blank" rel="noopener">http://119.23.73.3:5001/web6/==?money=10e9==</a> 直接得到flag</strong></p>
+<hr>
+<h1 id="Experiment-2"><a href="#Experiment-2" class="headerlink" title="Experiment 2"></a>Experiment 2</h1><p>打开链接页面中只有一句话“好像少了点什么”，试着在url后添加<strong>index.php~</strong><br>即<a href="http://119.23.73.3:5001/web5/index.php~。打开页面发现什么都没有，查看源文件发现果然有PHP文件：" target="_blank" rel="noopener">http://119.23.73.3:5001/web5/index.php~。打开页面发现什么都没有，查看源文件发现果然有PHP文件：</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20190903230150990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjM4MDA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="分析代码："><a href="#分析代码：" class="headerlink" title="分析代码："></a>分析代码：</h2><p>9：给出$flag的值为我们最终需要的结果</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">moctf&#123;**************&#125;</span><br></pre></td></tr></table></figure>
+
+<p>11：<br>{<br>PHP的isset()函数 一般用来检测变量是否设置<br>格式：bool isset ( mixed var [, mixed var [, …]] )<br>功能：检测变量是否设置<br>返回值：<br>若变量不存在则返回 FALSE<br>若变量存在且其值为NULL，也返回 FALSE<br>若变量存在且值不为NULL，则返回 TURE<br>同时检查多个变量时，每个单项都符合上一条要求时才返回 TRUE，否则结果为 FALSE<br>版本：PHP 3, PHP 4, PHP 5<br>更多说明：<br>使用 unset() 释放变量之后，它将不再是 isset()。<br>PHP函数isset()只能用于变量，传递任何其它参数都将造成解析错误。<br>检测常量是否已设置可使用 defined() 函数。<br>}</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">If</span>条件下对变量$_GET[<span class="string">'a'</span>]和$_GET[<span class="string">'b'</span>]赋值，并将其赋值给$a,$b.</span><br><span class="line">若$a等于$b则打印Wrong Answer!</span><br><span class="line">否则在条件md5($a)==md5($b)下给出$flag，否则打印Wrong Answer！</span><br><span class="line">==即此代码的意思时要我们对提供$a,$b使得其值不同，但MD5值相同。==</span><br></pre></td></tr></table></figure>
+
+<p><strong>***弱类型比较——“==”类型转换的规则<br>1、字符串和数字比较，字符串会被转换成数字。  “admin”==0 (true)  admin被转换成数字，由于admin是字符串，转换失败，int(admin)=0，所以 比较结果是true。<br>2、混合字符串转换成数字，看字符串的第一个。  “1admin”==1      “2admin”==2<br>3、字符串开头以xex开头，x代表数字。会被转换成科学计数法。  1e9 == 1×10^9</strong></p>
+<p>注：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"admin1"</span>==<span class="number">1</span> <span class="comment">//false</span></span><br><span class="line"><span class="string">"admin1"</span>==<span class="number">0</span> <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>参考网上资料：<strong>当一个字符串当作一个数值来取值，其结果和类型如下:<br>如果该字符串没有包含’.’,’e’,’E’并且其数值值在整形的范围之内<br>则：该字符串被当作int来取值，其他所有情况下都被作为float来取值，该字符串的开始部分决定了它的值，如果该字符串以合法的数值开始，则使用该数值，否则其值为0。</strong></p>
+<p><strong>所以我们可以直接找符合xex格式的MD5原参</strong><br>{MD5 算法自诞生之日起，就有很多人试图证明和发现它的不安全之处，即存在碰撞（在对两个不同的内容使用 MD5算法运算的时候，有可能得到一对相同的结果值）–百科}<br>md5的碰撞，在PHP的数的处理中，类似0开头的字符串会被转换成0，因此有md5碰撞。</p>
+<p>MD5值(哈希值)相等的问题可以用哈希值碰撞，也可以用数组绕过，如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`username[]=<span class="number">1</span>&amp;password[]=<span class="number">2.</span></span><br></pre></td></tr></table></figure>
+
+<p>解决：<a href="http://119.23.73.3:5001/web5/**?a=QNKCDZO&amp;b=s878926199a" target="_blank" rel="noopener">http://119.23.73.3:5001/web5/**?a=QNKCDZO&amp;b=s878926199a</a>** ,直接得到flag。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5(<span class="string">'**QNKCDZO**'</span>)==md5(<span class="string">'**s878926199a** '</span>)---&gt;True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Experiment-2-1"><a href="#Experiment-2-1" class="headerlink" title="Experiment 2.1"></a>Experiment 2.1</h1><p>题目给出了php代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line">$flag = <span class="string">'flag&#123;test&#125;'</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) <span class="keyword">and</span> <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> ($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>])</span><br><span class="line"><span class="keyword">print</span> <span class="string">'Your password can not be your username.'</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>]))</span><br><span class="line"><span class="keyword">die</span>(<span class="string">'Flag: '</span>.$flag);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Invalid password'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分析代码：-1"><a href="#分析代码：-1" class="headerlink" title="分析代码："></a>分析代码：</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们得构造$_GET[‘username’]和$GET[‘password’]的值不相等，同时它们的md5的值相等才能得到flag</span><br></pre></td></tr></table></figure>
+
+<p>因为md5不能处理数组，可以使用数组绕过，md5(数组)会返回FALSE，username[]=1,password[]=2这样弱==下可以实现username!=password,同时会得到FALSE===FALSE使得md5(username)===md5(password)成立。<br>解决：<a href="http://123.206.87.240:9009/18.php?username[]=1&amp;password[]=2" target="_blank" rel="noopener">http://123.206.87.240:9009/18.php?username[]=1&amp;password[]=2</a> 直接得到flag。</p>
+<hr>
+<h1 id="Experiment-3"><a href="#Experiment-3" class="headerlink" title="Experiment 3"></a>Experiment 3</h1><p>打开链接得到：<br><img src="https://img-blog.csdnimg.cn/20190903231726221.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjM4MDA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>细细品味后发现“链接”下真有一个链接。点开得到php代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'v1'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'v2'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'v3'</span>]))&#123;</span><br><span class="line">$v1 = $_GET[<span class="string">'v1'</span>];</span><br><span class="line">$v2 = $_GET[<span class="string">'v2'</span>];</span><br><span class="line">$v3 = $_GET[<span class="string">'v3'</span>];</span><br><span class="line"><span class="keyword">if</span>($v1 != $v2 &amp;&amp; md5($v1) == md5($v2))&#123;</span><br><span class="line"><span class="keyword">if</span>(!strcmp($v3, $flag))&#123;</span><br><span class="line"><span class="keyword">echo</span> $flag;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分析代码：-2"><a href="#分析代码：-2" class="headerlink" title="分析代码："></a>分析代码：</h2><p>v1不等于v2同时两者的MD5值相等<br>==&lt;此处既可以用MD5的0e漏洞也可以利用数组绕过&gt;==<br>由if(!strcmp(v3,flag))需要v3和flag值相同才返回flag的值</p>
+<h3 id="strcmp漏洞"><a href="#strcmp漏洞" class="headerlink" title="strcmp漏洞"></a>strcmp漏洞</h3><p>int strcmp ( string str1,stringstr2 )<br>str1是第一个字符串，str2是第二个字符串。如果 str1 小于 str2 返回 &lt; 0； 如果 str1 大于 str2 返回 &gt; 0；如果两者相等，返回 0。</p>
+<p>但是如果我们传入非字符串类型的数据的时候，这个函数将发生错误，在5.3之前的php中，显示了报错的警告信息后，将return 0 ! 也就是虽然报了错，但却判定其相等了。</p>
+<p>因此，解这道题，就只要传入一个非字符串类型的变量使其报错，又由于前面的否定“！”得到true。<br>解决：<a href="http://123.206.31.85:49162/?v1[]=1&amp;v2[]=2&amp;v3[]=1" target="_blank" rel="noopener">http://123.206.31.85:49162/?v1[]=1&amp;v2[]=2&amp;v3[]=1</a> </p>
+<hr>
+<h1 id="Experiment-3-2"><a href="#Experiment-3-2" class="headerlink" title="Experiment 3.2"></a>Experiment 3.2</h1><p>打开链接得到空页，根据给出的php代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$flag = <span class="string">"flag&#123;xxxxx&#125;"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'a'</span>])) &#123;</span><br><span class="line"><span class="keyword">if</span> (strcmp($_GET[<span class="string">'a'</span>], $flag) == <span class="number">0</span>) </span><br><span class="line"><span class="keyword">die</span>(<span class="string">'Flag: '</span>.$flag);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'No'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分析代码：-3"><a href="#分析代码：-3" class="headerlink" title="分析代码："></a>分析代码：</h2><p>  第一行，flag变量被设置为flag{xxxxx}。这并不是我们要提交的flag，真实运行的后端中的flag变量才是真的flag。<br>  第二行，isset函数判断HTTP GET请求中的参数a是否已设置并且非NULL。strcmp函数将a参数与flag相比较，如果一致，则调用die函数。die函数的作用是打印die函数的参数，并立即停止该php后端的运行。那么我们的目标很明显，就是要让php执行到die函数，显示flag。<br>根据上题<strong>strcmp漏洞</strong>，我们可以直接利用数组绕过比如用<strong>”a[]=”</strong><br>解决：<a href="http://123.206.87.240:9009/6.php?a[]=" target="_blank" rel="noopener">http://123.206.87.240:9009/6.php?a[]=</a> </p>
+<hr>
+<h1 id="ereg截断"><a href="#ereg截断" class="headerlink" title="ereg截断"></a>ereg截断</h1><p>打开链接同样是一个空白页面，根据给出的php代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$flag = <span class="string">"flag"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span> ($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line"><span class="keyword">if</span> (ereg (<span class="string">"^[a-zA-Z0-9]+$"</span>, $_GET[<span class="string">'password'</span>]) === <span class="keyword">FALSE</span>)</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'You password must be alphanumeric'</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (strpos ($_GET[<span class="string">'password'</span>], <span class="string">'--'</span>) !== <span class="keyword">FALSE</span>)</span><br><span class="line"><span class="keyword">die</span>(<span class="string">'Flag: '</span> . $flag);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'Invalid password'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分析代码：-4"><a href="#分析代码：-4" class="headerlink" title="分析代码："></a>分析代码：</h2><p>flag变量被设置为flag，即最终我们需要得到flag变量的内容从而达到真正的flag。<br>isset函数判断HTTP GET请求中的参数password是否已设置并且非NULL</p>
+<h3 id="ereg-函数"><a href="#ereg-函数" class="headerlink" title="ereg()函数"></a>ereg()函数</h3> <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> ereg ( string $pattern , string $string [, <span class="keyword">array</span> &amp;$regs ] ) : int</span><br><span class="line">函数用指定的模式搜索一个字符串中指定的字符串,如果匹配成功返回<span class="keyword">true</span>,否则,则返回<span class="keyword">false</span>。</span><br><span class="line">搜索字母的字符是大小写敏感的。</span><br><span class="line">&#125;</span><br><span class="line">ereg (<span class="string">"^[a-zA-Z0-9]+$"</span>, $_GET[<span class="string">'password'</span>]) !== <span class="keyword">FALSE</span></span><br><span class="line">由第一个参数正则表达式可知该字符串从头到尾只允许出现字母与数字即a-z、A-Z、<span class="number">0</span><span class="number">-9.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="strpos-函数"><a href="#strpos-函数" class="headerlink" title="strpos()函数"></a>strpos()函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> strpos ( string $haystack , mixed $needle [, int $offset = <span class="number">0</span> ] ) : int</span><br><span class="line">查找字符串在另一字符串中第一次出现的位置。</span><br><span class="line">&#125;</span><br><span class="line">strpos ($_GET[<span class="string">'password'</span>], <span class="string">'--'</span>) !== <span class="keyword">FALSE</span></span><br><span class="line">该字符串必须有“*--*”字符。</span><br></pre></td></tr></table></figure>
+
+<p>这两个条件明显发生冲突，<em>由于ereg()函数存在%00截断，即ereg()读取字符串时，当遇到%00会默认已经读完，不再读取后面的内容，这样我们就可以利用此漏洞在%00后添加“–”从而绕过正则检测。</em></p>
+<p>解决：<a href="http://123.206.87.240:9009/19.php?password=12%00--" target="_blank" rel="noopener">http://123.206.87.240:9009/19.php?password=12%00--</a><br>同时，ereg()只能处理字符串，遇到数组做参数返回NULL，条件用强 === （要求两边类型相同），而NULL跟FALSE类型不同,顺利进入下一个条件；strpos()的参数也不能为数组，否则返回NULL，与FALSE类型不同，满足！==条件，故也可以直接传入一个数组。<br>解决：<a href="http://123.206.87.240:9009/19.php?password[]=" target="_blank" rel="noopener">http://123.206.87.240:9009/19.php?password[]=</a><br>（或<a href="http://123.206.87.240:9009/19.php?password[]=1只是一个为空值一个给了个值。）" target="_blank" rel="noopener">http://123.206.87.240:9009/19.php?password[]=1只是一个为空值一个给了个值。）</a></p>
+<hr>
+<h1 id="Extract"><a href="#Extract" class="headerlink" title="Extract"></a>Extract</h1><p>打开链接空白页面，分析给出的php代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$flag=<span class="string">'xxx'</span>;extract($_GET); </span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($shiyan))</span><br><span class="line">&#123; </span><br><span class="line">$content=trim(file_get_contents($flag)); </span><br><span class="line"><span class="keyword">if</span>($shiyan==$content)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span><span class="string">'flag&#123;xxx&#125;'</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123; <span class="keyword">echo</span><span class="string">'Oh.no'</span>; &#125; &#125;<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="extract-函数"><a href="#extract-函数" class="headerlink" title="extract()函数"></a>extract()函数</h3><p>{<br>extract() 函数从数组中将变量导入到当前的符号表。<br>该函数使用数组键名作为变量名，使用数组键值作为变量值。针对数组中的每个元素，将在当前符号表中创建对应的一个变量。<br>该函数返回成功设置的变量数目。<br><strong>但是当变量中有同名的元素时，该函数默认将原有的值给覆盖掉，这就造成了变量覆盖漏洞。</strong><br>}</p>
+<h2 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h2><p>将flag变量设置为xxx；<br>将GET 方法传输进来的值通过extract()函数处理；<br>isset函数判断HTTP GET请求中的参数shiyan是否已设置并且非NULL;<br>if 判断shiyan这个变量和content这个变量是否相等。content 的值是通过读取 flag 变量的值来获取的。如果这个两个变量相等输出 flag 。<br>file_get_contents() — 将整个文件读入一个字符串。<br>trim() — 去除字符串首尾处的空白字符（或者其他字符）。<br>解决：<br>由于我们不知道flag的值是什么？所以我们需要利用extract()函数漏洞，进行变量覆盖，重新给flag变量赋值。<br>只要我们构造的payload使得 $shiyan = $content ，其中 $content 的值又取决于 flag 变量，所以只要 shiyan变量相等于flag变量即可。由于file_get_contents($flag) 中的$flag是一个参数，导致$content的值是空值，所以我们可以构造如下payload：<br><a href="http://123.206.87.240:9009/1.php?shiyan=" target="_blank" rel="noopener">http://123.206.87.240:9009/1.php?shiyan=</a> </p>
+<hr>
+<p><em>这里再引一位大佬的解答：（代码稍有不同）<a href="https://zhouxinan.github.io/" target="_blank" rel="noopener">https://zhouxinan.github.io/</a></em></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$flag=<span class="string">'xxx'</span>;</span><br><span class="line">extract($_GET);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($sixstars)) &#123;</span><br><span class="line">    $content=trim(file_get_contents($flag));</span><br><span class="line">    <span class="keyword">if</span> ($sixstars==$content) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'flag&#123;xxx&#125;'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'Oh.no'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>首先，flag变量被设置为’xxx’，一个简单的字符串。<br>接着，后端运行了extract函数，从<code>$_GET</code>数组中将变量导入到当前的符号表。什么意思呢？其实很简单。比如如果我们访问了<a href="http://139.224.220.67:23900/dmsj/level2/?sixstars=1，那么`$_GET[&quot;sixstars&quot;]`的值为字符串1。执行`extract($_GET)`;时，就相当于执行了`$sixstars=&#39;1&#39;`。" target="_blank" rel="noopener">http://139.224.220.67:23900/dmsj/level2/?sixstars=1，那么`$_GET[&quot;sixstars&quot;]`的值为字符串1。执行`extract($_GET)`;时，就相当于执行了`$sixstars=&#39;1&#39;`。</a><br>然后，程序将会执行<code>isset($sixstars)</code>。我们看到，为了获取flag，必须执行到echo ‘flag{xxx}’;，所以<code>isset($sixstars)</code>的返回值必须为 TRUE。所以，我们必须通过<code>extract($_GET)</code>;将sixstars变量设置为任意值，即使是空字符串也可以。也就是说，即使访问<a href="http://139.224.220.67:23900/dmsj/level2/?sixstars=也是可以的。但绝对不能不包含sixstars参数。" target="_blank" rel="noopener">http://139.224.220.67:23900/dmsj/level2/?sixstars=也是可以的。但绝对不能不包含sixstars参数。</a><br>接着，程序将会执行<code>$content=trim(file_get_contents($flag));</code>。我们分步看。首先会执行<code>file_get_contents($flag)</code>。正常情况下，如果你不通过URL传入flag参数，那么，因为程序的最开始已经执行过<code>$flag=&#39;xxx&#39;</code>;，所以到了这里将会执行file_get_contents(‘xxx’)。file_get_contents函数可以“将整个文件读入一个字符串”。比如如下代码可以将<a href="http://www.example.com/网站的源代码读取到homepage变量中并显示出来。" target="_blank" rel="noopener">http://www.example.com/网站的源代码读取到homepage变量中并显示出来。</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$homepage = file_get_contents(<span class="string">'http://www.example.com/'</span>);</span><br><span class="line"><span class="keyword">echo</span> $homepage;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，php又会执行trim函数，它将会“去除字符串首尾处的空白字符（或者其他字符）”。<br>最后，php将会执行<code>if ($sixstars==$content)，</code>如果为TRUE，那么将会显示flag。<br>读到这里，你想必已经知道了我们该怎么做：首先，给sixstars变量传入一个值，比如1。然后，给flag变量传入一个我们能控制的网站的地址，并让这个我们能控制的网站的源代码设置为1。由于extract能起到“变量覆盖”的作用，在extract后，flag变量就会被覆盖为我们能控制的网站的地址，而不再是’xxx’，这样当执行到file_get_contents时php后端将会从我们能控制的网站上读取到1，并将其和sixstars变量比较，并返回TRUE，然后就能打印flag。<br>虽然这个方法是可行的，但是今天我要教你一个更简单的方法，那就是php伪协议。我们可以直接给flag变量传入data://text/plain,1。意思是明文1。这样file_get_contents(‘data://text/plain,1’)将会直接返回1，就不需要我们在公网上开一台服务器了。<br>所以，最后我们的payload是：<br>1    <a href="http://139.224.220.67:23900/dmsj/level2/?sixstars=1&amp;flag=data://text/plain,1" target="_blank" rel="noopener">http://139.224.220.67:23900/dmsj/level2/?sixstars=1&amp;flag=data://text/plain,1</a><br>这里再强调一下，给后端传参的方法是：在?后跟变量名字，不同的变量之间用&amp;隔开。</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">https://singlemindedt.github.io/2019/09/03/代码审计ONE/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">September 3rd 2019, 10:35:18 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">September 3rd 2019, 11:40:26 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/01/加密算法/" title= "加密算法">
+                    <div class="prevTitle">加密算法</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:singlemindedt@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/singlemindedt" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP大法"><span class="toc-number">1.</span> <span class="toc-text">PHP大法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路："><span class="toc-number">1.1.</span> <span class="toc-text">解题思路：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Very-easy"><span class="toc-number">2.</span> <span class="toc-text">Very easy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiment-1"><span class="toc-number">3.</span> <span class="toc-text">Experiment 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码分析："><span class="toc-number">3.1.</span> <span class="toc-text">代码分析：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiment-2"><span class="toc-number">4.</span> <span class="toc-text">Experiment 2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析代码："><span class="toc-number">4.1.</span> <span class="toc-text">分析代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiment-2-1"><span class="toc-number">5.</span> <span class="toc-text">Experiment 2.1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析代码：-1"><span class="toc-number">5.1.</span> <span class="toc-text">分析代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiment-3"><span class="toc-number">6.</span> <span class="toc-text">Experiment 3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析代码：-2"><span class="toc-number">6.1.</span> <span class="toc-text">分析代码：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#strcmp漏洞"><span class="toc-number">6.1.1.</span> <span class="toc-text">strcmp漏洞</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiment-3-2"><span class="toc-number">7.</span> <span class="toc-text">Experiment 3.2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析代码：-3"><span class="toc-number">7.1.</span> <span class="toc-text">分析代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ereg截断"><span class="toc-number">8.</span> <span class="toc-text">ereg截断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析代码：-4"><span class="toc-number">8.1.</span> <span class="toc-text">分析代码：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ereg-函数"><span class="toc-number">8.1.1.</span> <span class="toc-text">ereg()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strpos-函数"><span class="toc-number">8.1.2.</span> <span class="toc-text">strpos()函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Extract"><span class="toc-number">9.</span> <span class="toc-text">Extract</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#extract-函数"><span class="toc-number">9.0.1.</span> <span class="toc-text">extract()函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码分析：-1"><span class="toc-number">9.1.</span> <span class="toc-text">代码分析：</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 8
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2019/09/03/代码审计ONE/" >代码审计</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/08/31/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/01/算法作业one/" >小雏鸟的成人式2</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/31</span><a class="archive-post-title" href= "/2019/08/31/newpapername/" >newpapername</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Smtsec"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
