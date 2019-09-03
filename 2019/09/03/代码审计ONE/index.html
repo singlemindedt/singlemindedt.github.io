@@ -420,7 +420,7 @@ height:50vh;
 <h2 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h2><p>第一行:告诉我们flag应该就在flag.php中<br>第二行：highlight_file() 函数对文件进行 PHP 语法高亮显示。语法通过使用 HTML 标签进行高亮。</p>
 <p>提示：用于高亮的颜色可通过 php.ini 文件进行设置或者通过调用 ini_set() 函数进行设置。</p>
 <p>注释：当使用该函数时，整个文件都将被显示，包括密码和其他敏感信息！</p>
-<p><strong>语法：highlight_file(filename,return)</strong><br><strong>filename    必需。规定要显示的文件。</strong><br><strong>return    可选。</strong><br>如果该参数设置为 TRUE，该函数将以字符串形式返回高亮显示的代码，而不是直接进行输出。<br>默认是 FALSE。<br>返回值<br>如果 return 参数设置为 TRUE，该函数将以字符串形式返回高亮显示的代码，而不是直接进行输出。<br>否则，如果成功则返回 TRUE，如果失败则返回 FALSE。<br><strong>If条件：$money的长度&lt;=4；同时&gt;time()；同时不是数组</strong><br>{<br>time() 函数返回自 Unix 纪元（January 1 1970 00:00:00 GMT）起的当前时间的秒数。<strong>此处我们直接将其理解为一个很大的数</strong><br>}<br>==PHP中，字符串开头以xex开头，x代表数字。会被转换成科学计数法。  如1e9 == 1×10^9==<br><strong>解决：直接用xex格式如：<a href="http://119.23.73.3:5001/web6/==?money=10e9==" target="_blank" rel="noopener">http://119.23.73.3:5001/web6/==?money=10e9==</a> 直接得到flag</strong></p>
+<p><strong>语法：highlight_file(filename,return)</strong><br><strong>filename    必需。规定要显示的文件。</strong><br><strong>return    可选。</strong><br>如果该参数设置为 TRUE，该函数将以字符串形式返回高亮显示的代码，而不是直接进行输出。<br>默认是 FALSE。<br>返回值<br>如果 return 参数设置为 TRUE，该函数将以字符串形式返回高亮显示的代码，而不是直接进行输出。<br>否则，如果成功则返回 TRUE，如果失败则返回 FALSE。<br><strong>If条件：$money的长度&lt;=4；同时&gt;time()；同时不是数组</strong><br>{<br>time() 函数返回自 Unix 纪元（January 1 1970 00:00:00 GMT）起的当前时间的秒数。<strong>此处我们直接将其理解为一个很大的数</strong><br>}<br>==PHP中，字符串开头以xex开头，x代表数字。会被转换成科学计数法。  如1e9 == 1×10^9==<br><strong>解决：直接用xex格式如：<a href="http://119.23.73.3:5001/web6/?money=10e9" target="_blank" rel="noopener">http://119.23.73.3:5001/web6/?money=10e9</a>  直接得到flag</strong></p>
 <hr>
 <h1 id="Experiment-2"><a href="#Experiment-2" class="headerlink" title="Experiment 2"></a>Experiment 2</h1><p>打开链接页面中只有一句话“好像少了点什么”，试着在url后添加<strong>index.php~</strong><br>即<a href="http://119.23.73.3:5001/web5/index.php~。" target="_blank" rel="noopener">http://119.23.73.3:5001/web5/index.php~。</a><br>打开页面发现什么都没有，查看源文件发现果然有PHP文件：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190903230150990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjM4MDA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -495,7 +495,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">https://singlemindedt.github.io/2019/09/03/代码审计ONE/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">September 3rd 2019, 11:38:21 pm</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">September 3rd 2019, 11:53:40 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/03/代码审计ONE/">September 3rd 2019, 11:56:56 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -742,8 +742,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 8
@@ -794,16 +792,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
-        </li>
-    
-    
     
     
     
@@ -825,6 +813,16 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+        </li>
     
     
         <li class="archive-post-item">
