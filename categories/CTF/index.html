@@ -346,24 +346,29 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/03/代码审计ONE/" >
+        <a class="abstract-title" href = "/2019/09/04/攻防世界之Web新手（1-6）/" >
             
-                <span>代码审计</span>
+                <span>攻防世界之Web新手（1-6）</span>
         </a>
         <div class="abstract-content">
-            PHP大法（来源：实验吧  解题链接： http://ctf5.shiyanbar.com/DUTCTF/index.php）点开链接只有如上一句话。根据提示 直接访问： index.php.txt        （即：http://ctf5.shiyanbar.com/DUTCTF/index.php.txt）得到如下页面：分析代码：
-1234567891011121314151617    &lt;?php    if(eregi("hackerDJ",$_GET[id])) &#123;      //对id进行字符串匹配，若$_GET[id]中有hacker DJ则    //出...
+            view_source题目描述：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。打开链接如下：试试右键的确不管用了，直接F12，找到flag
+另外还可以通过view-source：url查看源代码：
+其实还可以禁用Js代码，这样右键就可以用了：
+
+get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方法，你知道是哪两种吗？知识补充：
+两种 HTTP 请求方法：GET 和 POST在客户机和服务器之间进行请求-响应时，两种最常被用到的方法是：GET 和 
+12345POST。&#123;GET - 从指定的资源请求数据。POST - 向指定的资源提...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/03</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/04</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -737,6 +742,14 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="php"><span class="iconfont-archer">&#xe60a;</span>php</span>
     
         <span class="sidebar-category-name" data-categories="php/代码审计"><span class="iconfont-archer">&#xe60a;</span>php/代码审计</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="代码审计"><span class="iconfont-archer">&#xe60a;</span>代码审计</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="代码审计/php"><span class="iconfont-archer">&#xe60a;</span>代码审计/php</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
