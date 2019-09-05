@@ -44,11 +44,11 @@
   </entry>
   
   <entry>
-    <title>images</title>
+    <title>Images</title>
     <link href="https://singlemindedt.github.io/2019/09/04/images/"/>
     <id>https://singlemindedt.github.io/2019/09/04/images/</id>
     <published>2019-09-04T09:37:45.000Z</published>
-    <updated>2019-09-05T14:11:53.528Z</updated>
+    <updated>2019-09-05T14:33:05.157Z</updated>
     
     <content type="html"><![CDATA[<p>Inset demo …</p><p><img src="1.jpg" alt="demo"><br><img src="im/1.jpg" alt="demo"><br><img src="/images/1.jpg" alt="success"></p>]]></content>
     
