@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">2.7k</span>Reading time: <span class="post-count reading-time">10 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.7k</span>Reading time: <span class="post-count reading-time">9 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -435,14 +435,14 @@ height:50vh;
 </tbody></table>
 <h2 id="特征特点：-1"><a href="#特征特点：-1" class="headerlink" title="特征特点："></a>特征特点：</h2><p>国际标准字符，将全球的各种语言的每个字符定义一个唯一的编码，以满足跨语言、跨平台文本信息的转换，当编码和解码的字符集出现不一致的时候就会出现乱码。</p>
 <hr>
-<h1 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h1><p>url编码是一种浏览器用来打包表单输入的格式。浏览器从表单中获取所有的name和其中的值 ，将它们以name/value参数编码（移去那些不能传送的字符，将数据排行等等）作为URL的一部分或者分离地发给服务器。不管哪种情况，在服务器端的表单输入格式样子象这样：<br><strong>theName=Ichabod+Crane&amp;gender=male&amp;status=missing&amp; ;headless=yes</strong><br><strong>URL地址（常说网址）规定了常用地数字，字母可以直接使用，另外一批作为特殊用户字符也可以直接用（/,:@等），剩下的其它所有字符必须通过%xx编码处理。 现在已经成为一种规范了，基本所有程序语言都有这种编码，如js：有encodeURI、encodeURIComponent，PHP有 urlencode、urldecode等。</strong></p>
+<h1 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h1><p>url编码是一种浏览器用来打包表单输入的格式。浏览器从表单中获取所有的name和其中的值 ，将它们以name/value参数编码（移去那些不能传送的字符，将数据排行等等）作为URL的一部分或者分离地发给服务器。不管哪种情况，在服务器端的表单输入格式样子象这样：<br><strong>theName=Ichabod+Crane&amp;gender=male&amp;status=missing&amp; ;headless=yes</strong><br><strong>URL地址（常说网址）规定了常用地数字，字母可以直接使用，另外一批作为特殊用户字符也可以直接用（/,:@等），剩下的其它所有字符必须通过%后跟两位十六进制数来替换非ASCII字符。</strong></p>
 <h2 id="编码规则"><a href="#编码规则" class="headerlink" title="编码规则"></a>编码规则</h2><p>URL编码遵循下列规则： 每对name/value由&amp;；符分开；每对来自表单的name/value由=符分开。如果用户没有输入值给这个name，那么这个name还是出现，只是无值。任何特殊的字符（就是那些不是简单的七位ASCII，如汉字）将以百分符%用十六进制编码，当然也包括象 =,&amp;；，和 % 这些特殊的字符。其实url编码就是一个字符ascii码的十六进制。不过稍微有些变动，需要在前面加上“%”。<br>比如：</p>
 <ul>
 <li>“\”，它的ascii码是92，92的十六进制是5c，所以“\”的url编码就是%5c。</li>
 <li>空格字符，ascii 码是 32，对应16 进制是‘20’，那么 urlencode 编码结果是:%20。</li>
 </ul>
 <p>URL编码平时是用不到的，因为IE会自动将输入到地址栏的非数字字母转换为url编码。曾有人提出数据库名字里带上“#”以防止被下载，因为IE遇到#就会忽略后面的字母。破解方法很简单——<strong>用url编码%23替换掉#</strong>。</p>
-<h2 id="特征特点：-2"><a href="#特征特点：-2" class="headerlink" title="特征特点："></a>特征特点：</h2><p>字符ASCII码的十六进制，并在前面加上%<br><img src="/images/URL1.jpg" alt="URL"></p>
+<h2 id="特征特点：-2"><a href="#特征特点：-2" class="headerlink" title="特征特点："></a>特征特点：</h2><p>字符ASCII码的十六进制，并在前面加上%<br><img src="/images/URL.png" alt="URL"></p>
 <hr>
 <h1 id="base64编码"><a href="#base64编码" class="headerlink" title="base64编码"></a>base64编码</h1><p>Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。</p>
 <p>Base64编码是从二进制到字符的过程，可用于在HTTP环境下传递较长的标识信息。采用Base64编码具有不可读性，需要解码后才能阅读。</p>
@@ -510,7 +510,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">September 8th 2019, 9:05:00 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">September 8th 2019, 3:26:03 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">September 8th 2019, 3:36:47 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
