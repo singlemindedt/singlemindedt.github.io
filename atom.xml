@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-09-08T11:03:39.953Z</updated>
+  <updated>2019-09-09T08:42:09.927Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Byte CTF 字节跳动网络安全攻防大赛</title>
+    <link href="https://singlemindedt.github.io/2019/09/09/Byte_CTF/"/>
+    <id>https://singlemindedt.github.io/2019/09/09/Byte_CTF/</id>
+    <published>2019-09-09T08:36:00.000Z</published>
+    <updated>2019-09-09T08:42:09.927Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="betgame"><a href="#betgame" class="headerlink" title="betgame"></a>betgame</h1><p>给了提示，nc 112.125.25.81 9999</p><h2 id="知识补充："><a href="#知识补充：" class="headerlink" title="知识补充："></a>知识补充：</h2><p>nc即netcat，被誉为网络安全界的“瑞士军刀”。透过使用TCP或UDP协议的网络连接去读写数据。它被设计成一个稳定的后门(back-end)工具，能够直接由其它程序和脚本轻松驱动。同时，它也是一个功能强大的网络调试和探测工具，能够建立你需要的几乎所有类型的网络连接.</p><p>使用之前首先我们要弄明白netcat的工作原理,其实netcat的原理很简单,它就是从网络的一端读入数据,然后输出到网络的另一端,它可以使用tcp 和udp协议.之所以叫做netcat,因为它是网络上的cat,想象一下cat的功能,读出一个文件的内容,然后输出到屏幕上(默认的stdout是屏幕,当然可以重定向到其他地方).netcat也是如此,它读取一端的输入,然后传送到网络的另一端。ncat/nc 既是一个端口扫描工具，也是一款安全工具，还能是一款监测工具，甚至可以做为一个简单的 TCP 代理。<br><a href="https://blog.csdn.net/qq_26442553/article/details/79056683" target="_blank" rel="noopener">细节</a></p><h2 id="实际操作："><a href="#实际操作：" class="headerlink" title="实际操作："></a>实际操作：</h2><p>可以将nc作为聊天工具利用，本地server1上传nc 122.125.25.81 9999<br>Server2启动监听9999端口：nc -lp 9999<br>至此就可以简单交互，本题提示要30次全赢，找规律，对应输入即可；<br><img src="/images/betgame1.png" alt="a"></p><p><a href="https://blog.csdn.net/iteye_21199/article/details/82358749" target="_blank" rel="noopener">Linux nc命令详解</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;betgame&quot;&gt;&lt;a href=&quot;#betgame&quot; class=&quot;headerlink&quot; title=&quot;betgame&quot;&gt;&lt;/a&gt;betgame&lt;/h1&gt;&lt;p&gt;给了提示，nc 112.125.25.81 9999&lt;/p&gt;
+&lt;h2 id=&quot;知识补充：&quot;&gt;&lt;a h
+      
+    
+    </summary>
+    
+      <category term="Writeup" scheme="https://singlemindedt.github.io/categories/Writeup/"/>
+    
+    
+      <category term="Misc" scheme="https://singlemindedt.github.io/tags/Misc/"/>
+    
+  </entry>
   
   <entry>
     <title>CTF中常见编码</title>
