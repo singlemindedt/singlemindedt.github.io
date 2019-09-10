@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-09-09T08:42:09.927Z</updated>
+  <updated>2019-09-10T08:25:44.836Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cat</title>
+    <link href="https://singlemindedt.github.io/2019/09/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E4%B9%8BWeb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-cat/"/>
+    <id>https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-cat/</id>
+    <published>2019-09-09T16:00:00.000Z</published>
+    <updated>2019-09-10T08:25:44.836Z</updated>
+    
+    <content type="html"><![CDATA[<p>仅给出了这样一个页面：<br><img src="/images/cat1.png" alt="cat1"></p><p>输入cat，得到：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PING cat.ad-world-<span class="number">198302431</span>-<span class="number">4658</span>.rancher.internal (<span class="number">10.42</span>.197.21) <span class="number">56</span>(<span class="number">84</span>) bytes of data.</span><br><span class="line"><span class="number">64</span> <span class="function">bytes from <span class="title">b4fccc7cf554</span> <span class="params">(<span class="number">10.42</span><span class="number">.197</span><span class="number">.21</span>)</span>: icmp_seq</span>=<span class="number">1</span> ttl=<span class="number">64</span> time=<span class="number">0.045</span> ms</span><br><span class="line"></span><br><span class="line">--- cat.ad-world-<span class="number">198302431</span>-<span class="number">4658</span>.rancher.internal ping statistics ---</span><br><span class="line"><span class="number">1</span> packets transmitted, <span class="number">1</span> received, <span class="number">0</span>% packet loss, time <span class="number">0</span>ms</span><br><span class="line">rtt min/avg/max/mdev = <span class="number">0.045</span>/<span class="number">0.045</span>/<span class="number">0.045</span>/<span class="number">0.000</span> ms</span><br></pre></td></tr></table></figure><p>并在URL中如此传参：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//111.198.29.45:35113/index.php?url=cat</span></span><br></pre></td></tr></table></figure><p>输入127.0.0.1：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PING <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> (<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>) <span class="number">56</span>(<span class="number">84</span>) bytes of data.</span><br><span class="line"><span class="number">64</span> bytes from <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>: icmp_seq=<span class="number">1</span> ttl=<span class="number">64</span> time=<span class="number">0.061</span> ms</span><br><span class="line"></span><br><span class="line">--- <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> ping statistics ---</span><br><span class="line"><span class="number">1</span> packets transmitted, <span class="number">1</span> received, <span class="number">0</span>% packet loss, time <span class="number">0</span>ms</span><br><span class="line">rtt min/avg/max/mdev = <span class="number">0.061</span>/<span class="number">0.061</span>/<span class="number">0.061</span>/<span class="number">0.000</span> ms</span><br></pre></td></tr></table></figure><p>尝试使用命令连接符/管道命令，均被屏蔽；<br>目前仅知道，输入框通过用户输入进行GET方式传参；<br>那么只能从url入手了，看看有没有可能爆出一些有用的信息；<br>测试发现超过ASCll可打印字符之外的url编码都会报错，比如键入<a href="http://111.198.29.45:35113/index.php?url=%8c" target="_blank" rel="noopener">http://111.198.29.45:35113/index.php?url=%8c</a> ：<br>给出报错信息：<br><img src="/images/cat2.png" alt><br>可以明显看到使用的是Django框架；</p><p>搜索配置文件信息：<a href="https://www.shiyanlou.com/questions/23602/" target="_blank" rel="noopener">settings.py</a></p><p>在报错信息中搜索database，发现的到有关数据库内容：<br><img src="/images/cat3.png" alt><br>参考：<img src="/images/cat4.png" alt><br>通过<a href="http://111.198.29.45:35113/index.php?url=@/opt/api/database.sqlite3" target="_blank" rel="noopener">http://111.198.29.45:35113/index.php?url=@/opt/api/database.sqlite3</a> 得到数据库内容：<br>查找ctf关键字：</p><p><img src="/images/cat5.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;仅给出了这样一个页面：&lt;br&gt;&lt;img src=&quot;/images/cat1.png&quot; alt=&quot;cat1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;输入cat，得到：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="Writeup" scheme="https://singlemindedt.github.io/categories/Writeup/"/>
+    
+      <category term="Web" scheme="https://singlemindedt.github.io/categories/Writeup/Web/"/>
+    
+    
+      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10安装pygame</title>
+    <link href="https://singlemindedt.github.io/2019/09/09/pygame_install/"/>
+    <id>https://singlemindedt.github.io/2019/09/09/pygame_install/</id>
+    <published>2019-09-09T15:37:45.000Z</published>
+    <updated>2019-09-10T06:13:00.094Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>检查pip是否安装，查看Python安装版本；<br><img src="/images/pygames.png" alt></li><li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wheel</span><br></pre></td></tr></table></figure></li></ol><p><img src="/images/pygame1.png" alt></p><p>3.</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pygame==<span class="number">1.9</span><span class="number">.6</span></span><br></pre></td></tr></table></figure><p><img src="/images/pygame2.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;检查pip是否安装，查看Python安装版本；&lt;br&gt;&lt;img src=&quot;/images/pygames.png&quot; alt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
+      
+    
+    </summary>
+    
+      <category term="notes" scheme="https://singlemindedt.github.io/categories/notes/"/>
+    
+    
+      <category term="tools" scheme="https://singlemindedt.github.io/tags/tools/"/>
+    
+  </entry>
   
   <entry>
     <title>Byte CTF 字节跳动网络安全攻防大赛</title>
