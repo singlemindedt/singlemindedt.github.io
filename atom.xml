@@ -50,17 +50,19 @@
     <link href="https://singlemindedt.github.io/2019/09/09/pygame_install/"/>
     <id>https://singlemindedt.github.io/2019/09/09/pygame_install/</id>
     <published>2019-09-09T15:37:45.000Z</published>
-    <updated>2019-09-10T06:13:00.094Z</updated>
+    <updated>2019-09-10T08:33:21.440Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>检查pip是否安装，查看Python安装版本；<br><img src="/images/pygames.png" alt></li><li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wheel</span><br></pre></td></tr></table></figure></li></ol><p><img src="/images/pygame1.png" alt></p><p>3.</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pygame==<span class="number">1.9</span><span class="number">.6</span></span><br></pre></td></tr></table></figure><p><img src="/images/pygame2.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<ol><li>检查pip是否安装，查看Python安装版本；<br><img src="/images/pygame0.png" alt></li></ol><p>2.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wheel</span><br></pre></td></tr></table></figure><p><img src="/images/pygame1.png" alt></p><p>3.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pygame==<span class="number">1.9</span>.6</span><br></pre></td></tr></table></figure><p><img src="/images/pygame2.png" alt></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;ol&gt;
-&lt;li&gt;检查pip是否安装，查看Python安装版本；&lt;br&gt;&lt;img src=&quot;/images/pygames.png&quot; alt&gt;&lt;/li&gt;
-&lt;li&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
+&lt;li&gt;检查pip是否安装，查看Python安装版本；&lt;br&gt;&lt;img src=&quot;/images/pygame0.png&quot; alt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c
       
     
     </summary>
