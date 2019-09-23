@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-09-10T14:50:43.749Z</updated>
+  <updated>2019-09-23T16:23:38.411Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -17,11 +17,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>文件包含漏洞</title>
+    <link href="https://singlemindedt.github.io/2019/09/24/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://singlemindedt.github.io/2019/09/24/文件包含漏洞/</id>
+    <published>2019-09-23T16:13:50.000Z</published>
+    <updated>2019-09-23T16:23:38.411Z</updated>
+    
+    <content type="html"><![CDATA[<p>php://filter（本地磁盘文件进行读取）<br>元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。</p><p>用法：</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?filename=php://<span class="built_in">filter</span>/<span class="built_in">convert</span>.base64-encode/resource=xxx.php </span><br><span class="line">?filename=php://<span class="built_in">filter</span>/<span class="built_in">read</span>=<span class="built_in">convert</span>.base64-encode/resource=xxx.php </span><br><span class="line">一样。</span><br></pre></td></tr></table></figure><p>条件：只是读取，需要开启 allow_url_fopen，不需要开启 allow_url_include；</p><p>MOCTF上这道文件包含题，直接</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?<span class="built_in">file</span>=php://<span class="built_in">filter</span>/<span class="built_in">convert</span>.base64-encode/resource=flag.php</span><br></pre></td></tr></table></figure><p>得到一串base64编码解码得到flag</p><p>关于<a href="https://www.freebuf.com/articles/web/182280.html" target="_blank" rel="noopener">文件包含漏洞</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;php://filter（本地磁盘文件进行读取）&lt;br&gt;元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。&lt;/p&gt;
+&lt;p&gt;用法：&lt;/p&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;t
+      
+    
+    </summary>
+    
+      <category term="CTF" scheme="https://singlemindedt.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://singlemindedt.github.io/tags/CTF/"/>
+    
+      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ics-06</title>
+    <link href="https://singlemindedt.github.io/2019/09/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E4%B9%8BWeb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-NewsCenter/"/>
+    <id>https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/</id>
+    <published>2019-09-10T15:45:00.000Z</published>
+    <updated>2019-09-10T15:49:23.881Z</updated>
+    
+    <content type="html"><![CDATA[<p>打开链接，出现如下页面：<br><img src="/images/N1.png" alt="N1"></p><p>尝试是否为sql注入：<br>抓包：<br><img src="/images/N0.png" alt="N0"><br>利用sqlmap,</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;打开链接，出现如下页面：&lt;br&gt;&lt;img src=&quot;/images/N1.png&quot; alt=&quot;N1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;尝试是否为sql注入：&lt;br&gt;抓包：&lt;br&gt;&lt;img src=&quot;/images/N0.png&quot; alt=&quot;N0&quot;&gt;&lt;br&gt;利用sqlmap,&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Writeup" scheme="https://singlemindedt.github.io/categories/Writeup/"/>
+    
+      <category term="Web" scheme="https://singlemindedt.github.io/categories/Writeup/Web/"/>
+    
+    
+      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ics-06</title>
     <link href="https://singlemindedt.github.io/2019/09/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E4%B9%8BWeb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-ics-06/"/>
     <id>https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-ics-06/</id>
-    <published>2019-09-09T16:00:00.000Z</published>
-    <updated>2019-09-10T14:50:43.749Z</updated>
+    <published>2019-09-10T09:00:00.000Z</published>
+    <updated>2019-09-10T15:45:13.006Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>云平台报表中心收集了设备管理基础服务的数据，但是数据被删除了，只有一处留下了入侵者的痕迹。<br><img src="/images/ics1.png" alt><br>进入页面只有报表中心可以点击，有一个输入框，各种fuzzing，没成功，后来才知道直接爆破就行。。。<br><img src="/images/ics2.png" alt></p><p>关于<a href="http://single-minded_t.coding.me/2019/09/05/攻防世界之Web新手（7-12）/" target="_blank" rel="noopener">爆破</a></p>]]></content>
     

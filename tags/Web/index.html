@@ -346,14 +346,51 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/10/攻防世界之Web高手进阶-cat/" >
+        <a class="abstract-title" href = "/2019/09/24/文件包含漏洞/" >
             
-                <span>Cat</span>
+                <span>文件包含漏洞</span>
         </a>
         <div class="abstract-content">
-            仅给出了这样一个页面：
-输入cat，得到：
-123456PING cat.ad-world-198302431-4658.rancher.internal (10.42.197.21) 56(84) bytes of data.64 bytes from b4fccc7cf554 (10.42.197.21): icmp_seq=1 ttl=64 time=0.045 ms--- cat.ad-world-198302431-4658.rancher.internal ping statistics ---1 packets transmitted, 1 received, 0% pac...
+            php://filter（本地磁盘文件进行读取）元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。
+用法：
+123?filename=php://filter/convert.base64-encode/resource=xxx.php ?filename=php://filter/read=convert.base64-encode/resource=xxx.php 一样。
+
+条件：只是读取，需要开启 allow_url_fopen，不需要开启 allow_url_include；
+MOCTF上这道文件包含题，直接
+1?file=php://filter/c...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/10/攻防世界之Web高手进阶-NewsCenter/" >
+            
+                <span>ics-06</span>
+        </a>
+        <div class="abstract-content">
+            打开链接，出现如下页面：
+尝试是否为sql注入：抓包：利用sqlmap,
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -385,6 +422,37 @@
             题目描述：云平台报表中心收集了设备管理基础服务的数据，但是数据被删除了，只有一处留下了入侵者的痕迹。进入页面只有报表中心可以点击，有一个输入框，各种fuzzing，没成功，后来才知道直接爆破就行。。。
 关于爆破
 
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/10/攻防世界之Web高手进阶-cat/" >
+            
+                <span>Cat</span>
+        </a>
+        <div class="abstract-content">
+            仅给出了这样一个页面：
+输入cat，得到：
+123456PING cat.ad-world-198302431-4658.rancher.internal (10.42.197.21) 56(84) bytes of data.64 bytes from b4fccc7cf554 (10.42.197.21): icmp_seq=1 ttl=64 time=0.045 ms--- cat.ad-world-198302431-4658.rancher.internal ping statistics ---1 packets transmitted, 1 received, 0% pac...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -753,9 +821,23 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 17
         </div>
         <!-- search  -->
         
@@ -771,12 +853,22 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-cat/" >Cat</a>
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href= "/2019/09/24/文件包含漏洞/" >文件包含漏洞</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-NewsCenter/" >ics-06</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-ics-06/" >ics-06</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-cat/" >Cat</a>
         </li>
     
     
@@ -821,17 +913,17 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
@@ -853,11 +945,13 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
@@ -900,11 +994,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
-    
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
         <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
     

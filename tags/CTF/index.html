@@ -346,191 +346,31 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/03/代码审计ONE/" >
+        <a class="abstract-title" href = "/2019/09/24/文件包含漏洞/" >
             
-                <span>代码审计</span>
+                <span>文件包含漏洞</span>
         </a>
         <div class="abstract-content">
-            PHP大法（来源：实验吧  解题链接： http://ctf5.shiyanbar.com/DUTCTF/index.php）点开链接只有如上一句话。根据提示 直接访问： index.php.txt        （即：http://ctf5.shiyanbar.com/DUTCTF/index.php.txt）得到如下页面：分析代码：
-1234567891011121314151617    &lt;?php    if(eregi("hackerDJ",$_GET[id])) &#123;      //对id进行字符串匹配，若$_GET[id]中有hacker DJ则    //出...
+            php://filter（本地磁盘文件进行读取）元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。
+用法：
+123?filename=php://filter/convert.base64-encode/resource=xxx.php ?filename=php://filter/read=convert.base64-encode/resource=xxx.php 一样。
+
+条件：只是读取，需要开启 allow_url_fopen，不需要开启 allow_url_include；
+MOCTF上这道文件包含题，直接
+1?file=php://filter/c...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/03</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
     
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/加密算法/" >
-            
-                <span>加密算法</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/反序列化/" >
-            
-                <span>反序列化</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/xxe/" >
-            
-                <span>xxe</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/VPS/" >
-            
-                <span>VPS</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/算法作业one/" >
-            
-                <span>小雏鸟的成人式2</span>
-        </a>
-        <div class="abstract-content">
-            题目描述陶行知先生说：“我们要活的书，不要死的书 ”。
-小雏鸟们从书上都是对的到现在能去伪存真的去使用书籍，证明你们长大了。总之就是要有自己的主见，自己的思考。
-大白希望大家都能拿到一百分，所以对100这个数以及他的倍数很喜欢。
-大白发现，从1开始，一定能找出一个序列从小到大排列，使得每一项都是 恰好能且仅能 被100整除D次。
-请你编写程序，找到这个数列里第N个数。
-输入多行。每行输入两个整数，表示D和N，N范围[1,100]，D范围[0,2]
-输出每行对应输入，给出一个符合题意的整数
-样例输入1230 51 112 85
-
-样例输出12351100850000
-
-提示###思路：很容...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/08/31/hello-world/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-
-More info: Writing
-Run server1$ hexo server
-
-Mo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Hexo">Hexo</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -538,10 +378,6 @@ Mo...
     </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-    </nav>
     
 </main>
             <!-- profile -->
