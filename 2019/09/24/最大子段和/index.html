@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Smtsec&#39;s Studio</title>
+    <title>最大子段和 · Smtsec&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Smtsec&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">最大子段和</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Smtsec's Studio.</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            最大子段和
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "动态规划">动态规划</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">265</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/24</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,75 +401,60 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/05/攻防世界之Web新手（7-12）/" >
-            
-                <span>攻防世界之Web新手（7-12）</span>
-        </a>
-        <div class="abstract-content">
-            simple_js题目描述：小宁发现了一个网页，但却一直输不对密码。(Flag格式为 Cyberpeace{xxxxxxxxx} )打开链接空白，查看源码，有如下代码：
-12345678910111213141516171819202122232425262728293031function dechiffre(pass_enc) &#123;    var pass = "70,65,85,88,32,80,65,83,83,87,79,82,68,32,72,65,72,65";    var tab = pass_enc.split(',');    var tab2 = pass...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/04/攻防世界之Web新手（1-6）/" >
-            
-                <span>攻防世界之Web新手（1-6）</span>
-        </a>
-        <div class="abstract-content">
-            view_source题目描述：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。打开链接如下：试试右键的确不管用了，直接F12，找到flag
-另外还可以通过view-source：url查看源代码：
-其实还可以禁用Js代码，这样右键就可以用了：
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="问题D：最大子段和"><a href="#问题D：最大子段和" class="headerlink" title="问题D：最大子段和"></a>问题D：最大子段和</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定n 个整体组成的序列a1，a2，… an，求子段和a i + a i + 1 + … + a j（子段可为空集）的替代。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>包含多组测试数据。第一行为一个整数T（1 &lt;= T &lt;= 20），代表测试数据个数。</p>
+<p>每组测试数据第一行为一个整数n ，代表有n 个整数（1 &lt;= n &lt;= 10000）。</p>
+<p>接下来一行有n 个数x（-1000 &lt;= x &lt;= 1000）。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>输出其对应的最大子段和。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="symbol">2 </span>-<span class="number">11</span> <span class="number">4</span> <span class="number">13</span> -<span class="number">1</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方法，你知道是哪两种吗？知识补充：
-两种 HTTP 请求方法：GET 和 POST在客户机和服务器之间进行请求-响应时，两种最常被用到的方法是：GET 和 
-12345POST。&#123;GET - 从指定的资源请求数据。POST - 向指定的资源提...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">18</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>子段可为空集，答案为0</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxsum</span><span class="params">(<span class="keyword">int</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tempsum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> Maxsum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		tempsum=(tempsum+b[i])&gt;b[i]?(tempsum+b[i]):b[i];</span><br><span class="line">		<span class="keyword">if</span>(tempsum&gt;Maxsum)</span><br><span class="line">		Maxsum=tempsum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Maxsum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;T&gt;&gt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a[<span class="number">10000</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		<span class="keyword">int</span> SUM=maxsum(a,n);</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;SUM&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/24/最大子段和/">https://singlemindedt.github.io/2019/09/24/最大子段和/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/24/最大子段和/">September 24th 2019, 10:18:31 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/24/最大子段和/">September 24th 2019, 10:22:04 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/24/汽水瓶/" title= "汽水瓶">
+                    <div class="prevTitle">汽水瓶</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -495,6 +543,24 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题D：最大子段和"><span class="toc-number">1.</span> <span class="toc-text">问题D：最大子段和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入"><span class="toc-number">1.2.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出"><span class="toc-number">1.3.</span> <span class="toc-text">输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#样例输入"><span class="toc-number">1.3.1.</span> <span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样例输出"><span class="toc-number">1.3.2.</span> <span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示"><span class="toc-number">1.3.3.</span> <span class="toc-text">提示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码："><span class="toc-number">1.4.</span> <span class="toc-text">代码：</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -962,6 +1028,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
