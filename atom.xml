@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-09-25T15:23:24.465Z</updated>
+  <updated>2019-09-27T15:38:49.163Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://singlemindedt.github.io/2019/09/25/%E6%9A%B4%E8%B7%B3%E8%80%81%E6%9D%BF/"/>
     <id>https://singlemindedt.github.io/2019/09/25/暴跳老板/</id>
     <published>2019-09-25T14:49:02.000Z</published>
-    <updated>2019-09-25T15:23:24.465Z</updated>
+    <updated>2019-09-27T15:38:49.163Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="暴跳老板"><a href="#暴跳老板" class="headerlink" title="暴跳老板"></a>暴跳老板</h2><p>随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：<br><img src="/image/%E6%9A%B4%E8%B7%B31.png" alt="暴跳"><br>直接在postText后添加Dear=MyBoss，发包得到flag</p><hr><h2 id="Flag在哪？"><a href="#Flag在哪？" class="headerlink" title="Flag在哪？"></a>Flag在哪？</h2><p>burpsuit抓包，发现有五个跳转页面，但是都没有flag:)<br>/where_is_flag.php<br>/flag.php<br><strong>/I_have_a_frog.php</strong><br><strong>/I_have_a_flag.php</strong><br>/no_flag.php<br>看看大佬们骚操作，要组合一下 orz ，flagfrog.php,发包得到flag。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="暴跳老板"><a href="#暴跳老板" class="headerlink" title="暴跳老板"></a>暴跳老板</h2><p>随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：<br><img src="/image/%E6%9A%B4%E8%B7%B31.png" alt="暴跳"><br>直接在postText后添加Dear=MyBoss，发包得到flag</p><hr><h2 id="Flag在哪？"><a href="#Flag在哪？" class="headerlink" title="Flag在哪？"></a>Flag在哪？</h2><p>burpsuit抓包，发现有五个跳转页面，但是都没有flag:)<br>/where_is_flag.php<br>/flag.php<br><strong>/I_have_a_frog.php</strong><br><strong>/I_have_a_flag.php</strong><br>/no_flag.php<br>看看大佬们骚操作，要组合一下 orz ，flagfrog.php,发包得到flag。</p><hr><h2 id="美味的饼干"><a href="#美味的饼干" class="headerlink" title="美味的饼干"></a>美味的饼干</h2><p>点击链接得到一个登录页面，尝试admin，111<br>提示“登录成功，欢迎admin！”，但是并没有什么有用的信息。查看源代码，提示“只有admin才有flag”。<br>检查请求头，有可疑Cookie：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">login</span>=ZWUxMWNiYjE5MDUyZTQwYjA3YWFjMGNhMDYwYzIzZWU%<span class="number">3</span>D</span><br></pre></td></tr></table></figure><p>base64解码：</p><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ee<span class="number">11</span>cbb<span class="number">19052e40</span>b<span class="number">07</span>aac<span class="number">0</span>ca<span class="number">060</span><span class="keyword">c</span><span class="number">23</span>ee</span><br></pre></td></tr></table></figure><p>MD5解码：<br>user</p><p>那么意思基本就清楚了，应该是要Cookie信息为admin，才能够得到flag</p><p>admin<br>MD5：</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">21232f</span>297a57a5a743894a0e4a801fc3</span><br></pre></td></tr></table></figure><p>base64:</p><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MjEyMzJmMjk<span class="number">3</span>YTU<span class="number">3</span>YTVh<span class="symbol">NzQzODk0</span>YTBl<span class="symbol">NGE4</span>MDFmYzM=</span><br></pre></td></tr></table></figure><p>更改Cookie，重发，在响应里看到flag</p>]]></content>
     
     <summary type="html">
     
@@ -150,21 +150,20 @@
   </entry>
   
   <entry>
-    <title>ics-06</title>
+    <title>NewsCenter</title>
     <link href="https://singlemindedt.github.io/2019/09/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E4%B9%8BWeb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-NewsCenter/"/>
     <id>https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/</id>
     <published>2019-09-10T15:45:00.000Z</published>
-    <updated>2019-09-10T15:49:23.881Z</updated>
+    <updated>2019-09-27T15:42:02.629Z</updated>
     
-    <content type="html"><![CDATA[<p>打开链接，出现如下页面：<br><img src="/images/N1.png" alt="N1"></p><p>尝试是否为sql注入：<br>抓包：<br><img src="/images/N0.png" alt="N0"><br>利用sqlmap,</p>]]></content>
+    <content type="html"><![CDATA[<p>打开链接，出现如下页面：<br><img src="https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG" alt="N1"></p><p>尝试是否为sql注入：<br>抓包：<br><img src="https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N0.PNG" alt="N0"><br>利用sqlmap,</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;打开链接，出现如下页面：&lt;br&gt;&lt;img src=&quot;/images/N1.png&quot; alt=&quot;N1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;尝试是否为sql注入：&lt;br&gt;抓包：&lt;br&gt;&lt;img src=&quot;/images/N0.png&quot; alt=&quot;N0&quot;&gt;&lt;br&gt;利用sqlmap,&lt;/p&gt;
-
+        &lt;p&gt;打开链接，出现如下页面：&lt;br&gt;&lt;img src=&quot;https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG&quot; alt=&quot;N1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;尝试是否
       
     
     </summary>
