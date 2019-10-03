@@ -359,6 +359,72 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/30/PHP学习/" >
+            
+                <span>PHP学习</span>
+        </a>
+        <div class="abstract-content">
+            文章内容主要来自W3School，仅作为学习记录使用。
+在 PHP 创建用户定义函数用户定义的函数声明以单词 “function” 开头：
+语法123function functionName() &#123;  被执行的代码;&#125;
+
+注释：函数名能够以字母或下划线开头（而非数字）。注释：函数名对大小写不敏感。提示：函数名应该能够反映函数所执行的任务。*
+
+获得数组的长度 - count() 函数count() 函数用于返回数组的长度（元素数）
+1234&lt;?php$cars=array("porsche","BMW","Volvo");echo count($cars);?...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/30/CumtCTF2019华为杯/" >
+            
+                <span>CumtCTF2019华为杯</span>
+        </a>
+        <div class="abstract-content">
+            Web签到题点开链接为seed和hash参数的提交框，尝试admin，admin，返回Fail…;查看响应，发现有payload，提示访问index.php?source=1发现php代码:
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&lt;?phpfunction gen_secured_random() &#123; // cause random is the way    $a = rand(1337,2600)*42;    $b = rand(187...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/25/暴跳老板/" >
             
                 <span>暴跳老板+Flag在哪？</span>
@@ -521,9 +587,9 @@ MOCTF上这道文件包含题，直接
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -617,77 +683,6 @@ MOCTF上这道文件包含题，直接
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/09/pygame_install/" >
-            
-                <span>Win10安装pygame</span>
-        </a>
-        <div class="abstract-content">
-            
-检查pip是否安装，查看Python安装版本；
-
-2.
-1pip install wheel
-
-
-3.
-1pip install Pygame==1.9.6
-
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tools">tools</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/09/Byte_CTF/" >
-            
-                <span>Byte CTF 字节跳动网络安全攻防大赛</span>
-        </a>
-        <div class="abstract-content">
-            betgame给了提示，nc 112.125.25.81 9999
-知识补充：nc即netcat，被誉为网络安全界的“瑞士军刀”。透过使用TCP或UDP协议的网络连接去读写数据。它被设计成一个稳定的后门(back-end)工具，能够直接由其它程序和脚本轻松驱动。同时，它也是一个功能强大的网络调试和探测工具，能够建立你需要的几乎所有类型的网络连接.
-使用之前首先我们要弄明白netcat的工作原理,其实netcat的原理很简单,它就是从网络的一端读入数据,然后输出到网络的另一端,它可以使用tcp 和udp协议.之所以叫做netcat,因为它是网络上的cat,想象一下cat的功能,读出一个文件...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Misc">Misc</a>
     
 </div>
             
@@ -1165,9 +1160,11 @@ MOCTF上这道文件包含题，直接
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 23
         </div>
         <!-- search  -->
         
@@ -1180,6 +1177,16 @@ MOCTF上这道文件包含题，直接
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span><a class="archive-post-title" href= "/2019/09/30/PHP学习/" >PHP学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span><a class="archive-post-title" href= "/2019/09/30/CumtCTF2019华为杯/" >CumtCTF2019华为杯</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1258,17 +1265,17 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
@@ -1293,13 +1300,15 @@ MOCTF上这道文件包含题，直接
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
-        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
@@ -1344,11 +1353,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
-    
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     

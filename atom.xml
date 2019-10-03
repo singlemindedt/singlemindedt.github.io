@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-09-27T15:38:49.163Z</updated>
+  <updated>2019-10-03T12:53:25.216Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP学习</title>
+    <link href="https://singlemindedt.github.io/2019/09/30/PHP%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://singlemindedt.github.io/2019/09/30/PHP学习/</id>
+    <published>2019-09-30T14:44:09.000Z</published>
+    <updated>2019-10-03T12:53:25.216Z</updated>
+    
+    <content type="html"><![CDATA[<p>文章内容主要来自W3School，仅作为学习记录使用。</p><h2 id="在-PHP-创建用户定义函数"><a href="#在-PHP-创建用户定义函数" class="headerlink" title="在 PHP 创建用户定义函数"></a>在 PHP 创建用户定义函数</h2><p>用户定义的函数声明以单词 “function” 开头：</p><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  被执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>注释：函数名能够以字母或下划线开头（而非数字）。<br>注释：函数名对大小写不敏感。<br>提示：函数名应该能够反映函数所执行的任务。*</p><hr><h2 id="获得数组的长度-count-函数"><a href="#获得数组的长度-count-函数" class="headerlink" title="获得数组的长度 - count() 函数"></a>获得数组的长度 - count() 函数</h2><p>count() 函数用于返回数组的长度（元素数）</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$cars=<span class="keyword">array</span>(<span class="string">"porsche"</span>,<span class="string">"BMW"</span>,<span class="string">"Volvo"</span>);</span><br><span class="line"><span class="keyword">echo</span> count($cars);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><hr><h2 id="PHP-关联数组"><a href="#PHP-关联数组" class="headerlink" title="PHP 关联数组"></a>PHP 关联数组</h2><p>关联数组是使用您分配给数组的指定键的数组。<br>有两种创建关联数组的方法：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$age=<span class="keyword">array</span>(<span class="string">"Bill"</span>=&gt;<span class="string">"35"</span>,<span class="string">"Steve"</span>=&gt;<span class="string">"37"</span>,<span class="string">"Elon"</span>=&gt;<span class="string">"43"</span>);</span><br><span class="line">或者：</span><br><span class="line">$age[<span class="string">'Bill'</span>]=<span class="string">"63"</span>;</span><br><span class="line">$age[<span class="string">'Steve'</span>]=<span class="string">"56"</span>;</span><br><span class="line">$age[<span class="string">'Elon'</span>]=<span class="string">"47"</span>;</span><br></pre></td></tr></table></figure><p>随后可以在脚本中使用指定键：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$age=<span class="keyword">array</span>(<span class="string">"Bill"</span>=&gt;<span class="string">"63"</span>,<span class="string">"Steve"</span>=&gt;<span class="string">"56"</span>,<span class="string">"Elon"</span>=&gt;<span class="string">"47"</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"Elon is "</span> . $age[<span class="string">'Elon'</span>] . <span class="string">" years old."</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">Elon is <span class="number">47</span> years old.</span><br></pre></td></tr></table></figure><hr><h2 id="PHP-数组的排序函数"><a href="#PHP-数组的排序函数" class="headerlink" title="PHP - 数组的排序函数"></a>PHP - 数组的排序函数</h2><p>在本节中，我们将学习如下 PHP 数组排序函数：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sort() - 以升序对数组排序</span><br><span class="line">rsort() - 以降序对数组排序</span><br><span class="line">asort() - 根据值，以升序对关联数组进行排序</span><br><span class="line">ksort() - 根据键，以升序对关联数组进行排序</span><br><span class="line">arsort() - 根据值，以降序对关联数组进行排序</span><br><span class="line">krsort() - 根据键，以降序对关联数组进行排序</span><br></pre></td></tr></table></figure><hr><h2 id="GET-vs-POST"><a href="#GET-vs-POST" class="headerlink" title="GET vs. POST"></a>GET vs. POST</h2><p>GET 和 POST 都创建数组（例如，array( key =&gt; value, key2 =&gt; value2, key3 =&gt; value3, …)）。此数组包含键/值对，其中的键是表单控件的名称，而值是来自用户的输入数据。<br>GET 和 POST 被视作 $_GET 和 $_POST。它们是超全局变量，这意味着对它们的访问无需考虑作用域 - 无需任何特殊代码，您能够从任何函数、类或文件访问它们。<br>$_GET 是通过 URL 参数传递到当前脚本的变量数组。<br>$_POST 是通过 HTTP POST 传递到当前脚本的变量数组。</p><h3 id="何时使用-GET？"><a href="#何时使用-GET？" class="headerlink" title="何时使用 GET？"></a>何时使用 GET？</h3><p>通过 GET 方法从表单发送的信息对任何人都是可见的（所有变量名和值都显示在 URL 中）。GET 对所发送信息的数量也有限制。限制在大约 2000 个字符。不过，由于变量显示在 URL 中，把页面添加到书签中也更为方便。<br>GET 可用于发送非敏感的数据。<br>注释：绝不能使用 GET 来发送密码或其他敏感信息！</p><h3 id="何时使用-POST？"><a href="#何时使用-POST？" class="headerlink" title="何时使用 POST？"></a>何时使用 POST？</h3><p>通过 POST 方法从表单发送的信息对其他人是不可见的（所有名称/值会被嵌入 HTTP 请求的主体中），并且对所发送信息的数量也无限制。<br>此外 POST 支持高阶功能，比如在向服务器上传文件时进行 multi-part 二进制输入。<br>不过，由于变量未显示在 URL 中，也就无法将页面添加到书签。<br>提示：开发者偏爱 POST 来发送表单数据。</p><hr><h2 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h2><p>表单的 HTML 代码是这样的：</p><form method="post" action="<?php echo htmlspecialchars($_SERVER[" php_self"]);?>">当提交此表单时，通过 method="post" 发送表单数据。什么是 $_SERVER["PHP_SELF"] 变量？$_SERVER["PHP_SELF"] 是一种超全局变量，它返回当前执行脚本的文件名。因此，$_SERVER["PHP_SELF"] 将表单数据发送到页面本身，而不是跳转到另一张页面。这样，用户就能够在表单页面获得错误提示信息。什么是 htmlspecialchars() 函数？htmlspecialchars() 函数把特殊字符转换为 HTML 实体。这意味着 < 和 > 之类的 HTML 字符会被替换为 &lt; 和 &gt; 。这样可防止攻击者通过在表单中注入 HTML 或 JavaScript 代码（跨站点脚本攻击）对代码进行利用。<h2 id="关于-PHP-表单安全性的重要提示"><a href="#关于-PHP-表单安全性的重要提示" class="headerlink" title="关于 PHP 表单安全性的重要提示"></a>关于 PHP 表单安全性的重要提示</h2><p>$_SERVER[“PHP_SELF”] 变量能够被黑客利用！<br>如果您的页面使用了 PHP_SELF，用户能够输入下划线然后执行跨站点脚本（XSS）。<br>提示：跨站点脚本（Cross-site scripting，XSS）是一种计算机安全漏洞类型，常见于 Web 应用程序。XSS 能够使攻击者向其他用户浏览的网页中输入客户端脚本。<br>假设我们的一张名为 “test_form.php” 的页面中有如下表单：</p><form method="post" action="<?php echo $_SERVER[" php_self"];?>">现在，如果用户进入的是地址栏中正常的 URL："http://www.example.com/test_form.php"，上面的代码会转换为：<form method="post" action="test_form.php">到目前，一切正常。不过，如果用户在地址栏中键入了如下 URL：http://www.example.com/test_form.php/%22%3E%3Cscript%3Ealert('hacked')%3C/script%3E在这种情况下，上面的代码会转换为：<form method="post" action="test_form.php"><script>alert('hacked')</script>这段代码加入了一段脚本和一个提示命令。并且当此页面加载后，就会执行 JavaScript 代码（用户会看到一个提示框）。这仅仅是一个关于 PHP_SELF 变量如何被利用的简单无害案例。您应该意识到 <script> 标签内能够添加任何 JavaScript 代码！黑客能够把用户重定向到另一台服务器上的某个文件，该文件中的恶意代码能够更改全局变量或将表单提交到其他地址以保存用户数据，等等。如果避免 $_SERVER["PHP_SELF"] 被利用？通过使用 htmlspecialchars() 函数能够避免 $_SERVER["PHP_SELF"] 被利用。表单代码是这样的：<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">htmlspecialchars() 函数把特殊字符转换为 HTML 实体。现在，如果用户试图利用 PHP_SELF 变量，会导致如下输出：<form method="post" action="test_form.php/&quot;&gt;&lt;script&gt;alert('hacked')&lt;/script&gt;">无法利用，没有危害！通过 PHP 验证表单数据我们要做的第一件事是通过 PHP 的 htmlspecialchars() 函数传递所有变量。在我们使用 htmlspecialchars() 函数后，如果用户试图在文本字段中提交以下内容：<script>location.href('http://www.hacked.com')</script>- 代码不会执行，因为会被保存为转义代码，就像这样：&lt;script&gt;location.href('http://www.hacked.com')&lt;/script&gt;现在这条代码显示在页面上或 e-mail 中是安全的。在用户提交该表单时，我们还要做两件事：（通过 PHP trim() 函数）去除用户输入数据中不必要的字符（多余的空格、制表符、换行）（通过 PHP stripslashes() 函数）删除用户输入数据中的反斜杠（\）接下来我们创建一个检查函数（相比一遍遍地写代码，这样效率更好）。我们把函数命名为 test_input()。现在，我们能够通过 test_input() 函数检查每个 $_POST 变量，脚本是这样的：实例<?php// 定义变量并设置为空值$name = $email = $gender = $comment = $website = "";<p>if ($_SERVER[“REQUEST_METHOD”] == “POST”) {<br>  $name = test_input($_POST[“name”]);<br>  $email = test_input($_POST[“email”]);<br>  $website = test_input($_POST[“website”]);<br>  $comment = test_input($_POST[“comment”]);<br>  $gender = test_input($_POST[“gender”]);<br>}<p></p><p>function test_input($data) {<br>  $data = trim($data);<br>  $data = stripslashes($data);<br>  $data = htmlspecialchars($data);<br>  return $data;<br>}<br>?&gt;<br>运行实例<br>请注意在脚本开头，我们检查了表单是否使用 $_SERVER[“REQUEST_METHOD”] 进行提交。如果 REQUEST_METHOD 是 POST，那么表单已被提交 - 并且应该对其进行验证。如果未提交，则跳过验证并显示一个空白表单。<br>不过，在上面的例子中，所有输入字段都是可选的。即使用户未输入任何数据，脚本也能正常工作。<br>下一步是制作必填输入字段，并创建需要时使用的错误消息。</p></form></form></form></form>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;文章内容主要来自W3School，仅作为学习记录使用。&lt;/p&gt;
+&lt;h2 id=&quot;在-PHP-创建用户定义函数&quot;&gt;&lt;a href=&quot;#在-PHP-创建用户定义函数&quot; class=&quot;headerlink&quot; title=&quot;在 PHP 创建用户定义函数&quot;&gt;&lt;/a&gt;在 PHP 创建用
+      
+    
+    </summary>
+    
+      <category term="notes" scheme="https://singlemindedt.github.io/categories/notes/"/>
+    
+    
+      <category term="PHP" scheme="https://singlemindedt.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CumtCTF2019华为杯</title>
+    <link href="https://singlemindedt.github.io/2019/09/30/CumtCTF2019%E5%8D%8E%E4%B8%BA%E6%9D%AF/"/>
+    <id>https://singlemindedt.github.io/2019/09/30/CumtCTF2019华为杯/</id>
+    <published>2019-09-30T07:38:23.000Z</published>
+    <updated>2019-10-03T12:53:29.320Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Web签到题"><a href="#Web签到题" class="headerlink" title="Web签到题"></a>Web签到题</h2><p>点开链接为seed和hash参数的提交框，尝试admin，admin，返回Fail…;查看响应，发现有payload，提示访问<code>index.php?source=1</code><br>发现php代码:</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gen_secured_random</span><span class="params">()</span> </span>&#123; <span class="comment">// cause random is the way</span></span><br><span class="line">    $a = rand(<span class="number">1337</span>,<span class="number">2600</span>)*<span class="number">42</span>;</span><br><span class="line">    $b = rand(<span class="number">1879</span>,<span class="number">1955</span>)*<span class="number">42</span>;</span><br><span class="line"></span><br><span class="line">    $a &lt; $b ? $a ^= $b ^= $a ^= $b : $a = $b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $a+$b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">secured_hash_function</span><span class="params">($plain)</span> </span>&#123; <span class="comment">// cause md5 is the best hash ever</span></span><br><span class="line">    $secured_plain = sanitize_user_input($plain);</span><br><span class="line">    <span class="keyword">return</span> md5($secured_plain);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sanitize_user_input</span><span class="params">($input)</span> </span>&#123; <span class="comment">// cause someone told me to never trust user input</span></span><br><span class="line">    $re = <span class="string">'/[^a-zA-Z0-9]/'</span>;</span><br><span class="line">    $secured_input = preg_replace($re, <span class="string">""</span>, $input);</span><br><span class="line">    <span class="keyword">return</span> $secured_input;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'source'</span>])) &#123;</span><br><span class="line">    show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">    <span class="keyword">die</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">require_once</span> <span class="string">"secret.php"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_POST[<span class="string">'s'</span>]) &amp;&amp; <span class="keyword">isset</span>($_POST[<span class="string">'h'</span>])) &#123;</span><br><span class="line">    $s = sanitize_user_input($_POST[<span class="string">'s'</span>]);</span><br><span class="line">    $h = secured_hash_function($_POST[<span class="string">'h'</span>]);</span><br><span class="line">    $r = gen_secured_random();</span><br><span class="line">    <span class="keyword">if</span>($s != <span class="keyword">false</span> &amp;&amp; $h != <span class="keyword">false</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>($s.$r == $h) &#123;</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"Well done! Here is your flag: "</span>.$flag;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"Fail..."</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"&lt;p&gt;Hum ...&lt;/p&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Web签到题&quot;&gt;&lt;a href=&quot;#Web签到题&quot; class=&quot;headerlink&quot; title=&quot;Web签到题&quot;&gt;&lt;/a&gt;Web签到题&lt;/h2&gt;&lt;p&gt;点开链接为seed和hash参数的提交框，尝试admin，admin，返回Fail…;查看响应，发现有pay
+      
+    
+    </summary>
+    
+      <category term="CTF" scheme="https://singlemindedt.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://singlemindedt.github.io/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>暴跳老板+Flag在哪？</title>
@@ -143,9 +194,9 @@
       <category term="CTF" scheme="https://singlemindedt.github.io/categories/CTF/"/>
     
     
-      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
-    
       <category term="CTF" scheme="https://singlemindedt.github.io/tags/CTF/"/>
+    
+      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
     
   </entry>
   
@@ -456,46 +507,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>VPS</title>
-    <link href="https://singlemindedt.github.io/2019/09/01/VPS/"/>
-    <id>https://singlemindedt.github.io/2019/09/01/VPS/</id>
-    <published>2019-09-01T14:47:52.000Z</published>
-    <updated>2019-09-01T14:47:52.634Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>小雏鸟的成人式2</title>
-    <link href="https://singlemindedt.github.io/2019/09/01/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9Aone/"/>
-    <id>https://singlemindedt.github.io/2019/09/01/算法作业one/</id>
-    <published>2019-09-01T09:37:45.000Z</published>
-    <updated>2019-09-05T14:24:01.539Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>陶行知先生说：“我们要活的书，不要死的书 ”。</p><p>小雏鸟们从书上都是对的到现在能去伪存真的去使用书籍，证明你们长大了。总之就是要有自己的主见，自己的思考。</p><p>大白希望大家都能拿到一百分，所以对100这个数以及他的倍数很喜欢。</p><p>大白发现，从1开始，一定能找出一个序列从小到大排列，使得每一项都是 恰好能且仅能 被100整除D次。</p><p>请你编写程序，找到这个数列里第N个数。</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>多行。每行输入两个整数，表示D和N，N范围[1,100]，D范围[0,2]</p><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>每行对应输入，给出一个符合题意的整数</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span><span class="number">5</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">11</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">85</span></span><br></pre></td></tr></table></figure><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1100</span></span><br><span class="line"><span class="number">850000</span></span><br></pre></td></tr></table></figure><h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>###思路：很容易想到计算方法，其中N=100的情况需要注意，在下面带代码中给出。</p><h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a><strong>题解：</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">double</span> D,N;<span class="comment">//pow(double,double)</span></span><br><span class="line"><span class="keyword">double</span> n;  <span class="comment">//避免损失精度 </span></span><br><span class="line">                 <span class="comment">//int s;//最后由于要得到整数而非科学记数法，故需要强制转换一下</span></span><br><span class="line">           <span class="comment">//如：2 100 得到1.01e+006转化之后为1010000 </span></span><br><span class="line">           <span class="comment">//***也可以直接cout&lt;&lt;int(n)转化输出结果 </span></span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;D&gt;&gt;N)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(<span class="number">1</span>&lt;=N&amp;&amp;N&lt;<span class="number">100</span>&amp;&amp;<span class="number">0</span>&lt;=D&amp;&amp;D&lt;=<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">n=N*(<span class="built_in">pow</span>(<span class="number">100</span>,D));</span><br><span class="line">               <span class="comment">//s=n;</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="keyword">int</span>(n)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(N=<span class="number">100</span>&amp;&amp;<span class="number">0</span>&lt;=D&amp;&amp;D&lt;=<span class="number">2</span>)<span class="comment">//当N=100用原来的算法会使结果整除次数加1</span></span><br><span class="line">    &#123;</span><br><span class="line">    n=<span class="number">101</span>*(<span class="built_in">pow</span>(<span class="number">100</span>,D));</span><br><span class="line">    <span class="comment">//s=n;</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="keyword">int</span>(n)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">continue</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://dev.tencent.com/u/Single-minded_T/p/daerduotutu/git/raw/master/%E5%B0%8F%E9%9B%8F%E9%B8%9F%E7%9A%84%E6%88%90%E4%BA%BA%E5%BC%8F2.PNG" alt="Demo"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;陶行知先生说：“我们要活的书，不要死的书 ”。&lt;/p&gt;
-&lt;p&gt;小雏鸟们从书上都是对的到现在能去伪存真的去使用书籍，证明你们长
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://singlemindedt.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://singlemindedt.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
