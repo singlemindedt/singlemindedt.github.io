@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-10-04T07:18:57.002Z</updated>
+  <updated>2019-10-10T15:56:49.921Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初探栈溢出</title>
+    <link href="https://singlemindedt.github.io/2019/10/10/%E5%88%9D%E6%8E%A2%E6%A0%88%E6%BA%A2%E5%87%BA/"/>
+    <id>https://singlemindedt.github.io/2019/10/10/初探栈溢出/</id>
+    <published>2019-10-10T14:09:17.000Z</published>
+    <updated>2019-10-10T15:56:49.921Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里给出一个简单的exe文件，实现的功能为：让用户键入密码，程序将之与固定密码(1234567)进行比较，如果错误继续键入，成功则提示“Congratulation! You have passed the verification!”</p><p>将程序拖入IDA，在左边窗口有<strong>函数名称</strong>列表，找到_main函数双击，可以看到其程序流程图：<br><img src="/images/zyc0.png" alt="zyc0"><br>伪代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> __<span class="function">cdecl <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> **argv, <span class="keyword">const</span> <span class="keyword">char</span> **envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> v4; <span class="comment">// [esp+0h] [ebp-8h]//变量v4</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    sub_4010A7(aPleaseInputPas, v4);<span class="comment">//函数sub_4010A7需要调用两个参数aPleaseInputPas, v4</span></span><br><span class="line">    <span class="built_in">scanf</span>(aS, &amp;v4);<span class="comment">//输入v4</span></span><br><span class="line">    <span class="keyword">if</span> ( !sub_401000(&amp;v4) )<span class="comment">//若sub_401000(&amp;v4)==0调用 sub_4010A7(aIncorrectPassw, v4)</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    sub_4010A7(aIncorrectPassw, v4);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sub_4010A7(aCongratulation, v4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我们接下来查看 判断函数sub_401000：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> __<span class="function">cdecl <span class="title">sub_401000</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">strcmp</span>(a1, a1234567);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*比较两个字符串</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">设这两个字符串为str1，str2，</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">若str1=str2，则返回零；</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">若str1&lt;str2，则返回负数；</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">若str1&gt;str2，则返回正数。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><p>查看sub_4010A7：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> __<span class="function">cdecl <span class="title">sub_4010A7</span><span class="params">(<span class="keyword">int</span> a1, <span class="keyword">int</span> a2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> v2; <span class="comment">// edi</span></span><br><span class="line">  <span class="keyword">int</span> v3; <span class="comment">// ebx</span></span><br><span class="line"></span><br><span class="line">  v2 = _stbuf(&amp;stru_4080E0);</span><br><span class="line">  v3 = sub_401E34(&amp;stru_4080E0, a1, (<span class="keyword">int</span>)&amp;a2);</span><br><span class="line">  _ftbuf(v2, &amp;stru_4080E0);</span><br><span class="line">  <span class="keyword">return</span> v3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这里给出一个简单的exe文件，实现的功能为：让用户键入密码，程序将之与固定密码(1234567)进行比较，如果错误继续键入，成功则提示“Congratulation! You have passed the verification!”&lt;/p&gt;
+&lt;p&gt;将程序拖入IDA，在左
+      
+    
+    </summary>
+    
+      <category term="notes" scheme="https://singlemindedt.github.io/categories/notes/"/>
+    
+    
+      <category term="re" scheme="https://singlemindedt.github.io/tags/re/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ics-05</title>
+    <link href="https://singlemindedt.github.io/2019/10/05/ics-05/"/>
+    <id>https://singlemindedt.github.io/2019/10/05/ics-05/</id>
+    <published>2019-10-05T02:53:52.000Z</published>
+    <updated>2019-10-06T00:38:42.710Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CTF" scheme="https://singlemindedt.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://singlemindedt.github.io/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式</title>
@@ -491,34 +535,6 @@
     
     
       <category term="php" scheme="https://singlemindedt.github.io/tags/php/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>加密算法</title>
-    <link href="https://singlemindedt.github.io/2019/09/01/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
-    <id>https://singlemindedt.github.io/2019/09/01/加密算法/</id>
-    <published>2019-09-01T14:50:25.000Z</published>
-    <updated>2019-09-01T14:50:25.208Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>反序列化</title>
-    <link href="https://singlemindedt.github.io/2019/09/01/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    <id>https://singlemindedt.github.io/2019/09/01/反序列化/</id>
-    <published>2019-09-01T14:49:34.000Z</published>
-    <updated>2019-09-01T14:49:35.039Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
