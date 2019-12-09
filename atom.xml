@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-12-09T01:50:24.249Z</updated>
+  <updated>2019-12-09T02:00:55.672Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://singlemindedt.github.io/2019/12/09/Bug/"/>
     <id>https://singlemindedt.github.io/2019/12/09/Bug/</id>
     <published>2019-12-09T01:18:21.000Z</published>
-    <updated>2019-12-09T01:50:24.249Z</updated>
+    <updated>2019-12-09T02:00:55.672Z</updated>
     
-    <content type="html"><![CDATA[<p>给出一个登录页面;首先随便注册一个用户；<br><img src="https://s2.ax1x.com/2019/12/09/Qd5WsP.png" alt="Qd5WsP.png"><br> <img src="/images/bug01.png" alt="bug01.png"><br>登录；<br> <img src="/images/bug02.png" alt="bug02.png"><br>发现只有Manage是不能普通用户使用的；<br> <img src="/images/bug03.png" alt="bug03.png"><br>最后发现还有个Finpwd，找回密码之前应该会验证身份，应该是突破口；<br>先以smtsec找回密码，发现直接给了一个newpwd输入框；应该是需要抓包修改用户身份；<br> <img src="/images/bug04.png" alt="bug04.png"><br>修改为admin，提示修改成功；</p><p><img src="/images/bug05.png" alt="bug05.png"><br>以admin身份登录成功；<br>但是Manage还是不能使用提示IP not allowed!<br>应该要改为本地登录；在请求头中加入X-Forwarded-For: 127.0.0.1进行ip伪造；得到如下页面；<br> <img src="/images/bug07.png" alt="bug07.png"><br>查看源码，看到提示：<br> <img src="/images/bug08.png" alt="bug08.png"><br>看到filemanage想到可能do为upload(文件管理无非上传、下载、查看、删除)；<br>关于文件上传：<a href="https://blog.csdn.net/qq_42636435/article/details/88096844" target="_blank" rel="noopener">https://blog.csdn.net/qq_42636435/article/details/88096844</a><br> <img src="/images/bug09.png" alt="bug09.png"><br>根据提示Just image？因该是上传image然后改后缀；<br>构造： </p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;？php</span><br><span class="line">    phpinfo();</span><br><span class="line">？&gt;</span><br></pre></td></tr></table></figure><p>上传发现，过滤了<?php?>;<br>不是php文件又不能进行解析得到响应；<br>非php文件下提示要上传php文件；<br>It is not a really php file<br>这里尝试使用php的脚本表达形式</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">'php'</span>&gt;</span><br><span class="line">phpinfo();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p> <img src="/images/bug11.png" alt="bug11.png"><br>将jpg后缀改为php4/php5;(否则不能解析)就得到响应flag了.</p>]]></content>
+    <content type="html"><![CDATA[<p>给出一个登录页面;首先随便注册一个用户；<br><img src="https://s2.ax1x.com/2019/12/09/Qd5WsP.png" alt="Qd5WsP.png"><br>登录；<br><img src="https://s2.ax1x.com/2019/12/09/QdI9JJ.png" alt="QdI9JJ.png"><br>发现只有Manage是不能普通用户使用的；<br><img src="https://s2.ax1x.com/2019/12/09/QdIAL6.png" alt="QdIAL6.png"><br>最后发现还有个Finpwd，找回密码之前应该会验证身份，应该是突破口；<br>先以smtsec找回密码，发现直接给了一个newpwd输入框；应该是需要抓包修改用户身份；<br><img src="https://s2.ax1x.com/2019/12/09/QdIZdO.png" alt="QdIZdO.png"><br>修改为admin，提示修改成功；</p><p><img src="https://s2.ax1x.com/2019/12/09/QdIeoD.png" alt="QdIeoD.png"><br>以admin身份登录成功；<br>但是Manage还是不能使用提示IP not allowed!<br>应该要改为本地登录；在请求头中加入X-Forwarded-For: 127.0.0.1进行ip伪造；得到如下页面；<br><img src="https://s2.ax1x.com/2019/12/09/QdIuJH.png" alt="QdIuJH.png"><br>查看源码，看到提示：<br><img src="https://s2.ax1x.com/2019/12/09/QdIFQ1.png" alt="QdIFQ1.png"><br>看到filemanage想到可能do为upload(文件管理无非上传、下载、查看、删除)；<br>关于文件上传：<a href="https://blog.csdn.net/qq_42636435/article/details/88096844" target="_blank" rel="noopener">https://blog.csdn.net/qq_42636435/article/details/88096844</a><br><img src="https://s2.ax1x.com/2019/12/09/QdIPzR.png" alt="QdIPzR.png"><br>根据提示Just image？因该是上传image然后改后缀；<br>构造： </p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;？php</span><br><span class="line">    phpinfo();</span><br><span class="line">？&gt;</span><br></pre></td></tr></table></figure><p>上传发现，过滤了<?php?>;<br>不是php文件又不能进行解析得到响应；<br>非php文件下提示要上传php文件；<br>It is not a really php file<br>这里尝试使用php的脚本表达形式</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">'php'</span>&gt;</span><br><span class="line">phpinfo();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/12/09/QdIksx.png" alt="QdIksx.png"><br>将jpg后缀改为php4/php5;(否则不能解析)就得到响应flag了.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;给出一个登录页面;首先随便注册一个用户；&lt;br&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/12/09/Qd5WsP.png&quot; alt=&quot;Qd5WsP.png&quot;&gt;&lt;br&gt; &lt;img src=&quot;/images/bug01.png&quot; alt=&quot;bug0
+        &lt;p&gt;给出一个登录页面;首先随便注册一个用户；&lt;br&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/12/09/Qd5WsP.png&quot; alt=&quot;Qd5WsP.png&quot;&gt;&lt;br&gt;登录；&lt;br&gt;&lt;img src=&quot;https://s2.ax1x.com/20
       
     
     </summary>

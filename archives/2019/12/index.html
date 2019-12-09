@@ -351,8 +351,8 @@
                 <span>Bug</span>
         </a>
         <div class="abstract-content">
-            给出一个登录页面;首先随便注册一个用户； 登录； 发现只有Manage是不能普通用户使用的； 最后发现还有个Finpwd，找回密码之前应该会验证身份，应该是突破口；先以smtsec找回密码，发现直接给了一个newpwd输入框；应该是需要抓包修改用户身份； 修改为admin，提示修改成功；
-以admin身份登录成功；但是Manage还是不能使用提示IP not allowed!应该要改为本地登录；在请求头中加入X-Forwarded-For: 127.0.0.1进行ip伪造；得到如下页面； 查看源码，看到提示： 看到filemanage想到可能do为upload(文件管理无非上传、下载、查...
+            给出一个登录页面;首先随便注册一个用户；登录；发现只有Manage是不能普通用户使用的；最后发现还有个Finpwd，找回密码之前应该会验证身份，应该是突破口；先以smtsec找回密码，发现直接给了一个newpwd输入框；应该是需要抓包修改用户身份；修改为admin，提示修改成功；
+以admin身份登录成功；但是Manage还是不能使用提示IP not allowed!应该要改为本地登录；在请求头中加入X-Forwarded-For: 127.0.0.1进行ip伪造；得到如下页面；查看源码，看到提示：看到filemanage想到可能do为upload(文件管理无非上传、下载、查看、删除)；...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
