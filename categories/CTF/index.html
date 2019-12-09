@@ -381,7 +381,7 @@
                 <span>NaNNaNNaNNaN-Batman</span>
         </a>
         <div class="abstract-content">
-            NaNNaNNaNNaN-Batman下载附件，得到web100的文本，打开是乱码，大概看了下，将后缀改为HTML，在浏览器里打开，得到一个OK输入框； 但是输入没有任何响应；回头再看看代码； 可以很明显看到,’’是一个变量，而它的内容就是后面一长串字符(三行绿色部分即’’中间部分)；最后eval()函数执行_;**eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。**此处，eval()并未执行$()函数，而是执行了字符串，导致乱码?:).为了能看到正常源码，将eval()改为alert()；**alert() 方法用于显示带有一条指定消息和一个 OK 按钮...
+            NaNNaNNaNNaN-Batman下载附件，得到web100的文本，打开是乱码，大概看了下，将后缀改为HTML，在浏览器里打开，得到一个OK输入框；但是输入没有任何响应；回头再看看代码；可以很明显看到,’’是一个变量，而它的内容就是后面一长串字符(三行绿色部分即’’中间部分)；最后eval()函数执行_;**eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。**此处，eval()并未执行$()函数，而是执行了字符串，导致乱码?:).为了能看到正常源码，将eval()改为alert()；**alert() 方法用于显示带有一条指定消息和一个 OK 按钮的警...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -439,11 +439,11 @@
                 <span>Mfw</span>
         </a>
         <div class="abstract-content">
-            Mfw打开链接，几个目录都看了下，发现： 可能存在git源码泄露，尝试访问.git目录：  利用Githack得到网站源码(直接将GitHack.py拖入cmd,输入执行命令)：  在GitHack目录下可以看到网站源码文件夹：  在flag.php中只有如下内容：
+            Mfw打开链接，几个目录都看了下，发现：可能存在git源码泄露，尝试访问.git目录：利用Githack得到网站源码(直接将GitHack.py拖入cmd,输入执行命令)：在GitHack目录下可以看到网站源码文件夹：在flag.php中只有如下内容：
 1234&lt;?php// TODO// $FLAG = '';?&gt;
 
 是将flag.php中的内容注释了，不显在网页上。在index.php中发现关键代码：
-12345678910111213&lt;?phpif (isset($_GET['page'])) &#123;    $page = $_GET['pag...
+12345678910111213&lt;?phpif (isset($_GET['page'])) &#123;    $page = $_GET['page'];&#1...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -472,7 +472,7 @@
                 <span>Lottery!</span>
         </a>
         <div class="abstract-content">
-            Lottery！随便输入7个数字得到以下结果，并且每次的winning numbers都是不同的，应该为随机数；根据Claim Your Prize中的提示，需要花费$9990000才能买到flag，如果一直猜数字获得余额不太现实， 用burpsuite对输入彩票数字验证过程抓包，得到api.php; 不过还是不太清楚怎么搞，看了下wp，说是git源码泄露：在运行git init初始化代码库的时候，会在当前目录下面产生一个.git的隐藏文件，用来记录代码的变更记录等等。在发布代码的时候，把.git这个目录没有删除，直接发布了。使用这个文件，可以用来恢复源代码。尝试访问： 可以利用Gith...
+            Lottery！随便输入7个数字得到以下结果，并且每次的winning numbers都是不同的，应该为随机数；根据Claim Your Prize中的提示，需要花费$9990000才能买到flag，如果一直猜数字获得余额不太现实，用burpsuite对输入彩票数字验证过程抓包，得到api.php;不过还是不太清楚怎么搞，看了下wp，说是git源码泄露：在运行git init初始化代码库的时候，会在当前目录下面产生一个.git的隐藏文件，用来记录代码的变更记录等等。在发布代码的时候，把.git这个目录没有删除，直接发布了。使用这个文件，可以用来恢复源代码。尝试访问：可以利用Githack...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -501,7 +501,7 @@
                 <span>ics-04</span>
         </a>
         <div class="abstract-content">
-            ics-04本题和之前几题使用了相同的页面，根据提示漏洞位置应该在登录和注册上，随便注册都能成功，但是登录时提示“普通用户登录成功，没什么用”； 尝试sql注入，这两个地方并没有什么注入点，看到还有个“忘记密码？”，可以正常使用找回密码，尝试sql注入；利用sqlmap检测，发现存在漏洞；构造命令猜解数据库名：–dbs 枚举数据库管理系统数据库sqlmap -u “http://111.198.29.45:33931/findpwd.php&quot; –data=”username=1” –dbs得到库名结果；  库名对每个数据库进行表名猜解；sqlmap -u  “http://11...
+            ics-04本题和之前几题使用了相同的页面，根据提示漏洞位置应该在登录和注册上，随便注册都能成功，但是登录时提示“普通用户登录成功，没什么用”；尝试sql注入，这两个地方并没有什么注入点，看到还有个“忘记密码？”，可以正常使用找回密码，尝试sql注入；利用sqlmap检测，发现存在漏洞；构造命令猜解数据库名：–dbs 枚举数据库管理系统数据库sqlmap -u “http://111.198.29.45:33931/findpwd.php&quot; –data=”username=1” –dbs得到库名结果；库名对每个数据库进行表名猜解；sqlmap -u  “http://111.1...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -530,7 +530,7 @@
                 <span>ics-05</span>
         </a>
         <div class="abstract-content">
-            ics-05题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统点击链接进入“工控云管理系统”，根据题目要求只能点击“设备维护中心”；得到如下页面：  除了index.php页面，没有其他有效信息，查看源码：  可以看到?page=indedx;由于出现page这个get参数，我们可以尝试一下是否存在文件包含源码漏洞；  **本地文件包含漏洞（LFI漏洞）的黑盒判断方法：单纯的从URL判断的话，URL中path、dir、file、pag、page、archive、p、eng、语言文件等相关关键字眼的时候,可能存在文件包含漏洞:主要涉及到的函数：include(),requi...
+            ics-05题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统点击链接进入“工控云管理系统”，根据题目要求只能点击“设备维护中心”；得到如下页面：除了index.php页面，没有其他有效信息，查看源码：可以看到?page=indedx;由于出现page这个get参数，我们可以尝试一下是否存在文件包含源码漏洞； **本地文件包含漏洞（LFI漏洞）的黑盒判断方法：单纯的从URL判断的话，URL中path、dir、file、pag、page、archive、p、eng、语言文件等相关关键字眼的时候,可能存在文件包含漏洞:主要涉及到的函数：include(),require()、...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -589,11 +589,11 @@
                 <span>暴跳老板+Flag在哪？</span>
         </a>
         <div class="abstract-content">
-            暴跳老板随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：直接在postText后添加Dear=MyBoss，发包得到flag
+            暴跳老板随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：//: 直接在postText后添加Dear=MyBoss，发包得到flag
 
 Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:)/where_is_flag.php/flag.php/I_have_a_frog.php/I_have_a_flag.php/no_flag.php看看大佬们骚操作，要组合一下 orz ，flagfrog.php,发包得到flag。
 
-美味的饼干点击链接得到一个登录页面，尝试admin，111提示“登录成功，欢迎admin！”，但是并没有什么有用的信息。查看源代码，提示...
+美味的饼干点击链接得到一个登录页面，尝试admin，111提示“登录成功，欢迎admin！”，但是并没有什么有用的信息。查看源代...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1197,6 +1197,38 @@ MOCTF上这道文件包含题，直接
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1215,17 +1247,22 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1236,11 +1273,6 @@ MOCTF上这道文件包含题，直接
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1355,17 +1387,17 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -1390,25 +1422,25 @@ MOCTF上这道文件包含题，直接
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
-        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
-    
-        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
-        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
-    
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
+    
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
@@ -1453,15 +1485,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
-        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
-        <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
-    
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
+        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     

