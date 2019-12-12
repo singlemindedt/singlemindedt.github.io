@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-12-11T10:36:37.105Z</updated>
+  <updated>2019-12-12T07:31:43.276Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo卡通挂件踩坑记</title>
+    <link href="https://singlemindedt.github.io/2019/12/12/hexo%E5%8D%A1%E9%80%9A%E6%8C%82%E4%BB%B6%E8%B8%A9%E5%9D%91%E8%AE%B0/"/>
+    <id>https://singlemindedt.github.io/2019/12/12/hexo卡通挂件踩坑记/</id>
+    <published>2019-12-12T07:30:52.000Z</published>
+    <updated>2019-12-12T07:31:43.276Z</updated>
+    
+    <content type="html"><![CDATA[<p>添加卡通人物：</p><h1 id="1-安装hexo-helper-live2d"><a href="#1-安装hexo-helper-live2d" class="headerlink" title="1.安装hexo-helper-live2d"></a>1.安装hexo-helper-live2d</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp install -save hexo-helper-live2d</span><br></pre></td></tr></table></figure><h1 id="2-安装live2d"><a href="#2-安装live2d" class="headerlink" title="2.安装live2d"></a>2.安装live2d</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp install live2d-widget-model-tororo</span><br></pre></td></tr></table></figure><p><strong>注意</strong>：可能出现报错<br><img src="https://s2.ax1x.com/2019/12/12/Qyre0S.png" alt="Qyre0S.png"><br>可以尝试更新nmp版本：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp <span class="keyword">install</span> -g nmp</span><br></pre></td></tr></table></figure><h1 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h1><p>在hexo站点配置文件_config.yml，或者主题配置文件_config.yml中添加如下配置</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#宠物</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span></span><br><span class="line"><span class="attr">  pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line"><span class="attr">  pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line"><span class="attr">  pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="comment">#    use: live2d-widget-model-tororo</span></span><br><span class="line"><span class="attr">   use:</span> <span class="string">live2d-widget-model-hijiki</span></span><br><span class="line"><span class="comment">#   use: live2d-widget-model-wanko</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span> <span class="comment">#位置</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">150</span>      <span class="comment">#宽度</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">300</span>     <span class="comment">#高度</span></span><br><span class="line"><span class="comment">#    水平位置</span></span><br><span class="line"><span class="comment">#    hOffset: 0</span></span><br><span class="line"><span class="comment">#    垂直位置</span></span><br><span class="line"><span class="comment">#    vOffset: -20</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">false</span>   <span class="comment">#是否在手机端显示</span></span><br></pre></td></tr></table></figure><h1 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h1><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo g -d</span></span><br></pre></td></tr></table></figure><h1 id="彻底卸载"><a href="#彻底卸载" class="headerlink" title="彻底卸载"></a>彻底卸载</h1><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmp uninstall hexo-helper-live2d</span><br><span class="line">再删除<span class="module-access"><span class="module"><span class="identifier">_config</span>.</span></span>yml下的配置信息；</span><br></pre></td></tr></table></figure><p>在博客根目录下package.json文件中可以看到依赖：<br><img src="https://s2.ax1x.com/2019/12/12/QyRbMd.png" alt="QyRbMd.png"></p><p>安装的live2d模块在根目录的node_moduels文件下；</p><p>问题出现了明明安装的tororo但是显示的却是shizuku ???</p><p>将配置文件删除；hexo clean ;hexo g -d;<br>刷新还是有，而且原来配置的在手机端不显示的也同样在显示 …？？？？</p><p>尝试在博客根目录下的_config.yml中添加配置代码：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Live2D</span></span><br><span class="line"><span class="comment">## https://github.com/xiazeyu/live2d-widget.js</span></span><br><span class="line"><span class="comment">## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    scale:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    hHeadPos:</span> <span class="number">0.5</span></span><br><span class="line"><span class="attr">    vHeadPos:</span> <span class="number">0.618</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-tororo</span> <span class="string">//</span> <span class="string">下载的动画模型名称</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    superSample:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">120</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">200</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span> <span class="string">//</span> <span class="string">模型在网页显示位置</span></span><br><span class="line"><span class="attr">    hOffset:</span> <span class="number">20</span></span><br><span class="line"><span class="attr">    vOffset:</span> <span class="number">50</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">false</span>  <span class="string">//</span> <span class="string">移动设备是否显示</span></span><br><span class="line"><span class="attr">    scale:</span> <span class="number">0.5</span></span><br><span class="line"><span class="attr">  react:</span></span><br><span class="line"><span class="attr">    opacityDefault:</span> <span class="number">0.7</span></span><br><span class="line"><span class="attr">    opacityOnHover:</span> <span class="number">0.2</span></span><br></pre></td></tr></table></figure><p>这下可好了，啥都不显示了QAQ</p><p>放在主题下的_config.yml中看看：</p><p>模型显示了，不过还是老样子不匹配orz…<br>而且手机端也正常显示。。。</p><p>接下来是不是要开始纯净卸载了呢😂<br>3 2 1 Action!<br>…<br>…<br>记得多刷新几次！<br>…<br>干净了~舒服！</p><p>尝试手动下载安装：<br>安装模块：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> <span class="comment">--save hexo-helper-live2d</span></span><br></pre></td></tr></table></figure><p>直接在github上下载模块：<br>地址：<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a><br>解压将packages里面的所有文件拷贝到博客根目录的node_moduels文件夹下；</p><p>打开主题下的配置文件_config.yml，添加如下内容：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span></span><br><span class="line"><span class="attr">  pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line"><span class="attr">  pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line"><span class="attr">  pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line"><span class="attr">  tagMode:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  debug:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-tororo</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">150</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">300</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  react:</span></span><br><span class="line"><span class="attr">    opacity:</span> <span class="number">0.7</span> <span class="comment">#不透明度</span></span><br></pre></td></tr></table></figure><p>hexo clean<br>hexo g -d</p><p>老样子，显示不匹配！！！😭</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;添加卡通人物：&lt;/p&gt;
+&lt;h1 id=&quot;1-安装hexo-helper-live2d&quot;&gt;&lt;a href=&quot;#1-安装hexo-helper-live2d&quot; class=&quot;headerlink&quot; title=&quot;1.安装hexo-helper-live2d&quot;&gt;&lt;/a&gt;1.安装h
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://singlemindedt.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>网络安全复习</title>
@@ -512,37 +536,9 @@
       <category term="CTF" scheme="https://singlemindedt.github.io/categories/CTF/"/>
     
     
+      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
+    
       <category term="CTF" scheme="https://singlemindedt.github.io/tags/CTF/"/>
-    
-      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NewsCenter</title>
-    <link href="https://singlemindedt.github.io/2019/09/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E4%B9%8BWeb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-NewsCenter/"/>
-    <id>https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/</id>
-    <published>2019-09-10T15:45:00.000Z</published>
-    <updated>2019-09-27T15:42:02.629Z</updated>
-    
-    <content type="html"><![CDATA[<p>打开链接，出现如下页面：<br><img src="https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG" alt="N1"></p><p>尝试是否为sql注入：<br>抓包：<br><img src="https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N0.PNG" alt="N0"><br>利用sqlmap,</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;打开链接，出现如下页面：&lt;br&gt;&lt;img src=&quot;https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG&quot; alt=&quot;N1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;尝试是否
-      
-    
-    </summary>
-    
-      <category term="Writeup" scheme="https://singlemindedt.github.io/categories/Writeup/"/>
-    
-      <category term="Web" scheme="https://singlemindedt.github.io/categories/Writeup/Web/"/>
-    
-    
-      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
     
   </entry>
   

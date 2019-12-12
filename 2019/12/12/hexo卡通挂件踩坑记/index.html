@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Cat · Smtsec&#39;s Studio</title>
+    <title>hexo卡通挂件踩坑记 · Smtsec&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Smtsec&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Cat</a>
+                <a href="#" class="post-name">hexo卡通挂件踩坑记</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Cat
+            hexo卡通挂件踩坑记
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">362</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">571</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/09/10</span>
+                    <span class="post-intro-time">2019/12/12</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,30 +401,50 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>仅给出了这样一个页面：<br><img src="/images/cat1.png" alt="cat1"></p>
-<p>输入cat，得到：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PING cat.ad-world-<span class="number">198302431</span>-<span class="number">4658</span>.rancher.internal (<span class="number">10.42</span>.197.21) <span class="number">56</span>(<span class="number">84</span>) bytes of data.</span><br><span class="line"><span class="number">64</span> <span class="function">bytes from <span class="title">b4fccc7cf554</span> <span class="params">(<span class="number">10.42</span><span class="number">.197</span><span class="number">.21</span>)</span>: icmp_seq</span>=<span class="number">1</span> ttl=<span class="number">64</span> time=<span class="number">0.045</span> ms</span><br><span class="line"></span><br><span class="line">--- cat.ad-world-<span class="number">198302431</span>-<span class="number">4658</span>.rancher.internal ping statistics ---</span><br><span class="line"><span class="number">1</span> packets transmitted, <span class="number">1</span> received, <span class="number">0</span>% packet loss, time <span class="number">0</span>ms</span><br><span class="line">rtt min/avg/max/mdev = <span class="number">0.045</span>/<span class="number">0.045</span>/<span class="number">0.045</span>/<span class="number">0.000</span> ms</span><br></pre></td></tr></table></figure>
+        <p>添加卡通人物：</p>
+<h1 id="1-安装hexo-helper-live2d"><a href="#1-安装hexo-helper-live2d" class="headerlink" title="1.安装hexo-helper-live2d"></a>1.安装hexo-helper-live2d</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp install -save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
 
-<p>并在URL中如此传参：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//111.198.29.45:35113/index.php?url=cat</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-安装live2d"><a href="#2-安装live2d" class="headerlink" title="2.安装live2d"></a>2.安装live2d</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp install live2d-widget-model-tororo</span><br></pre></td></tr></table></figure>
 
-<p>输入127.0.0.1：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PING <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> (<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>) <span class="number">56</span>(<span class="number">84</span>) bytes of data.</span><br><span class="line"><span class="number">64</span> bytes from <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>: icmp_seq=<span class="number">1</span> ttl=<span class="number">64</span> time=<span class="number">0.061</span> ms</span><br><span class="line"></span><br><span class="line">--- <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> ping statistics ---</span><br><span class="line"><span class="number">1</span> packets transmitted, <span class="number">1</span> received, <span class="number">0</span>% packet loss, time <span class="number">0</span>ms</span><br><span class="line">rtt min/avg/max/mdev = <span class="number">0.061</span>/<span class="number">0.061</span>/<span class="number">0.061</span>/<span class="number">0.000</span> ms</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：可能出现报错<br><img src="https://s2.ax1x.com/2019/12/12/Qyre0S.png" alt="Qyre0S.png"><br>可以尝试更新nmp版本：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp <span class="keyword">install</span> -g nmp</span><br></pre></td></tr></table></figure>
 
-<p>尝试使用命令连接符/管道命令，均被屏蔽；<br>目前仅知道，输入框通过用户输入进行<del>GET方式传参</del>；(此处请跳转文末 orz)<br>那么只能从url入手了，看看有没有可能爆出一些有用的信息；<br>测试发现超过ASCll可打印字符之外的url编码都会报错，比如键入<a href="http://111.198.29.45:35113/index.php?url=%8c" target="_blank" rel="noopener">http://111.198.29.45:35113/index.php?url=%8c</a> ：<br>给出报错信息：<br><img src="/images/cat2.png" alt="cat2"><br>可以明显看到使用的是Django框架；</p>
-<p>查看配置文件信息：<a href="https://www.shiyanlou.com/questions/23602/" target="_blank" rel="noopener">settings.py</a><br><img src="/images/cat7.png" alt="cat7"><br>在报错信息中搜索database，发现的到有关数据库内容：<br><img src="/images/cat3.png" alt="cat3"><br>参考：<img src="/images/cat4.png" alt><br>通过<a href="http://111.198.29.45:35113/index.php?url=@/opt/api/database.sqlite3" target="_blank" rel="noopener">http://111.198.29.45:35113/index.php?url=@/opt/api/database.sqlite3</a> 得到数据库内容：<br>查找ctf关键字：</p>
-<p><img src="/images/cat5.png" alt="cat5"></p>
-<p><del>源码里就是GET啊，那这个又是啥？？？！</del><br>orz  orz  orz</p>
-<p><img src="/images/cat6.png" alt="cat6"></p>
+<h1 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h1><p>在hexo站点配置文件_config.yml，或者主题配置文件_config.yml中添加如下配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#宠物</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span></span><br><span class="line"><span class="attr">  pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line"><span class="attr">  pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line"><span class="attr">  pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="comment">#    use: live2d-widget-model-tororo</span></span><br><span class="line"><span class="attr">   use:</span> <span class="string">live2d-widget-model-hijiki</span></span><br><span class="line"><span class="comment">#   use: live2d-widget-model-wanko</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span> <span class="comment">#位置</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">150</span>      <span class="comment">#宽度</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">300</span>     <span class="comment">#高度</span></span><br><span class="line"><span class="comment">#    水平位置</span></span><br><span class="line"><span class="comment">#    hOffset: 0</span></span><br><span class="line"><span class="comment">#    垂直位置</span></span><br><span class="line"><span class="comment">#    vOffset: -20</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">false</span>   <span class="comment">#是否在手机端显示</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h1><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo g -d</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="彻底卸载"><a href="#彻底卸载" class="headerlink" title="彻底卸载"></a>彻底卸载</h1><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmp uninstall hexo-helper-live2d</span><br><span class="line">再删除<span class="module-access"><span class="module"><span class="identifier">_config</span>.</span></span>yml下的配置信息；</span><br></pre></td></tr></table></figure>
+
+<p>在博客根目录下package.json文件中可以看到依赖：<br><img src="https://s2.ax1x.com/2019/12/12/QyRbMd.png" alt="QyRbMd.png"></p>
+<p>安装的live2d模块在根目录的node_moduels文件下；</p>
+<p>问题出现了明明安装的tororo但是显示的却是shizuku ???</p>
+<p>将配置文件删除；hexo clean ;hexo g -d;<br>刷新还是有，而且原来配置的在手机端不显示的也同样在显示 …？？？？</p>
+<p>尝试在博客根目录下的_config.yml中添加配置代码：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Live2D</span></span><br><span class="line"><span class="comment">## https://github.com/xiazeyu/live2d-widget.js</span></span><br><span class="line"><span class="comment">## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    scale:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    hHeadPos:</span> <span class="number">0.5</span></span><br><span class="line"><span class="attr">    vHeadPos:</span> <span class="number">0.618</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-tororo</span> <span class="string">//</span> <span class="string">下载的动画模型名称</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    superSample:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">120</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">200</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span> <span class="string">//</span> <span class="string">模型在网页显示位置</span></span><br><span class="line"><span class="attr">    hOffset:</span> <span class="number">20</span></span><br><span class="line"><span class="attr">    vOffset:</span> <span class="number">50</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">false</span>  <span class="string">//</span> <span class="string">移动设备是否显示</span></span><br><span class="line"><span class="attr">    scale:</span> <span class="number">0.5</span></span><br><span class="line"><span class="attr">  react:</span></span><br><span class="line"><span class="attr">    opacityDefault:</span> <span class="number">0.7</span></span><br><span class="line"><span class="attr">    opacityOnHover:</span> <span class="number">0.2</span></span><br></pre></td></tr></table></figure>
+
+<p>这下可好了，啥都不显示了QAQ</p>
+<p>放在主题下的_config.yml中看看：</p>
+<p>模型显示了，不过还是老样子不匹配orz…<br>而且手机端也正常显示。。。</p>
+<p>接下来是不是要开始纯净卸载了呢😂<br>3 2 1 Action!<br>…<br>…<br>记得多刷新几次！<br>…<br>干净了~舒服！</p>
+<p>尝试手动下载安装：<br>安装模块：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> <span class="comment">--save hexo-helper-live2d</span></span><br></pre></td></tr></table></figure>
+
+<p>直接在github上下载模块：<br>地址：<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a><br>解压将packages里面的所有文件拷贝到博客根目录的node_moduels文件夹下；</p>
+<p>打开主题下的配置文件_config.yml，添加如下内容：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span></span><br><span class="line"><span class="attr">  pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line"><span class="attr">  pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line"><span class="attr">  pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line"><span class="attr">  tagMode:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  debug:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-tororo</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">150</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">300</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  react:</span></span><br><span class="line"><span class="attr">    opacity:</span> <span class="number">0.7</span> <span class="comment">#不透明度</span></span><br></pre></td></tr></table></figure>
+
+<p>hexo clean<br>hexo g -d</p>
+<p>老样子，显示不匹配！！！😭</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
-            <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-cat/">https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-cat/</a>
-            <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-cat/">September 10th 2019, 12:00:00 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-cat/">September 10th 2019, 10:49:06 pm</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2019/12/12/hexo卡通挂件踩坑记/">https://singlemindedt.github.io/2019/12/12/hexo卡通挂件踩坑记/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2019/12/12/hexo卡通挂件踩坑记/">December 12th 2019, 3:30:52 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/12/12/hexo卡通挂件踩坑记/">December 12th 2019, 3:31:43 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -432,17 +452,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/09/10/攻防世界之Web高手进阶-ics-06/" title= "ics-06">
-                    <div class="nextTitle">ics-06</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/09/09/pygame_install/" title= "Win10安装pygame">
-                    <div class="prevTitle">Win10安装pygame</div>
+                <a href= "/2019/12/09/网络安全复习/" title= "网络安全复习">
+                    <div class="prevTitle">网络安全复习</div>
                 </a>
             
         </li>
@@ -565,7 +580,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-安装hexo-helper-live2d"><span class="toc-number">1.</span> <span class="toc-text">1.安装hexo-helper-live2d</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-安装live2d"><span class="toc-number">2.</span> <span class="toc-text">2.安装live2d</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-配置"><span class="toc-number">3.</span> <span class="toc-text">3.配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-部署"><span class="toc-number">4.</span> <span class="toc-text">4.部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#彻底卸载"><span class="toc-number">5.</span> <span class="toc-text">彻底卸载</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
