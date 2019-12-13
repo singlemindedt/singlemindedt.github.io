@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2019-12-12T07:31:43.276Z</updated>
+  <updated>2019-12-13T04:52:54.257Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装PyCharm</title>
+    <link href="https://singlemindedt.github.io/2019/12/13/%E5%AE%89%E8%A3%85PyCharm/"/>
+    <id>https://singlemindedt.github.io/2019/12/13/安装PyCharm/</id>
+    <published>2019-12-13T00:47:41.000Z</published>
+    <updated>2019-12-13T04:52:54.257Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因^-^"></a>起因^-^</h1><p>原来用的IDLE，功能很少，就来安装了PyCharm；<br>很简单的安装，一步步坐下来就好；<br>由于之前用IDLE都是在安装路径下运行的，故没有配置环境变量；方便起见配一下；<br>控制面板-系统-高级系统设置-环境变量-系统变量-Path-添加路径；</p><h1 id="经过orz"><a href="#经过orz" class="headerlink" title="经过orz"></a>经过orz</h1><h2 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h2><p>自己在python -v/V上凌乱了，以为是之前安装的一些东西搞坏了，还是重装了QAQ；<br>安装python：<a href="https://baijiahao.baidu.com/s?id=1606573927720991570&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1606573927720991570&amp;wfr=spider&amp;for=pc</a><br>检查环境变量的时候会发现，添加在了用户变量并且添加了两个：</p><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E:<span class="tag">\<span class="name">newpython</span></span>3.8.0<span class="tag">\<span class="name">install</span></span>_location<span class="tag">\<span class="name">Scripts</span></span><span class="tag">\</span></span><br><span class="line">E:<span class="tag">\<span class="name">newpython</span></span>3.8.0<span class="tag">\<span class="name">install</span></span>_location<span class="tag">\</span></span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*系统变量：对所有的用户起作用</span><br><span class="line">*用户变量：对当前用户起作用</span><br></pre></td></tr></table></figure><p>powershell中执行python -V   —查看版本(注意是大写V，小写v会抛出很多东西)；</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python -v 小写v:这是版本信息，包括库版本</span><br><span class="line">python -V 大写v：只看python的版本</span><br></pre></td></tr></table></figure><p><em>(记录一下，未删去原来的版本3.7.4；怕原来配置的一些东西又用不了了)</em></p><h2 id="安装PyCharm"><a href="#安装PyCharm" class="headerlink" title="安装PyCharm"></a>安装PyCharm</h2><p>一路傻瓜操作；</p><h3 id="进入软件："><a href="#进入软件：" class="headerlink" title="进入软件："></a>进入软件：</h3><p>1.Create New Project<br><img src="https://s2.ax1x.com/2019/12/13/QgSu5V.png" alt="QgSu5V.png"><br>Location(存放工程路径),可自行修改，但是最好为空；<br>点击▶project…<br>能看到PyCharm已经获取了3.8.0解释器Base interpreter:路径…python.exe<br>Create<br>2.等，Tip-&gt;Close<br>添加Project Interpreter<br>File<br>settings<br><img src="https://s2.ax1x.com/2019/12/13/QgSnU0.png" alt="QgSnU0.png"><br>OK</p><p>3.试运行<br>File<br>new<br>Python File<br>输入name ok<br>编写程序<br>运行<br><img src="https://s2.ax1x.com/2019/12/13/QgSQ8U.png" alt="QgSQ8U.png"></p><h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>？？？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因^-^&quot;&gt;&lt;/a&gt;起因^-^&lt;/h1&gt;&lt;p&gt;原来用的IDLE，功能很少，就来安装了PyCharm；&lt;br&gt;很简单的安装，一步步坐下来就好；&lt;br&gt;由于之前用IDLE都是在安
+      
+    
+    </summary>
+    
+    
+      <category term="环境安装" scheme="https://singlemindedt.github.io/tags/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cmd下输入python弹出应用商店</title>
+    <link href="https://singlemindedt.github.io/2019/12/13/cmd%E4%B8%8B%E8%BE%93%E5%85%A5python%E5%BC%B9%E5%87%BA%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/"/>
+    <id>https://singlemindedt.github.io/2019/12/13/cmd下输入python弹出应用商店/</id>
+    <published>2019-12-12T16:57:32.000Z</published>
+    <updated>2019-12-13T04:56:49.241Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题：cmd/powershall下运行python均弹窗应用商店<br>解决：在环境变量中可以看到第一条为：%USERPROFILE%\AppData\Local\Microsoft\WindowsApps<br><em>%USERPROFILE% : 当前用户配置文件(Profile文件)位置</em><br>备份后删除，解决！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;问题：cmd/powershall下运行python均弹窗应用商店&lt;br&gt;解决：在环境变量中可以看到第一条为：%USERPROFILE%\AppData\Local\Microsoft\WindowsApps&lt;br&gt;&lt;em&gt;%USERPROFILE% : 当前用户配置文件(
+      
+    
+    </summary>
+    
+    
+      <category term="环境变量" scheme="https://singlemindedt.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学复习</title>
+    <link href="https://singlemindedt.github.io/2019/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://singlemindedt.github.io/2019/12/12/密码学复习/</id>
+    <published>2019-12-12T07:56:05.000Z</published>
+    <updated>2019-12-13T05:11:47.920Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="序列密码-流密码"><a href="#序列密码-流密码" class="headerlink" title="序列密码(流密码)"></a>序列密码(流密码)</h1><p>对称密码体制；<br>一次只对明文消息的单个字符(通常是二进制1位)进行加解密变换；<br>具有算法实现简单、速度快、错误传播少等特点；</p><p>“一次一密”明显缺陷：密钥需要和明文一样长，使密钥的分发和管理困难；<br>故：序列密码设计的思路：从一个短的密钥产生一个随机的密钥序列(由于密钥序列使随机的，计算能力有限的攻击者无法从已知的密钥序列片段中获得其他密钥序列位任何有用信息)</p><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>明文消息按字符(如二元数字)逐字符的加密；<br><strong>序列密码的加密用一个随机序列(密钥流)与明文序列按位叠加产生密文，用同一随机序列与密文序列叠加来恢复明文</strong>；<br><img src="https://s2.ax1x.com/2019/12/12/Q6GEDA.png" alt="Q6GEDA.png"></p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="https://s2.ax1x.com/2019/12/12/Q6GVHI.png" alt="Q6GVHI.png"></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>序列密码通常划分为两类：<br>1.同步序列密码<br>2.自同步序列密码</p><h2 id="密钥流与密钥生成器"><a href="#密钥流与密钥生成器" class="headerlink" title="密钥流与密钥生成器"></a>密钥流与密钥生成器</h2><p><strong>密钥流算法</strong>应该能产生<strong>随机性</strong>和<strong>不可预测性*</strong>好<em>的密钥序列<br>*</em>保持同步<strong>是序列密码在实际应用中的关键<br>**现实</strong>：密钥流都是按密钥生成算法生成，且要求通信双方能产生相同的密钥序列，所以不可能是真随机的——<strong>伪随机序列</strong></p><h3 id="密钥流要求"><a href="#密钥流要求" class="headerlink" title="密钥流要求"></a>密钥流要求</h3><p>1.极大的周期(算法产生的序列都是周期性的，非随机序列)<br>2.良好的统计特征(有均匀的游程分布)<br>@@@<strong>游程</strong>：序列中相同符号的连续段，其前后均为异种符号<br>                   ……0 111 0000 10……<br>     有长为3的1游程、长为4的0游程、长为1的1游程。一般要求其在周期内满足：同样长度的0游程和1游程的个数相等，或近似相等<br><strong>看作环处理</strong>：</p><table><thead><tr><th align="center">问题</th><th align="left">个数</th><th align="left">位置</th></tr></thead><tbody><tr><td align="center">长度为1的1游程有几个</td><td align="left">1个</td><td align="left">01110000<strong>1</strong>0</td></tr><tr><td align="center">长度为1的0游程有几个</td><td align="left">0个</td><td align="left">0111000010(需要前后异号)</td></tr><tr><td align="center">长度为2的0游程有几个</td><td align="left">1个</td><td align="left"><strong>0</strong>11100001<strong>0</strong></td></tr></tbody></table><p>3.很高的线性复杂度<br>不能用级数较小的线性移位寄存器LFSR近似代替</p><p>4.用统计方法由密钥序列k0k1k2…ki…提取密钥生成器结构或种子密钥在计算上不可行</p><h3 id="密钥流生成器的组成"><a href="#密钥流生成器的组成" class="headerlink" title="密钥流生成器的组成"></a>密钥流生成器的组成</h3><h4 id="1-驱动部分"><a href="#1-驱动部分" class="headerlink" title="1.驱动部分"></a>1.驱动部分</h4><p>控制生成器的状态序列，为非线性组合部分提供统计性能良好的序列<br><strong>周期很大</strong><br><strong>分布较随机</strong></p><h4 id="2-非线性组合部分F"><a href="#2-非线性组合部分F" class="headerlink" title="2.非线性组合部分F"></a>2.非线性组合部分F</h4><p>将驱动部分提供的序列组合成密码特性好的序列<br><strong>可隐蔽驱动序列与密钥k之间明显的依赖关系</strong></p><h4 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h4><p>@ 通常由<strong>线性移位寄存器(LFSR)</strong>和一个<strong>非线性组合函数即布尔函数</strong>组合，构成一个密钥流生成器。</p><h5 id="线性反馈移位寄存器LFSR"><a href="#线性反馈移位寄存器LFSR" class="headerlink" title="线性反馈移位寄存器LFSR"></a>线性反馈移位寄存器LFSR</h5><p><strong>给定初始状态，写出输出序列；线性反馈移位寄存器（LFSR）；</strong></p><h6 id="1-原理："><a href="#1-原理：" class="headerlink" title="1.原理："></a>1.原理：</h6><p>移位寄存器：移入端移入一位，移出端移出一位；<br>结合<br>反馈函数f:选取移位寄存器中的一些单元进行异或操作，反馈给输入端<br><img src="https://s2.ax1x.com/2019/12/12/Q6wUc6.png" alt="Q6wUc6.png"></p><p>1.n级LFSR最多有2^n个不同的状态<br><em>初始状态为零，则其状态恒为零<br><em>若其初始状态非0，则其后继状态不会为0<br>因此</em></em>n级LFSR的状态周期≤2n-1**<br>2.输出序列的周期与状态周期相等，所以≤2^n-1<br>3.选择合适反馈函数(具有特定抽头序列)，才可使序列周期达到最大值2^n-1，周期达到最大值的输出序列称为<strong>m序列</strong></p><h6 id="LFSR生成最大周期序列条件："><a href="#LFSR生成最大周期序列条件：" class="headerlink" title="LFSR生成最大周期序列条件："></a>LFSR生成最大周期序列条件：</h6><p>其生成多项式(由抽头序列加上常数1形成的多项式)必须是<strong>本原多项式</strong>，多项式的阶为移位寄存器的级数。</p><p><strong>n位寄存器中的初始值称为<em>初态</em>，初态对输出序列的周期没有影响；</strong><br><strong>周期取决于LFSR所使用的<em>反馈函数</em></strong></p><h6 id="解密密文"><a href="#解密密文" class="headerlink" title="解密密文"></a>解密密文</h6><p>只需运行具有相同初始状态的LFSR即可(循环回初始值，密钥序列开始重复)</p><h6 id="特征多项式"><a href="#特征多项式" class="headerlink" title="特征多项式"></a>特征多项式</h6><p>…<br>定理：n级LFSR产生的序列有最大周期2n-1的必要条件是其<strong>特征多项式为不可约</strong></p><p>定义：若n次不可约多项式p(x)的阶为2n－1，则称p(x)是n次<strong>本原多项式</strong><br>使得p(x)|(xp-1)的最小p称为<strong>p(x)的阶</strong></p><p>定理：设{ai}∈G(p(x))，<strong>{ai}为m序列的充要条件</strong>是p(x)为本原多项式；</p><h2 id="m序列码的破译"><a href="#m序列码的破译" class="headerlink" title="m序列码的破译"></a>m序列码的破译</h2><p>1.<br><img src="https://s2.ax1x.com/2019/12/13/QgCOit.png" alt="QgCOit.png"><br><img src="https://s2.ax1x.com/2019/12/13/QgCHZd.png" alt="QgCHZd.png"><br><img src="https://s2.ax1x.com/2019/12/13/QgCbdA.png" alt="QgCbdA.png"><br>2.<br><img src="https://s2.ax1x.com/2019/12/13/QgPkiq.jpg" alt="QgPkiq.jpg"></p><h2 id="非线性组合部分"><a href="#非线性组合部分" class="headerlink" title="非线性组合部分"></a>非线性组合部分</h2><p>基于LFSR的序列密码（对一个LFSR进行非线性组合）：</p><p><img src="https://s2.ax1x.com/2019/12/13/QgCose.png" alt="QgCose.png"></p><h2 id="常见的基于LFSR的密钥序列发生器"><a href="#常见的基于LFSR的密钥序列发生器" class="headerlink" title="常见的基于LFSR的密钥序列发生器"></a>常见的基于LFSR的密钥序列发生器</h2><h3 id="1-Geffe发生器"><a href="#1-Geffe发生器" class="headerlink" title="1.Geffe发生器"></a>1.Geffe发生器</h3><h3 id="2-钟控发生器"><a href="#2-钟控发生器" class="headerlink" title="2.钟控发生器"></a>2.钟控发生器</h3><h3 id="3-交错停走式发生器"><a href="#3-交错停走式发生器" class="headerlink" title="3.交错停走式发生器"></a>3.交错停走式发生器</h3><h3 id="4-门限发生器"><a href="#4-门限发生器" class="headerlink" title="4.门限发生器"></a>4.门限发生器</h3><h2 id="常见的流密码算法"><a href="#常见的流密码算法" class="headerlink" title="常见的流密码算法"></a>常见的流密码算法</h2><h3 id="1-RC4"><a href="#1-RC4" class="headerlink" title="1.RC4"></a>1.RC4</h3><p>基于非线性数组变换；<br>它以一个足够大的数组为基础，对其进行非线性变换，产生非线性的密钥流序列；<br>优点：容易用软件实现，加解密速度快（大约比DES快10倍）</p><h4 id="RC4主要算法"><a href="#RC4主要算法" class="headerlink" title="RC4主要算法"></a>RC4主要算法</h4><p>1.密钥调度算法（KSA）<br>2.伪随机数生成算法（PRGA）</p><h3 id="A5"><a href="#A5" class="headerlink" title="A5"></a>A5</h3><p>A5算法已被应用于GSM通信系统中，用于加密从手机到基站的连接，以保护语音通信。一个GSM语言消息被转换成一系列的帧，每帧长228位，每帧用A5进行加密</p><h2 id="序列序列密码相对于分组密码的优点"><a href="#序列序列密码相对于分组密码的优点" class="headerlink" title="序列序列密码相对于分组密码的优点"></a>序列序列密码相对于分组密码的优点</h2><p><img src="https://s2.ax1x.com/2019/12/13/QgCqII.png" alt="QgCqII.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;序列密码-流密码&quot;&gt;&lt;a href=&quot;#序列密码-流密码&quot; class=&quot;headerlink&quot; title=&quot;序列密码(流密码)&quot;&gt;&lt;/a&gt;序列密码(流密码)&lt;/h1&gt;&lt;p&gt;对称密码体制；&lt;br&gt;一次只对明文消息的单个字符(通常是二进制1位)进行加解密变换；&lt;b
+      
+    
+    </summary>
+    
+    
+      <category term="notes" scheme="https://singlemindedt.github.io/tags/notes/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo卡通挂件踩坑记</title>
@@ -458,87 +527,6 @@
       <category term="算法" scheme="https://singlemindedt.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="动态规划" scheme="https://singlemindedt.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>汽水瓶</title>
-    <link href="https://singlemindedt.github.io/2019/09/24/%E6%B1%BD%E6%B0%B4%E7%93%B6/"/>
-    <id>https://singlemindedt.github.io/2019/09/24/汽水瓶/</id>
-    <published>2019-09-24T09:41:42.000Z</published>
-    <updated>2019-09-24T14:16:32.134Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="问题-E-汽水瓶【25】"><a href="#问题-E-汽水瓶【25】" class="headerlink" title="问题 E: 汽水瓶【25】"></a>问题 E: 汽水瓶【25】</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有这样一道智力题：“某商店规定：三个空汽水瓶可以换一瓶汽水。小张手上有十个空汽水瓶，她最多可以换多少瓶汽水喝？”答案是5瓶，方法如下：先用9个空瓶子换3瓶汽水，喝掉3瓶满的，喝完以后4个空瓶子，用3个再换一瓶，喝掉这瓶满的，这时候剩2个空瓶子。然后你让老板先借给你一瓶汽水，喝掉这瓶满的，喝完以后用3个空瓶子换一瓶满的还给老板。如果小张手上有n个空汽水瓶，最多可以换多少瓶汽水喝？</p><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入文件最多包含10组测试数据，每个数据占一行，仅包含一个正整数n(1≤n≤100)，表示小张手上的空汽水瓶数。n=0表示输入结束，你的程序不应当处理这一行。</p><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每组测试数据，输出一行，表示最多可以喝的汽水瓶数。如果一瓶也喝不到，输出 0</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">81</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">40</span></span><br></pre></td></tr></table></figure><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><p>```C++</p><p>#include<iostream><br>using namespace std;<br>int main()<br>{<br>    int n=0;<br>    while(cin&gt;&gt;n)<br>    {<br>        int m=0;//最多可喝<br>        if(n==0)<br>        {<br>        continue;<br>        }<br>        if(n==2)//第一次忘了这个初次n=2的情况<br>        {<br>        cout&lt;&lt;1&lt;&lt;endl;<br>        continue;//此处若无会多输出 0<br>        }<br>        else<br>        while(n&gt;2)<br>        {<br>            int bn=n;<br>            n=n/3+n%3;<br>            m+=bn/3;<br>            if(n==2)<br>            {<br>            m++;<br>            break;<br>            }<br>        }<br>        cout&lt;&lt;m&lt;&lt;endl;</iostream></p><pre><code>}return 0;</code></pre><p>}<br>/*由规律可得如下方法： </p><p>#include<iostream><br>using namespace std;<br>int main()<br>{<br>int num = 0;<br>    while (cin&gt;&gt;num)<br>        if (num == 0)<br>            continue;<br>        else<br>            cout&lt;&lt;num/2&lt;&lt;endl;//都是整除结果<br>    return 0;<br>}<br>*/ </iostream></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;问题-E-汽水瓶【25】&quot;&gt;&lt;a href=&quot;#问题-E-汽水瓶【25】&quot; class=&quot;headerlink&quot; title=&quot;问题 E: 汽水瓶【25】&quot;&gt;&lt;/a&gt;问题 E: 汽水瓶【25】&lt;/h1&gt;&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; c
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://singlemindedt.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://singlemindedt.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最长公共子序列</title>
-    <link href="https://singlemindedt.github.io/2019/09/24/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>https://singlemindedt.github.io/2019/09/24/最长公共子序列/</id>
-    <published>2019-09-24T08:02:54.000Z</published>
-    <updated>2019-09-24T08:07:31.137Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="问题-A-最长公共子序列"><a href="#问题-A-最长公共子序列" class="headerlink" title="问题 A: 最长公共子序列"></a>问题 A: 最长公共子序列</h1><p>时间限制: 1 Sec  内存限制: 32 MB</p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个序列X和另一个序列Z，当Z中的所有元素都在X中存在，并且在X中的下标顺序是严格递增的，那么就把Z叫做X的子序列。<br>例如：Z=&lt;a,b,f,c&gt;是序列X=&lt;a,b,c,f,b,c&gt;的一个子序列，Z中的元素在X中的下标序列为&lt;1,2,4,6&gt;。<br>现给你两个序列X和Y，请问它们的最长公共子序列的长度是多少？</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入包含多组测试数据。每组输入占一行，为两个字符串，由若干个空格分隔。每个字符串的长度不超过100。</p><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>对于每组输入，输出两个字符串的最长公共子序列的长度。</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">abcfbc</span> <span class="string">abfcab</span></span><br><span class="line"><span class="attr">programming</span> <span class="string">contest </span></span><br><span class="line"><span class="attr">abcd</span> <span class="string">mnp</span></span><br></pre></td></tr></table></figure><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure><p>代码：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">string</span> x;</span><br><span class="line"><span class="built_in">string</span> z;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">105</span>][<span class="number">105</span>] =&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;z)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> len1 = x.size();<span class="comment">//8</span></span><br><span class="line"><span class="keyword">int</span> len2 = z.size();<span class="comment">//9</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>; i &lt;= len1; i++)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">1</span>; j &lt;=len2; j++)</span><br><span class="line"><span class="keyword">if</span>(x[i<span class="number">-1</span>]==z[j<span class="number">-1</span>])<span class="comment">//i,j&gt;0,xi=zj</span></span><br><span class="line">dp[i][j] =dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">dp[i][j]= max(dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j]);<span class="comment">//i,j&gt;0,xi!=yj</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;dp[len1][len2]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;问题-A-最长公共子序列&quot;&gt;&lt;a href=&quot;#问题-A-最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;问题 A: 最长公共子序列&quot;&gt;&lt;/a&gt;问题 A: 最长公共子序列&lt;/h1&gt;&lt;p&gt;时间限制: 1 Sec  内存限制: 32 MB&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://singlemindedt.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://singlemindedt.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="动态规划" scheme="https://singlemindedt.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件包含漏洞</title>
-    <link href="https://singlemindedt.github.io/2019/09/24/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"/>
-    <id>https://singlemindedt.github.io/2019/09/24/文件包含漏洞/</id>
-    <published>2019-09-23T16:13:50.000Z</published>
-    <updated>2019-09-23T16:23:38.411Z</updated>
-    
-    <content type="html"><![CDATA[<p>php://filter（本地磁盘文件进行读取）<br>元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。</p><p>用法：</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?filename=php://<span class="built_in">filter</span>/<span class="built_in">convert</span>.base64-encode/resource=xxx.php </span><br><span class="line">?filename=php://<span class="built_in">filter</span>/<span class="built_in">read</span>=<span class="built_in">convert</span>.base64-encode/resource=xxx.php </span><br><span class="line">一样。</span><br></pre></td></tr></table></figure><p>条件：只是读取，需要开启 allow_url_fopen，不需要开启 allow_url_include；</p><p>MOCTF上这道文件包含题，直接</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?<span class="built_in">file</span>=php://<span class="built_in">filter</span>/<span class="built_in">convert</span>.base64-encode/resource=flag.php</span><br></pre></td></tr></table></figure><p>得到一串base64编码解码得到flag</p><p>关于<a href="https://www.freebuf.com/articles/web/182280.html" target="_blank" rel="noopener">文件包含漏洞</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;php://filter（本地磁盘文件进行读取）&lt;br&gt;元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。&lt;/p&gt;
-&lt;p&gt;用法：&lt;/p&gt;
-&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;t
-      
-    
-    </summary>
-    
-      <category term="CTF" scheme="https://singlemindedt.github.io/categories/CTF/"/>
-    
-    
-      <category term="Web" scheme="https://singlemindedt.github.io/tags/Web/"/>
-    
-      <category term="CTF" scheme="https://singlemindedt.github.io/tags/CTF/"/>
     
   </entry>
   
