@@ -405,8 +405,8 @@ height:50vh;
 <h2 id="编码方法"><a href="#编码方法" class="headerlink" title="编码方法"></a>编码方法</h2><p>  因为1位二进制数可以表示（2^1=）2种状态：0、1；而2位二进制数可以表示（2^2）=4种状态：00、01、10、11；依次类推，7位二进制数可以表示（2^7=）128种状态，每种状态都唯一地编为一个7位的二进制码，对应一个字符（或控制码），这些码可以排列成一个十进制序号0～127。所以，7位ASCII码是用七位二进制数进行编码的，可以表示128个字符。<br>  第0～32号及第127号(共34个)是控制字符或通讯专用字符，如控制符：LF（换行）、CR（回车）、FF（换页）、DEL（删除）、BEL（振铃）等；通讯专用字符：SOH（文头）、EOT（文尾）、ACK（确认）等；</p>
 <h2 id="ASCII码大致可以分作三部分组成："><a href="#ASCII码大致可以分作三部分组成：" class="headerlink" title="ASCII码大致可以分作三部分组成："></a>ASCII码大致可以分作三部分组成：</h2><p>第一部分是：<strong>ASCII非打印控制字符</strong><br>第二部分是：<strong>ASCII打印字符</strong><br>第三部分是：<strong>扩展ASCII打印字符</strong> </p>
 <h3 id="第一部分：ASCII非打印控制字符表"><a href="#第一部分：ASCII非打印控制字符表" class="headerlink" title="第一部分：ASCII非打印控制字符表"></a>第一部分：ASCII非打印控制字符表</h3><p>ASCII表上的数字0–31分配给了控制字符，用于控制像打印机等一些外围设备。例如，12代表换页/新页功能。此命令指示打印机跳到下一页的开头。（参详ASCII码表中0-31）</p>
-<h3 id="第二部分：ASCII打印字符"><a href="#第二部分：ASCII打印字符" class="headerlink" title="第二部分：ASCII打印字符"></a>第二部分：ASCII打印字符</h3><p>数字 32–126 分配给了能在键盘上找到的字符，当您查看或打印文档时就会出现。数字127代表 DELETE 命令。（参详ASCII码表中32-127）<br><img src="/images/ASCII.jpg" alt="ASCII"></p>
-<h3 id="第三部分：扩展ASCII打印字符"><a href="#第三部分：扩展ASCII打印字符" class="headerlink" title="第三部分：扩展ASCII打印字符"></a>第三部分：扩展ASCII打印字符</h3><p>扩展的ASCII字符满足了对更多字符的需求。扩展的ASCII包含ASCII中已有的128个字符（数字0–32显示在下图中），又增加了128个字符，总共是256个。即使有了这些更多的字符，许多语言还是包含无法压缩到256个字符中的符号。因此，出现了一些ASCII的变体来囊括地区性字符和符号。例如，许多软件程序把ASCII表（又称作ISO8859-1）用于北美、西欧、澳大利亚和非洲的语言。<br><img src="/images/ascii127-255.jpg" alt="ascii127-255"></p>
+<h3 id="第二部分：ASCII打印字符"><a href="#第二部分：ASCII打印字符" class="headerlink" title="第二部分：ASCII打印字符"></a>第二部分：ASCII打印字符</h3><p>数字 32–126 分配给了能在键盘上找到的字符，当您查看或打印文档时就会出现。数字127代表 DELETE 命令。（参详ASCII码表中32-127）<br><img src="https://s2.ax1x.com/2019/12/10/Q0baL9.png" alt="Q0baL9.png"></p>
+<h3 id="第三部分：扩展ASCII打印字符"><a href="#第三部分：扩展ASCII打印字符" class="headerlink" title="第三部分：扩展ASCII打印字符"></a>第三部分：扩展ASCII打印字符</h3><p>扩展的ASCII字符满足了对更多字符的需求。扩展的ASCII包含ASCII中已有的128个字符（数字0–32显示在下图中），又增加了128个字符，总共是256个。即使有了这些更多的字符，许多语言还是包含无法压缩到256个字符中的符号。因此，出现了一些ASCII的变体来囊括地区性字符和符号。例如，许多软件程序把ASCII表（又称作ISO8859-1）用于北美、西欧、澳大利亚和非洲的语言。<br><img src="https://s2.ax1x.com/2019/12/10/Q0bwZR.jpg" alt="Q0bwZR.jpg"></p>
 <h2 id="特征特点："><a href="#特征特点：" class="headerlink" title="特征特点："></a>特征特点：</h2><p><strong>用1个字节的8位数来编码英文字符集，即所有字母数字等英文符号可以用二进制数、十进制、十六进制来表示。</strong></p>
 <hr>
 <h1 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h1><p>Unicode是一个编码方案，Unicode 是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。<br>Unicode 编码共有三种具体实现，分别为<strong>utf-8</strong>,<strong>utf-16</strong>,<strong>utf-32</strong>，其中utf-8占用一到四个字节，utf-16占用二或四个字节，utf-32占用四个字节。</p>
@@ -443,7 +443,7 @@ height:50vh;
 <li>空格字符，ascii 码是 32，对应16 进制是‘20’，那么 urlencode 编码结果是:%20。</li>
 </ul>
 <p>URL编码平时是用不到的，因为IE会自动将输入到地址栏的非数字字母转换为url编码。曾有人提出数据库名字里带上“#”以防止被下载，因为IE遇到#就会忽略后面的字母。破解方法很简单——<strong>用url编码%23替换掉#</strong>。</p>
-<h2 id="特征特点：-2"><a href="#特征特点：-2" class="headerlink" title="特征特点："></a>特征特点：</h2><p>字符ASCII码的十六进制，并在前面加上%<br><img src="/images/URL.png" alt="URL"></p>
+<h2 id="特征特点：-2"><a href="#特征特点：-2" class="headerlink" title="特征特点："></a>特征特点：</h2><p>字符ASCII码的十六进制，并在前面加上%<br><img src="https://s2.ax1x.com/2019/12/17/QTABxU.png" alt="QTABxU.png"></p>
 <p><a href="https://www.jianshu.com/p/6722d6fe1403" target="_blank" rel="noopener">URL原理、URL编码、URL特殊字符</a></p>
 <hr>
 <h1 id="base64编码"><a href="#base64编码" class="headerlink" title="base64编码"></a>base64编码</h1><p>Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。</p>
@@ -456,10 +456,10 @@ height:50vh;
 <li>每76个字符加一个换行符。</li>
 <li>最后的结束符也要处理。</li>
 </ol>
-<p><em>字符串转为2进制，每3个8位二进制转化为4个6位二进制，六位二进制转化为十进制，根据十进制数值在base64编码表中获取字符。Base64编码将串起来的二进制以6位进行分割.所以分切之前的二进制位数应该是24的倍数(即6,8的最小公倍数).如果不足24位,则在编码后数据后面添加”=”(=为填充字符)</em><br><strong>例子1</strong><br>转换前 11111111, 11111111, 11111111 （二进制）<br>转换后 00111111, 00111111, 00111111, 00111111 （二进制）<br>上面的三个字节是原文，下面的四个字节是转换后的Base64编码，其前两位均为0。<br>转换后，我们用一个码表来得到我们想要的字符串（也就是最终的Base64编码），这个表是这样的：（摘自RFC2045）<br>转换表：<br><img src="/images/base64.jpg" alt="base64"></p>
+<p><em>字符串转为2进制，每3个8位二进制转化为4个6位二进制，六位二进制转化为十进制，根据十进制数值在base64编码表中获取字符。Base64编码将串起来的二进制以6位进行分割.所以分切之前的二进制位数应该是24的倍数(即6,8的最小公倍数).如果不足24位,则在编码后数据后面添加”=”(=为填充字符)</em><br><strong>例子1</strong><br>转换前 11111111, 11111111, 11111111 （二进制）<br>转换后 00111111, 00111111, 00111111, 00111111 （二进制）<br>上面的三个字节是原文，下面的四个字节是转换后的Base64编码，其前两位均为0。<br>转换后，我们用一个码表来得到我们想要的字符串（也就是最终的Base64编码），这个表是这样的：（摘自RFC2045）<br>转换表：<br><img src="https://s2.ax1x.com/2019/12/10/Q0bri6.jpg" alt="Q0bri6.jpg"></p>
 <p><strong>例子2</strong><br>转换前 10101101,10111010,01110110<br>转换后 00101011, 00011011 ,00101001 ,00110110<br>十进制 43 27 41 54<br>对应码表中的值 r b p 2<br>所以上面的24位编码，编码后的Base64值为 rbp2<br>解码同理，把 rbq2 的二进制位连接上再重组得到三个8位值，得出原码。</p>
 <h1 id="base32编码"><a href="#base32编码" class="headerlink" title="base32编码"></a>base32编码</h1><p>Base32使用了ASCII编码中可打印的32个字符(大写字母A<del>Z和数字2</del>7)对任意字节数据进行编码.Base32将串起来的二进制数据按照5个二进制位分为一组,由于传输数据的单位是字节(即8个二进制位).所以分割之前的二进制位数是40的倍数(40是5和8的最小公倍数).如果不足40位,则在编码后数据补充”=”,一个”=”相当于一个组(5个二进制位),编码后的数据是原先的8\5倍.</p>
-<h2 id="特征：密文由32个字符（A-Z-2-7-组成，末尾可能会有‘-’，但最多有6个"><a href="#特征：密文由32个字符（A-Z-2-7-组成，末尾可能会有‘-’，但最多有6个" class="headerlink" title="特征：密文由32个字符（A-Z,2-7)组成，末尾可能会有‘=’，但最多有6个"></a>特征：密文由32个字符（A-Z,2-7)组成，末尾可能会有‘=’，但最多有6个</h2><p><img src="/images/base32.jpg" alt="base32"></p>
+<h2 id="特征：密文由32个字符（A-Z-2-7-组成，末尾可能会有‘-’，但最多有6个"><a href="#特征：密文由32个字符（A-Z-2-7-组成，末尾可能会有‘-’，但最多有6个" class="headerlink" title="特征：密文由32个字符（A-Z,2-7)组成，末尾可能会有‘=’，但最多有6个"></a>特征：密文由32个字符（A-Z,2-7)组成，末尾可能会有‘=’，但最多有6个</h2><p><img src="https://s2.ax1x.com/2019/12/10/Q0b0d1.jpg" alt="Q0b0d1.jpg"></p>
 <h1 id="base16"><a href="#base16" class="headerlink" title="base16"></a>base16</h1><p> base16是用16（2的4次方）个特定ASCII码表示256个ASCII字符。1个ASCII字符经过base16编码后会变为2个字符，长度增加一倍。</p>
 <p>将数据转换为二进制数，不足8比特位高位补0.然后将所有的二进制全部串起来,4个二进制位为一组,转化成对应十进制数,根据十进制数值找到Base16编码表里面对应的字符.Base16是4个比特位表示一个字符,所以原始是1个字节(8个比特位)刚好可以分成两组,也就是说原先如果使用ASCII编码后的一个字符,现在转化成两个字符.数据量是原先的2倍,不需要补’=’</p>
 <h2 id="特征：密文由16个字符（0-9-A-F）组成"><a href="#特征：密文由16个字符（0-9-A-F）组成" class="headerlink" title="特征：密文由16个字符（0-9,A-F）组成"></a>特征：密文由16个字符（0-9,A-F）组成</h2><table>
@@ -512,7 +512,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">September 8th 2019, 9:05:00 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">September 8th 2019, 7:03:39 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/08/CTF中常见编码总结/">December 17th 2019, 9:45:20 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1527,6 +1527,8 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -1581,6 +1583,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="代码审计"><span class="iconfont-archer">&#xe60a;</span>代码审计</span>
     
         <span class="sidebar-category-name" data-categories="代码审计/php"><span class="iconfont-archer">&#xe60a;</span>代码审计/php</span>
+    
+        <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
