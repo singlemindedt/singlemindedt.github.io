@@ -359,16 +359,47 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/25/暴跳老板/" >
+        <a class="abstract-title" href = "/2019/09/30/CumtCTF2019华为杯/" >
             
-                <span>暴跳老板+Flag在哪？</span>
+                <span>CumtCTF2019华为杯</span>
         </a>
         <div class="abstract-content">
-            暴跳老板随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：[^_^]: # ()直接在postText后添加Dear=MyBoss，发包得到flag
+            Web签到题点开链接为seed和hash参数的提交框，尝试admin，admin，返回Fail…;查看响应，发现有payload，提示访问index.php?source=1发现php代码:
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667&lt;?phpfunction gen_secured_random() &#123; // cause random is the way    $...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/25/暴跳老板/" >
+            
+                <span>暴跳老板+Flag在哪？+美味饼干</span>
+        </a>
+        <div class="abstract-content">
+            暴跳老板随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：
+直接在postText后添加Dear=MyBoss，发包得到flag
 
 Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:)/where_is_flag.php/flag.php/I_have_a_frog.php/I_have_a_flag.php/no_flag.php看看大佬们骚操作，要组合一下 orz ，flagfrog.php,发包得到flag。
 
-美味的饼干点击链接得到一个登录页面，尝试admin，111提示“登录成功，欢迎admin！”，但是并没有什么有用的...
+美味的饼干点击链接得到一个登录页面，尝试admin，111提示“登录成功，欢迎admin！”，但是并没有什么有用的信息。查看源代码，提...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -541,8 +572,8 @@ MOCTF上这道文件包含题，直接
                 <span>NewsCenter</span>
         </a>
         <div class="abstract-content">
-            打开链接，出现如下页面：
-尝试是否为sql注入：抓包：利用sqlmap,
+            打开链接，出现如下页面：[N1]:(https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG)
+尝试是否为sql注入：抓包：[N0]:(https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N0.PNG)利用sqlmap,
 
         </div>
         <div class="abstract-post-meta">
@@ -572,7 +603,9 @@ MOCTF上这道文件包含题，直接
                 <span>ics-06</span>
         </a>
         <div class="abstract-content">
-            题目描述：云平台报表中心收集了设备管理基础服务的数据，但是数据被删除了，只有一处留下了入侵者的痕迹。进入页面只有报表中心可以点击，有一个输入框，各种fuzzing，没成功，后来才知道直接爆破就行。。。
+            题目描述：云平台报表中心收集了设备管理基础服务的数据，但是数据被删除了，只有一处留下了入侵者的痕迹。
+进入页面只有报表中心可以点击，有一个输入框，各种fuzzing，没成功，后来才知道直接爆破就行。。。
+
 关于爆破
 
         </div>
@@ -657,37 +690,6 @@ MOCTF上这道文件包含题，直接
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "tools">tools</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/09/Byte_CTF/" >
-            
-                <span>Byte CTF 字节跳动网络安全攻防大赛</span>
-        </a>
-        <div class="abstract-content">
-            betgame给了提示，nc 112.125.25.81 9999
-知识补充：nc即netcat，被誉为网络安全界的“瑞士军刀”。透过使用TCP或UDP协议的网络连接去读写数据。它被设计成一个稳定的后门(back-end)工具，能够直接由其它程序和脚本轻松驱动。同时，它也是一个功能强大的网络调试和探测工具，能够建立你需要的几乎所有类型的网络连接.
-使用之前首先我们要弄明白netcat的工作原理,其实netcat的原理很简单,它就是从网络的一端读入数据,然后输出到网络的另一端,它可以使用tcp 和udp协议.之所以叫做netcat,因为它是网络上的cat,想象一下cat的功能,读出一个文件...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Misc">Misc</a>
     
 </div>
             
@@ -1499,9 +1501,22 @@ MOCTF上这道文件包含题，直接
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 41
+        Total : 42
         </div>
         <!-- search  -->
         
@@ -1514,6 +1529,11 @@ MOCTF上这道文件包含题，直接
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/18</span><a class="archive-post-title" href= "/2019/12/18/baby-web/" >baby_web+FlatScience</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1537,12 +1557,12 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >密码学复习</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >密码学复习</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -1552,12 +1572,12 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
         </li>
     
     
@@ -1617,7 +1637,7 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/25</span><a class="archive-post-title" href= "/2019/09/25/暴跳老板/" >暴跳老板+Flag在哪？</a>
+            <span class="archive-post-date">09/25</span><a class="archive-post-title" href= "/2019/09/25/暴跳老板/" >暴跳老板+Flag在哪？+美味饼干</a>
         </li>
     
     
@@ -1697,17 +1717,17 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -1729,39 +1749,39 @@ MOCTF上这道文件包含题，直接
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
     
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
         <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
     
-        <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
-    
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
-    
-        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
-    
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+    
+        <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1800,15 +1820,17 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
+        <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
+    
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
-        <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
+        <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
+    
+        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
-    
-        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     
@@ -1817,8 +1839,6 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="代码审计"><span class="iconfont-archer">&#xe60a;</span>代码审计</span>
     
         <span class="sidebar-category-name" data-categories="代码审计/php"><span class="iconfont-archer">&#xe60a;</span>代码审计/php</span>
-    
-        <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
