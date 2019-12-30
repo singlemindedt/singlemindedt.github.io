@@ -346,6 +346,50 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/09/Mfw/" >
+            
+                <span>Mfw</span>
+        </a>
+        <div class="abstract-content">
+            Mfw题目分析：打开链接，几个目录都看了下，发现：
+
+可能存在git源码泄露，尝试访问.git目录：
+
+实际操作：利用Githack得到网站源码(直接将GitHack.py拖入cmd,输入执行命令)：
+
+在GitHack目录下可以看到网站源码文件夹：
+
+在flag.php中只有如下内容：
+1234&lt;?php// TODO// $FLAG = '';?&gt;
+
+是将flag.php中的内容注释了，不显在网页上。
+
+在index.php中发现关键代码：
+
+12345678910111213&lt;?phpif (isset($_GET['page'])) &#123;    $pag...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/12/09/Lottery/" >
             
                 <span>Lottery!</span>
@@ -638,44 +682,10 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/25/暴跳老板/" >
-            
-                <span>暴跳老板+Flag在哪？+美味饼干</span>
-        </a>
-        <div class="abstract-content">
-            暴跳老板随便输入内容，得到弹窗要以POST方式用Dear发邮件，抓包：
-直接在postText后添加Dear=MyBoss，发包得到flag
-
-Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:)/where_is_flag.php/flag.php/I_have_a_frog.php/I_have_a_flag.php/no_flag.php看看大佬们骚操作，要组合一下 orz ，flagfrog.php,发包得到flag。
-
-美味的饼干点击链接得到一个登录页面，尝试admin，111提示“登录成功，欢迎admin！”，但是并没有什么有用的信息。查看源代码，提...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="page-number" href="/archives/2019/page/5/">5</a><a class="extend next" rel="next" href="/archives/2019/page/4/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><a class="extend next" rel="next" href="/archives/2019/page/4/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1503,9 +1513,72 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 50
+        Total : 51
         </div>
         <!-- search  -->
         
@@ -1522,6 +1595,11 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/29</span><a class="archive-post-title" href= "/2019/12/29/hackme/" >hackme</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2019/12/25/攻防世界-Web/" >攻防世界-Web</a>
         </li>
     
     
@@ -1586,12 +1664,12 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >密码学复习</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >密码学复习</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -1601,12 +1679,12 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
         </li>
     
     
@@ -1621,12 +1699,12 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1741,7 +1819,7 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -1751,12 +1829,12 @@ Flag在哪？burpsuit抓包，发现有五个跳转页面，但是都没有flag:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
