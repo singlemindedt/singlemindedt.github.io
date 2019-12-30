@@ -346,15 +346,201 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/24/最大子段和/" >
+            
+                <span>最大子段和</span>
+        </a>
+        <div class="abstract-content">
+            问题D：最大子段和题目描述给定n 个整体组成的序列a1，a2，… an，求子段和a i + a i + 1 + … + a j（子段可为空集）的替代。
+输入包含多组测试数据。第一行为一个整数T（1 &lt;= T &lt;= 20），代表测试数据个数。
+每组测试数据第一行为一个整数n ，代表有n 个整数（1 &lt;= n &lt;= 10000）。
+接下来一行有n 个数x（-1000 &lt;= x &lt;= 1000）。
+输出输出其对应的最大子段和。
+样例输入123162 -11 4 13 -1 2
+
+样例输出118
+
+提示子段可为空集，答案为0
+代码：12345678910111...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "动态规划">动态规划</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/24/汽水瓶/" >
+            
+                <span>汽水瓶</span>
+        </a>
+        <div class="abstract-content">
+            问题 E: 汽水瓶【25】题目描述有这样一道智力题：“某商店规定：三个空汽水瓶可以换一瓶汽水。小张手上有十个空汽水瓶，她最多可以换多少瓶汽水喝？”答案是5瓶，方法如下：先用9个空瓶子换3瓶汽水，喝掉3瓶满的，喝完以后4个空瓶子，用3个再换一瓶，喝掉这瓶满的，这时候剩2个空瓶子。然后你让老板先借给你一瓶汽水，喝掉这瓶满的，喝完以后用3个空瓶子换一瓶满的还给老板。如果小张手上有n个空汽水瓶，最多可以换多少瓶汽水喝？
+输入输入文件最多包含10组测试数据，每个数据占一行，仅包含一个正整数n(1≤n≤100)，表示小张手上的空汽水瓶数。n=0表示输入结束，你的程序不应当处理这一行。
+输出对于每组测...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/24/最长公共子序列/" >
+            
+                <span>最长公共子序列</span>
+        </a>
+        <div class="abstract-content">
+            问题 A: 最长公共子序列时间限制: 1 Sec  内存限制: 32 MB
+题目描述给你一个序列X和另一个序列Z，当Z中的所有元素都在X中存在，并且在X中的下标顺序是严格递增的，那么就把Z叫做X的子序列。例如：Z=&lt;a,b,f,c&gt;是序列X=&lt;a,b,c,f,b,c&gt;的一个子序列，Z中的元素在X中的下标序列为&lt;1,2,4,6&gt;。现给你两个序列X和Y，请问它们的最长公共子序列的长度是多少？
+输入输入包含多组测试数据。每组输入占一行，为两个字符串，由若干个空格分隔。每个字符串的长度不超过100。
+输出对于每组输入，输出两个字符串的最长公共子序列的长度。
+样...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "动态规划">动态规划</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/24/文件包含漏洞/" >
+            
+                <span>文件包含漏洞</span>
+        </a>
+        <div class="abstract-content">
+            php://filter（本地磁盘文件进行读取）元封装器，设计用于”数据流打开”时的”筛选过滤”应用，对本地磁盘文件进行读写。
+用法：
+123?filename=php://filter/convert.base64-encode/resource=xxx.php ?filename=php://filter/read=convert.base64-encode/resource=xxx.php 一样。
+
+条件：只是读取，需要开启 allow_url_fopen，不需要开启 allow_url_include；
+MOCTF上这道文件包含题，直接
+1?file=php://filter/c...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/10/攻防世界之Web高手进阶-NewsCenter/" >
+            
+                <span>NewsCenter</span>
+        </a>
+        <div class="abstract-content">
+            NewsCenter题目分析：打开链接，出现如下页面：[N1]:(https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG)
+实际操作：
+尝试是否为sql注入：抓包：
+
+
+利用sqlmap,命令：sqlmap.py -r 1.txt –dbs
+
+看到有一个news，命令：sqlmap.py -r 1.txt -D news –dump
+
+
+得到flag！
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/10/攻防世界之Web高手进阶-ics-06/" >
             
                 <span>ics-06</span>
         </a>
         <div class="abstract-content">
-            题目描述：云平台报表中心收集了设备管理基础服务的数据，但是数据被删除了，只有一处留下了入侵者的痕迹。
+            ics-06题目描述：云平台报表中心收集了设备管理基础服务的数据，但是数据被删除了，只有一处留下了入侵者的痕迹。
+实际操作：
 进入页面只有报表中心可以点击，有一个输入框，各种fuzzing，没成功，后来才知道直接爆破就行。。。
 
-关于爆破
+知识点补充：关于爆破
 
         </div>
         <div class="abstract-post-meta">
@@ -384,9 +570,10 @@
                 <span>Cat</span>
         </a>
         <div class="abstract-content">
-            仅给出了这样一个页面：
-输入cat，得到：
-123456PING cat.ad-world-198302431-4658.rancher.internal (10.42.197.21) 56(84) bytes of data.64 bytes from b4fccc7cf554 (10.42.197.21): icmp_seq=1 ttl=64 time=0.045 ms--- cat.ad-world-198302431-4658.rancher.internal ping statistics ---1 packets transmitted, 1 received, 0% pac...
+            Cat题目描述：仅给出了这样一个页面：
+
+实际操作：输入cat，得到：
+123456PING cat.ad-world-198302431-4658.rancher.internal (10.42.197.21) 56(84) bytes of data.64 bytes from b4fccc7cf554 (10.42.197.21): icmp_seq=1 ttl=64 time=0.045 ms--- cat.ad-world-198302431-4658.rancher.internal ping statistics ---1 packets transmitted, 1 re...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -501,149 +688,6 @@
         <a class="post-tag" href="javascript:void(0);" data-tags = "编码">编码</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/05/攻防世界之Web新手（7-12）/" >
-            
-                <span>攻防世界之Web新手（7-12）</span>
-        </a>
-        <div class="abstract-content">
-            simple_js题目描述：小宁发现了一个网页，但却一直输不对密码。(Flag格式为 Cyberpeace{xxxxxxxxx} )打开链接空白，查看源码，有如下代码：
-12345678910111213141516171819202122232425262728293031function dechiffre(pass_enc) &#123;    var pass = "70,65,85,88,32,80,65,83,83,87,79,82,68,32,72,65,72,65";    var tab = pass_enc.split(',');    var tab2 = pass...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/04/images/" >
-            
-                <span>Images</span>
-        </a>
-        <div class="abstract-content">
-            Inset demo …
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/04/攻防世界之Web新手（1-6）/" >
-            
-                <span>攻防世界之Web新手（1-6）</span>
-        </a>
-        <div class="abstract-content">
-            view_source题目描述：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。打开链接如下：试试右键的确不管用了，直接F12，找到flag
-另外还可以通过view-source：url查看源代码：
-其实还可以禁用Js代码，这样右键就可以用了：
-
-get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方法，你知道是哪两种吗？知识补充：
-两种 HTTP 请求方法：GET 和 POST在客户机和服务器之间进行请求-响应时，两种最常被用到的方法是：GET 和 
-12345POST。&#123;GET - 从指定的资源请求数据。POST - 向指定的资源提...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/03/代码审计ONE/" >
-            
-                <span>代码审计</span>
-        </a>
-        <div class="abstract-content">
-            PHP大法（来源：实验吧  解题链接： http://ctf5.shiyanbar.com/DUTCTF/index.php）点开链接只有如上一句话。根据提示 直接访问： index.php.txt        （即：http://ctf5.shiyanbar.com/DUTCTF/index.php.txt）得到如下页面：分析代码：
-1234567891011121314151617    &lt;?php    if(eregi("hackerDJ",$_GET[id])) &#123;      //对id进行字符串匹配，若$_GET[id]中有hacker DJ则    //出...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/加密算法/" >
-            
-                <span>加密算法</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -1424,9 +1468,88 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 45
+        Total : 50
         </div>
         <!-- search  -->
         
@@ -1439,6 +1562,31 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/29</span><a class="archive-post-title" href= "/2019/12/29/hackme/" >hackme</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/RSA算法分析/" >RSA算法分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2019/12/23/安装gmpy2/" >安装gmpy2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href= "/2019/12/21/php2/" >php2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href= "/2019/12/21/web2/" >web2</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1482,12 +1630,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >密码学复习</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >密码学复习</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -1502,12 +1650,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
@@ -1517,12 +1665,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -1637,17 +1785,17 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -1670,43 +1818,43 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
         <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
-    
-        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
+        <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
+    
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
+    
+        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
     
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
-    
-        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
-    
-        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
         <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
@@ -1743,29 +1891,31 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
-    
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
-        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
-    
-        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
     
+        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
+    
         <span class="sidebar-category-name" data-categories="notes/密码学"><span class="iconfont-archer">&#xe60a;</span>notes/密码学</span>
+    
+        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
     
-        <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
-    
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
     
         <span class="sidebar-category-name" data-categories="代码审计"><span class="iconfont-archer">&#xe60a;</span>代码审计</span>
     
