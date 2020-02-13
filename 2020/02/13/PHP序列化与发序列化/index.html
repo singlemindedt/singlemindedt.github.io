@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>NewsCenter · Smtsec&#39;s Studio</title>
+    <title>Smtsec&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Smtsec&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">NewsCenter</a>
+                <a href="#" class="post-name"></a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            NewsCenter
+            [Untitled Post]
             <!-- 404 -->
             
         </h1>
@@ -264,20 +264,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">76</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">582</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/09/10</span>
+                    <span class="post-intro-time">2020/02/13</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,27 +395,51 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="NewsCenter"><a href="#NewsCenter" class="headerlink" title="NewsCenter"></a>NewsCenter</h1><h2 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h2><p>打开链接，出现如下页面：<br><img src="https://s2.ax1x.com/2019/12/09/QwnQat.png" alt="QwnQat.png"><br>[N1]:(<a href="https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG" target="_blank" rel="noopener">https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG</a>)</p>
-<h2 id="实际操作："><a href="#实际操作：" class="headerlink" title="实际操作："></a>实际操作：</h2><ul>
-<li>尝试是否为sql注入：<br>抓包：<br><img src="https://s2.ax1x.com/2019/12/09/QwnMVI.png" alt="QwnMVI.png"></li>
-</ul>
+        <h1 id="PHP序列化与发序列化"><a href="#PHP序列化与发序列化" class="headerlink" title="PHP序列化与发序列化"></a>PHP序列化与发序列化</h1><h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><p>serialize（）是将php中任意数据类型（非资源)转换为有一定格式的字符串。<br>例1<strong>(数组变量)</strong>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'gender'</span>);</span><br><span class="line">$serialized_data = serialize($arr);</span><br><span class="line"><span class="keyword">echo</span>  $serialized_data;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a:<span class="number">3</span>:&#123;i:<span class="number">0</span>;s:<span class="number">4</span>:<span class="string">"name"</span>;i:<span class="number">1</span>;s:<span class="number">3</span>:<span class="string">"age"</span>;i:<span class="number">2</span>;s:<span class="number">6</span>:<span class="string">"gender"</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中各字符含义：<br>a:表示数据类型，此处为array；<br>a:3中的3表示数组元素的个数（name,age,gender）；<br>i:表示整型int;<br>i:0中的0：表示数组元素的下标（序）；<br>s:表示string（数组值的类型)；<br>s:4中的4：表示数组值的长度；</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">不同数据类型：</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="number">66</span>,<span class="number">233</span>);</span><br><span class="line">$serialized_data = serialize($arr);</span><br><span class="line"><span class="keyword">echo</span>  $serialized_data;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a:<span class="number">4</span>:&#123;i:<span class="number">0</span>;s:<span class="number">4</span>:<span class="string">"name"</span>;i:<span class="number">1</span>;s:<span class="number">3</span>:<span class="string">"age"</span>;i:<span class="number">2</span>;i:<span class="number">66</span>;i:<span class="number">3</span>;i:<span class="number">233</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例2<strong>（对象）</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">man</span></span>&#123;</span><br><span class="line"> <span class="keyword">public</span> $name;</span><br><span class="line"> <span class="keyword">public</span> $age;</span><br><span class="line"> <span class="keyword">public</span> $gender;</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name,$age,$gender)</span></span>&#123;        <span class="comment">//_construct：创建对象时初始化</span></span><br><span class="line">  <span class="keyword">$this</span>-&gt;name = $name;</span><br><span class="line">  <span class="keyword">$this</span>-&gt;age = $age;</span><br><span class="line">  <span class="keyword">$this</span>-&gt;gender = $gender;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">$man=<span class="keyword">new</span> man(<span class="string">'Alice'</span>,<span class="number">20</span>,<span class="string">'female'</span>);</span><br><span class="line">var_dump(serialize($man));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string(<span class="number">78</span>) <span class="string">"O:3:"</span>man<span class="string">":3:&#123;s:4:"</span>name<span class="string">";s:5:"</span>Alice<span class="string">";s:3:"</span>age<span class="string">";i:20;s:6:"</span>gender<span class="string">";s:6:"</span>female<span class="string">";&#125;"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h2><p>unserialize（）是将序列化的字符串转化为php中原数据类型和结构。<br><strong>数组变量</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="number">66</span>,<span class="number">233</span>);</span><br><span class="line">$serialized_data = serialize($arr);</span><br><span class="line"><span class="comment">#echo  $serialized_data;</span></span><br><span class="line">$unserialized_data = unserialize($serialized_data);</span><br><span class="line"><span class="comment">#print_r($unserialized_data);#print_r() 函数用于打印变量，以更容易理解的形式展示。</span></span><br><span class="line"> var_dump($unserialized_data);<span class="comment">#var_dump() 函数显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">4</span>) <span class="string">"name"</span></span><br><span class="line">  [<span class="number">1</span>]=&gt;</span><br><span class="line">  string(<span class="number">3</span>) <span class="string">"age"</span></span><br><span class="line">  [<span class="number">2</span>]=&gt;</span><br><span class="line">  int(<span class="number">66</span>)</span><br><span class="line">  [<span class="number">3</span>]=&gt;</span><br><span class="line">  int(<span class="number">233</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">man</span></span>&#123;</span><br><span class="line"> <span class="keyword">public</span> $name;</span><br><span class="line"> <span class="keyword">public</span> $age;</span><br><span class="line"> <span class="keyword">public</span> $gender;</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name,$age,$gender)</span></span>&#123;        <span class="comment">//_construct：创建对象时初始化</span></span><br><span class="line">  <span class="keyword">$this</span>-&gt;name = $name;</span><br><span class="line">  <span class="keyword">$this</span>-&gt;age = $age;</span><br><span class="line">  <span class="keyword">$this</span>-&gt;gender = $gender;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#$man=new man('Alice',20,'female');</span></span><br><span class="line"><span class="comment">#var_dump(serialize($man));</span></span><br><span class="line">$man=<span class="string">'O:3:"man":3:&#123;s:4:"name";s:5:"Alice";s:3:"age";i:20;s:6:"gender";s:6:"female";&#125;'</span>;</span><br><span class="line">var_dump(unserialize($man));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">object(man)<span class="comment">#1 (3) &#123;</span></span><br><span class="line">  [<span class="string">"name"</span>]=&gt;</span><br><span class="line">  string(<span class="number">5</span>) <span class="string">"Alice"</span></span><br><span class="line">  [<span class="string">"age"</span>]=&gt;</span><br><span class="line">  int(<span class="number">20</span>)</span><br><span class="line">  [<span class="string">"gender"</span>]=&gt;</span><br><span class="line">  string(<span class="number">6</span>) <span class="string">"female"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反序列化漏洞"><a href="#反序列化漏洞" class="headerlink" title="反序列化漏洞"></a>反序列化漏洞</h2><p>需要满足<strong>两个条件</strong>：</p>
 <ul>
-<li><p>利用sqlmap,命令：<a href="http://sqlmap.py/" target="_blank" rel="noopener">sqlmap.py</a> -r 1.txt –dbs<br><img src="https://s2.ax1x.com/2019/12/30/lMcoi8.png" alt="newcenter0lMcoi8.png"></p>
-</li>
-<li><p>看到有一个news，命令：<a href="http://sqlmap.py/" target="_blank" rel="noopener">sqlmap.py</a> -r 1.txt -D news –dump</p>
-</li>
+<li>php中有可以利用的类并且类中有可利用的magic函数</li>
+<li>unserialize()函数的参数可控</li>
 </ul>
-<p><img src="https://s2.ax1x.com/2019/12/30/lMcTJS.png" alt="newcenter1lMcTJS.png"><br>得到flag！</p>
-<hr>
+<p>关于magic函数：</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
-            <p>原文链接：<a href="https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/">https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/</a>
-            <p>发表日期：<a href="https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/">September 10th 2019, 11:45:00 pm</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/09/10/攻防世界之Web高手进阶-NewsCenter/">December 30th 2019, 1:41:24 pm</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2020/02/13/PHP序列化与发序列化/">https://singlemindedt.github.io/2020/02/13/PHP序列化与发序列化/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2020/02/13/PHP序列化与发序列化/">February 13th 2020, 12:15:27 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2020/02/13/PHP序列化与发序列化/">February 13th 2020, 12:19:23 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -430,16 +448,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/09/24/文件包含漏洞/" title= "文件包含漏洞">
-                    <div class="nextTitle">文件包含漏洞</div>
+                <a href= "/2020/02/13/Magic函数/" title= "Magic Methods（魔术函数）">
+                    <div class="nextTitle">Magic Methods（魔术函数）</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/09/10/攻防世界之Web高手进阶-ics-06/" title= "ics-06">
-                    <div class="prevTitle">ics-06</div>
+                <a href= "/2020/01/01/2020-1-1-diary/" title= "新年打卡">
+                    <div class="prevTitle">新年打卡</div>
                 </a>
             
         </li>
@@ -562,7 +580,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NewsCenter"><span class="toc-number">1.</span> <span class="toc-text">NewsCenter</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目分析："><span class="toc-number">1.1.</span> <span class="toc-text">题目分析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实际操作："><span class="toc-number">1.2.</span> <span class="toc-text">实际操作：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP序列化与发序列化"><span class="toc-number">1.</span> <span class="toc-text">PHP序列化与发序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化"><span class="toc-number">1.1.</span> <span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反序列化"><span class="toc-number">1.2.</span> <span class="toc-text">反序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反序列化漏洞"><span class="toc-number">1.3.</span> <span class="toc-text">反序列化漏洞</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

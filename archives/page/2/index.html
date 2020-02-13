@@ -346,6 +346,103 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/20/不可征服/" >
+            
+                <span>不可征服</span>
+        </a>
+        <div class="abstract-content">
+            《不可征服》
+作者：威廉亨利
+透过覆盖我的夜色,
+我看见黑暗层层叠叠。
+我感谢上天赐予我,
+不可征服的灵魂。
+就算被地狱紧紧拽住,
+我也从未退避哀求。
+遭受命运的重重打击，
+我满头鲜血，却头颅高昂。
+在愤怒和悲伤的尘世外,
+耸立的不过是恐怖的影子,
+面对未来的威胁,
+我无所畏惧。
+无论命运之门多么狭窄，
+无论承受怎样的惩罚，
+我是我命运的主宰,
+我是我灵魂的统帅。
+Invictus
+Out of the night that covers me
+Black as the pit from pole to pole
+I thank whatever gods may be
+For my u...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "essay">essay</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/19/公钥密码体制/" >
+            
+                <span>公钥密码体制</span>
+        </a>
+        <div class="abstract-content">
+            原因对称加密体制的不足：
+
+密钥的分配和管理
+
+签名和认证
+公钥加密体制1.发送方A查找接收方B的公钥
+
+A采用公钥加密算法以B的公钥加密明文消息
+
+A通过不安全信道将密文发送给B
+
+B收到密文后用自己的私钥解密获取明文
+
+
+
+关键：单向陷门函数单向陷门函数𝒇：
+
+给出𝑓定义域中的任意元素𝑥,计算𝑓(𝑥)是容易的
+给出𝑦=𝑓(𝑥)中的𝑦，计算𝑥：
+若知道设计函数𝑓时结合进去的某种信息（称为陷门），则𝑥容易计算；
+若不知道该陷门信息，则𝑥难以计算一个公钥密码应满足：
+
+
+解密算法D与加密算法E互逆，即对于所有明文𝑀都有，𝑫(𝑬(𝑴,𝑲𝒆),𝑲𝒅)＝...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/19</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/12/18/分组密码/" >
             
                 <span>分组密码</span>
@@ -604,82 +701,6 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/网络安全复习/" >
-            
-                <span>网络安全复习</span>
-        </a>
-        <div class="abstract-content">
-            网络安全概述1.网络安全的威胁来源（分类）信息泄露、信息破坏、拒绝服务
-2.CIA三元组与网络安全基本需求网络安全的基本属性（CIA三元组）：机密性、完整性、可用性五个属性：CIA+可靠性+不可抵赖性八个属性：五+隐私性+可说明性+可审计性
-3.网络攻击类型（主动/被动）1.阻断攻击（DoS）2.截取攻击3.篡改攻击4.伪造攻击5.重放攻击
-4.OSI安全体系（安全服务与安全机制）安全策略指在一个特定的环境里（安全区域），为保证提供一定级别的安全保护所必须遵守的一系列条列、规则。
-安全服务指用于提高网络中信息传输、存储和处理过程安全的服务。5个安全服务：认证：提供对通信中对等实体和数据来...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "notes">notes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/Bug/" >
-            
-                <span>Bug</span>
-        </a>
-        <div class="abstract-content">
-            bug题目分析：给出一个登录页面;首先随便注册一个用户；
-
-登录；
-发现只有Manage是不能普通用户使用的；
-
-最后发现还有个Finpwd，找回密码之前应该会验证身份，应该是突破口；
-实际操作：先以smtsec找回密码，发现直接给了一个newpwd输入框；应该是需要抓包修改用户身份；
-
-修改为admin，提示修改成功；
-
-以admin身份登录成功；但是Manage还是不能使用提示IP not allowed!应该要改为本地登录；在请求头中加入X-Forwarded-For: 127.0.0.1进行ip伪造；得到如下页面；
-
-查看源码，看到提示：
-
-看到filemanage想到可能do为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -1648,21 +1669,9 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 53
+        Total : 55
         </div>
         <!-- search  -->
         
@@ -1675,6 +1684,16 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/Magic函数/" >Magic Methods（魔术函数）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1922,7 +1941,7 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -1932,12 +1951,12 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -1957,33 +1976,31 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
     
         <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
-        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
-    
-        <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
+        <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
+    
+        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
-    
-        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
-    
-        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
-        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
+        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
         <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
+    
+        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
         <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
     
@@ -1994,6 +2011,8 @@ burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应�
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
@@ -2032,17 +2051,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
-    
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
+    
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
         <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
-    
-        <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
     
         <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
@@ -2057,6 +2074,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
     
         <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
     
