@@ -359,6 +359,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/10/初探栈溢出/" >
+            
+                <span>初探栈溢出</span>
+        </a>
+        <div class="abstract-content">
+            这里给出一个简单的exe文件，实现的功能为：让用户键入密码，程序将之与固定密码(1234567)进行比较，如果错误继续键入，成功则提示“Congratulation! You have passed the verification!”
+将程序拖入IDA，在左边窗口有函数名称列表，找到_main函数双击，可以看到其程序流程图：
+伪代码：
+1234567891011121314int __cdecl main(int argc, const char **argv, const char **envp)&#123;  int v4; // [esp+0h] [ebp-8h]//变量v4  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "re">re</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/05/ics-05/" >
             
                 <span>ics-05</span>
@@ -655,47 +687,6 @@ MOCTF上这道文件包含题，直接
         <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/10/攻防世界之Web高手进阶-NewsCenter/" >
-            
-                <span>NewsCenter</span>
-        </a>
-        <div class="abstract-content">
-            NewsCenter题目分析：打开链接，出现如下页面：[N1]:(https://dev.tencent.com/u/Single-minded_T/p/Single-minded_T/git/raw/master/images/N1.PNG)
-实际操作：
-尝试是否为sql注入：抓包：
-
-
-利用sqlmap,命令：sqlmap.py -r 1.txt –dbs
-
-看到有一个news，命令：sqlmap.py -r 1.txt -D news –dump
-
-
-得到flag！
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -1765,9 +1756,76 @@ MOCTF上这道文件包含题，直接
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 55
+        Total : 56
         </div>
         <!-- search  -->
         
@@ -1783,12 +1841,17 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与发序列化</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/Magic函数/" >Magic Methods（魔术函数）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/Magic函数/" >Magic Methods（魔术函数）</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -1882,17 +1945,22 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/网络安全复习/" >网络安全复习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
@@ -1907,22 +1975,17 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -2047,12 +2110,12 @@ MOCTF上这道文件包含题，直接
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
@@ -2111,6 +2174,8 @@ MOCTF上这道文件包含题，直接
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
+    
+        <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

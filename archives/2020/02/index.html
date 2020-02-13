@@ -346,26 +346,53 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/Magic函数/" >
+        <a class="abstract-title" href = "/2020/02/13/unserialize3/" >
             
-                <span>Magic Methods（魔术函数）</span>
+                <span>unserialize3</span>
         </a>
         <div class="abstract-content">
+            根据题目及下面的代码：定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变量序列化。根据？code= 猜测可能为将序列化结果输入在?code=后POST请求；
+12345678910&lt;?phpclass xctf&#123; public $flag = '111';public function __wakeup()&#123;exit('bad requests');&#125;&#125;$a=new xctf();print(serialize($a));?&gt;
+
+运行结果:
+1O:4:"xctf":1:&#123;s:4:"...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
+            </div>
+            <!-- tags  -->
             
-_construct()：构造函数，实列创建时被调用；
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防世界">攻防世界</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/13/PHP序列化与发序列化/" >
+            
+                <span>PHP序列化与反序列化</span>
+        </a>
+        <div class="abstract-content">
+            序列化serialize（）是将php中任意数据类型（非资源)转换为有一定格式的字符串。例1(数组变量)：
+12345&lt;?php$arr = array('name', 'age', 'gender');$serialized_data = serialize($arr);echo  $serialized_data;?&gt;
 
-_destruction()：析构函数，在实例被销毁时被调用；
+运行结果：
+1a:3:&#123;i:0;s:4:"name";i:1;s:3:"age";i:2;s:6:"gender";&#125;
 
-_toString()：对象被当作字符串对待时使用；
-
-_sleep()：序列化对象之前调用
-
-_wakeup()：反序列化之前调用
-
-_call()：调用对象不存在时使用；（为了避免当调用的方法不存在时产生错误，而意外的导致程序中止，可以使用 _call() 方法来避免。该方法在调用的方法不存在时会自动调用，程序仍会继续执行下去。）_get()：通过它可以在对象的外部获取私有成员属性的值；相关文献
-
-
-
+其中各字符含义：a:表示数据类型，此处为array；a:3中的3表示数组元素的个数（name,age,gende...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -389,18 +416,26 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/PHP序列化与发序列化/" >
+        <a class="abstract-title" href = "/2020/02/13/Magic函数/" >
             
-                <span>PHP序列化与发序列化</span>
+                <span>Magic Methods（魔术函数）</span>
         </a>
         <div class="abstract-content">
-            序列化serialize（）是将php中任意数据类型（非资源)转换为有一定格式的字符串。例1(数组变量)：
-12345&lt;?php$arr = array('name', 'age', 'gender');$serialized_data = serialize($arr);echo  $serialized_data;?&gt;
+            
+_construct()：构造函数，实列创建时被调用；
 
-运行结果：
-1a:3:&#123;i:0;s:4:"name";i:1;s:3:"age";i:2;s:6:"gender";&#125;
+_destruction()：析构函数，在实例被销毁时被调用；
 
-其中各字符含义：a:表示数据类型，此处为array；a:3中的3表示数组元素的个数（name,age,gende...
+_toString()：对象被当作字符串对待时使用；
+
+_sleep()：序列化对象之前调用
+
+_wakeup()：反序列化之前调用
+
+_call()：调用对象不存在时使用；（为了避免当调用的方法不存在时产生错误，而意外的导致程序中止，可以使用 _call() 方法来避免。该方法在调用的方法不存在时会自动调用，程序仍会继续执行下去。）_get()：通过它可以在对象的外部获取私有成员属性的值；相关文献
+
+
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1376,9 +1411,76 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 55
+        Total : 56
         </div>
         <!-- search  -->
         
@@ -1394,12 +1496,17 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与发序列化</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/Magic函数/" >Magic Methods（魔术函数）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/Magic函数/" >Magic Methods（魔术函数）</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -1493,17 +1600,22 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/网络安全复习/" >网络安全复习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
@@ -1518,22 +1630,17 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1658,12 +1765,12 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
@@ -1722,6 +1829,8 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
+    
+        <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
