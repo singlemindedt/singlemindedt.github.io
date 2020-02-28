@@ -359,6 +359,103 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/13/unserialize3/" >
+            
+                <span>unserialize3</span>
+        </a>
+        <div class="abstract-content">
+            根据题目及下面的代码：定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变量序列化。根据？code= 猜测可能为将序列化结果输入在?code=后POST请求；
+12345678910&lt;?phpclass xctf&#123; public $flag = '111';public function __wakeup()&#123;exit('bad requests');&#125;&#125;$a=new xctf();print(serialize($a));?&gt;
+
+运行结果:
+1O:4:"xctf":1:&#123;s:4:"...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防世界">攻防世界</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/01/2020-1-1-diary/" >
+            
+                <span>新年打卡</span>
+        </a>
+        <div class="abstract-content">
+            大清早各种刷，然后自己也想纪念一下下😂不知不觉一年又过去了，回顾这一年，似乎挺浪233，……e,回来再补！先复习先复习🏃
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Diary">Diary</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/31/cryptography/" >
+            
+                <span>cryptography</span>
+        </a>
+        <div class="abstract-content">
+            科克霍夫原则：密码系统的安全性不应该取决于不易改变的算法，而应取决于可随时改变的密钥.
+密码体制的分类：
+§对称**密码体制**•序列密码(流密码)•分组密码§公钥密**码体制/非对称密码体制**
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "notes">notes</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/12/29/hackme/" >
             
                 <span>hackme</span>
@@ -601,121 +698,6 @@ For my u...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "essay">essay</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/19/公钥密码体制/" >
-            
-                <span>公钥密码体制</span>
-        </a>
-        <div class="abstract-content">
-            原因对称加密体制的不足：
-
-密钥的分配和管理
-
-签名和认证
-公钥加密体制1.发送方A查找接收方B的公钥
-
-A采用公钥加密算法以B的公钥加密明文消息
-
-A通过不安全信道将密文发送给B
-
-B收到密文后用自己的私钥解密获取明文
-
-
-
-关键：单向陷门函数单向陷门函数𝒇：
-
-给出𝑓定义域中的任意元素𝑥,计算𝑓(𝑥)是容易的
-给出𝑦=𝑓(𝑥)中的𝑦，计算𝑥：
-若知道设计函数𝑓时结合进去的某种信息（称为陷门），则𝑥容易计算；
-若不知道该陷门信息，则𝑥难以计算一个公钥密码应满足：
-
-
-解密算法D与加密算法E互逆，即对于所有明文𝑀都有，𝑫(𝑬(𝑴,𝑲𝒆),𝑲𝒅)＝...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/18/分组密码/" >
-            
-                <span>分组密码</span>
-        </a>
-        <div class="abstract-content">
-            概念将明文划分成长为𝑚(如𝑚=64或128)的分组𝑃＝(𝑝0, 𝑝1, 𝑝2, ….,𝑝(𝑚−1))，各明文分组分别在长为t的密钥𝐾＝(𝑘0, 𝑘1, 𝑘2, ….,𝑘(𝑡−1)) 的控制下变换成长为𝑛的密文分组𝐶＝(𝑐0, 𝑐1, 𝑐2, …,𝑐_(𝑛−1))。(一般 𝑚=𝑛)
-
-特点速度快、安全性较高、易于标准化和便于软硬件实现构造伪随机数生成器、序列密码、消息认证码和Hash函数的方法
-设计要求1.分组长度要足够大假设𝑛为分组长度，则要使2𝑛足够大，防止明文穷举攻击2.密钥量要足够大防止密钥穷举攻击3.密码变换要足够复杂使攻击者除穷...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "notes">notes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/18/baby-web/" >
-            
-                <span>baby_web+FlatScience</span>
-        </a>
-        <div class="abstract-content">
-            [TOC]
-baby_web题目提示：想想初始页面是哪个
-实际操作：考虑到可能是页面302重定向抓包得到flag
-
-
-FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查看robots.txt(robots.txt:是搜索引擎中访问网站的时候要查看的第一个文件。robots.txt文件告诉蜘蛛程序在服务器上什么文件是可以被查看的。)访问:http://111.198.29.45:34978/robots.txt
-123User-agent: *Disallow: /login.phpDisallow: /admin.php
-
-访问login.php:得到了一个登陆页...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -1863,9 +1845,106 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 61
+        Total : 64
         </div>
         <!-- search  -->
         
@@ -1878,6 +1957,21 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/操作系统安全/" >操作系统安全</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/Linux操作系统/" >Linux操作系统</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2020/02/26/sqli-labs-Page-1-Less-4/" >sqli-labs-Page-1-Less-4</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1906,7 +2000,7 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -1916,7 +2010,7 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -2010,12 +2104,12 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -2025,12 +2119,12 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
         </li>
     
     
@@ -2040,7 +2134,7 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -2050,7 +2144,7 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
@@ -2165,12 +2259,7 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -2180,7 +2269,12 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
@@ -2198,27 +2292,29 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
-        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
-        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
-    
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
         <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
     
@@ -2230,13 +2326,11 @@ FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查�
     
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
     
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+    
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
-    
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
@@ -2275,13 +2369,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
-        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
@@ -2295,11 +2389,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
+    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
-    
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
     

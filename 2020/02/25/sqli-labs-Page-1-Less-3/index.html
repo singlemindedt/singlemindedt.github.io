@@ -408,32 +408,41 @@ height:50vh;
 <li>尝试通过get方式输入ID和数值参数：<br><font color="#ff000" face="黑体" size="4">?id=1</font></li>
 </ul>
 <p><img src="https://s2.ax1x.com/2020/02/25/3YwRg0.png" alt="3YwRg0.png"><br>成功得到查询结果；</p>
+<hr>
 <ul>
 <li>添加单引号：<br><font color="#ff000" face="黑体" size="4">?id=1’</font></li>
 </ul>
 <p><img src="https://s2.ax1x.com/2020/02/25/3Yw23q.png" alt="3Yw23q.png"><br>得到报错信息，即我们所输入的单引号与查询语句格式不匹配，从报错信息还可以看出可能与’）‘有关，猜测可能为单引号多余或者闭合格式为（’‘）造成；</p>
+<hr>
 <ul>
 <li>加入注释符：<br><font color="#ff000" face="黑体" size="4">?id=1’–+</font></li>
 </ul>
 <p><img src="https://s2.ax1x.com/2020/02/25/3Yw64s.png" alt="3Yw64s.png"><br>可以看出还是回显报错信息，并且错误之处还是在单引号附近；</p>
+<hr>
 <ul>
 <li>加单引号+）+注释符</li>
 </ul>
 <p><font color="#ff000" face="黑体" size="4">?id=1’）–+</font></p>
 <p><img src="https://s2.ax1x.com/2020/02/25/3Y6wJe.png" alt="3Y6wJe.png"><br>看到成功得到查询内容，所以该处的闭合方式为<strong>(‘’)</strong>;</p>
+<hr>
 <ul>
 <li>尝试输入<font color="#ff000" face="黑体" size="4">?id=1’）and 1=2–+</font></li>
 </ul>
 <p><img src="https://s2.ax1x.com/2020/02/25/3YREfU.png" alt="3YREfU.png"><br>可以看到既无报错信息也没有回显任何内容，说明我们所输入的语法是对的，在1=2上存在逻辑错误，即<code>SELECT * FROM users WHERE id=(&#39;1&#39;)and 1=2--+&#39;) LIMIT 0,1</code>；</p>
+<hr>
 <ul>
 <li>尝试输入<font color="#ff000" face="黑体" size="4">?id=1’）and 1=1–+</font></li>
 </ul>
 <p><img src="https://s2.ax1x.com/2020/02/25/3YRel4.png" alt="3YRel4.png"><br>成功得到查询内容，说明此处确为<strong>(‘’)字符型注入；</strong></p>
+<hr>
+<hr>
 <p>==猜解数据库内容==<br>猜解过程与Page-1-Less-1基本相同，只是在原来的基础上加一个“)”，此处仅举一例；<br>例：数据库版本，库名：<br><font color="#ff000" face="黑体" size="4">?id=-1’) union select 1,version(),database() –+</font></p>
 <p><img src="https://s2.ax1x.com/2020/02/25/3YTkz6.png" alt="3YTkz6.png"><br>成功得到结果；</p>
+<hr>
 <ul>
 <li>查看源码：<br>可以看到查询语句的格式为：<code>SELECT * FROM users WHERE id=(&#39;$id&#39;) LIMIT 0,1</code></li>
 </ul>
+<hr>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//including the Mysql connect parameters.</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">"../sql-connections/sql-connect.php"</span>);</span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// take the variables</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'id'</span>]))</span><br><span class="line">&#123;</span><br><span class="line">$id=$_GET[<span class="string">'id'</span>];</span><br><span class="line"><span class="comment">//logging the connection parameters to a file for analysis.</span></span><br><span class="line">$fp=fopen(<span class="string">'result.txt'</span>,<span class="string">'a'</span>);</span><br><span class="line">fwrite($fp,<span class="string">'ID:'</span>.$id.<span class="string">"\n"</span>);</span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// connectivity </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$sql=<span class="string">"SELECT * FROM users WHERE id=('$id') LIMIT 0,1"</span>;</span><br><span class="line">$result=mysql_query($sql);</span><br><span class="line">$row = mysql_fetch_array($result);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>($row)</span><br><span class="line">	&#123;</span><br><span class="line">  	<span class="keyword">echo</span> <span class="string">"&lt;font size='5' color= '#99FF00'&gt;"</span>;</span><br><span class="line">  	<span class="keyword">echo</span> <span class="string">'Your Login name:'</span>. $row[<span class="string">'username'</span>];</span><br><span class="line">  	<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">  	<span class="keyword">echo</span> <span class="string">'Your Password:'</span> .$row[<span class="string">'password'</span>];</span><br><span class="line">  	<span class="keyword">echo</span> <span class="string">"&lt;/font&gt;"</span>;</span><br><span class="line">  	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'&lt;font color= "#FFFF00"&gt;'</span>;</span><br><span class="line">	print_r(mysql_error());</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">"&lt;/font&gt;"</span>;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123; <span class="keyword">echo</span> <span class="string">"Please input the ID as parameter with numeric value"</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
@@ -442,13 +451,18 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/">https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/">February 25th 2020, 10:25:38 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/">February 25th 2020, 4:57:54 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/">February 27th 2020, 9:15:51 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/02/26/sqli-labs-Page-1-Less-4/" title= "sqli-labs-Page-1-Less-4">
+                    <div class="nextTitle">sqli-labs-Page-1-Less-4</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -1526,9 +1540,106 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 61
+        Total : 64
         </div>
         <!-- search  -->
         
@@ -1541,6 +1652,21 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/操作系统安全/" >操作系统安全</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/Linux操作系统/" >Linux操作系统</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2020/02/26/sqli-labs-Page-1-Less-4/" >sqli-labs-Page-1-Less-4</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1569,7 +1695,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -1579,7 +1705,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -1673,12 +1799,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -1688,12 +1814,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
         </li>
     
     
@@ -1703,7 +1829,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -1713,7 +1839,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
@@ -1828,12 +1954,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -1843,7 +1964,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
@@ -1861,27 +1987,29 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
-        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
-        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
-    
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
         <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
     
@@ -1893,13 +2021,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
     
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+    
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
-    
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
@@ -1938,13 +2064,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
-        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
     
@@ -1958,11 +2084,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
+    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
-    
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
     
