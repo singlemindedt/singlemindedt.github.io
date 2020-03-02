@@ -427,7 +427,9 @@ height:50vh;
 <p><img src="https://s2.ax1x.com/2020/03/01/3cDwMq.png" alt="3cDwMq.png"></p>
 <h1 id="XML元素"><a href="#XML元素" class="headerlink" title="XML元素"></a>XML元素</h1><p>XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。<br>一个元素可以包含：其他元素、文本、属性、或混合前几种元素<br><font color="#ff000" face="黑体" size="4">注意：</font></p>
 <ul>
-<li>元素标记区分大小写，<name> ≠<name>;</name></name></li>
+<li><p>元素标记区分大小写</p>
+<p><code>&lt;Name&gt; ≠&lt;name&gt;;</code></p>
+</li>
 </ul>
 <p>XML元素标记命名规则:</p>
 <ul>
@@ -438,7 +440,7 @@ height:50vh;
 <hr>
 <p>xml有且只有一个根元素，根元素的起始标记要放在所有其它元素起始标记之前，根元素的结束标记根放在其它所有元素的结束标记之后。</p>
 <h1 id="XML语法"><a href="#XML语法" class="headerlink" title="XML语法"></a>XML语法</h1><h2 id="XML属性"><a href="#XML属性" class="headerlink" title="XML属性"></a>XML属性</h2><p>属性值必须加引号</p>
-<h2 id="XML注释"><a href="#XML注释" class="headerlink" title="XML注释"></a>XML注释</h2><p>与HTML一致：<!--This is comment --></p>
+<h2 id="XML注释"><a href="#XML注释" class="headerlink" title="XML注释"></a>XML注释</h2><p>与HTML一致：<code>&lt;!--This is comment --&gt;</code></p>
 <h2 id="实体引用"><a href="#实体引用" class="headerlink" title="实体引用"></a>实体引用</h2><h3 id="字符实体"><a href="#字符实体" class="headerlink" title="字符实体"></a>字符实体</h3><p>由于XML中部分符号具有特殊意义，为避免解析器解析错误，以实体引用代替部分字符；</p>
 <p>在 XML 中，有 5 个预定义的实体引用：</p>
 <table>
@@ -514,7 +516,7 @@ height:50vh;
 <h1 id="XXE"><a href="#XXE" class="headerlink" title="XXE"></a>XXE</h1><p>  XXE漏洞是由xml解析器配置不安全，解析器本身并不分析实体是否为恶意内容，仅检查xml文件是否有结构上的错误。当允许引用外部实体时，通过构造恶意内容，可导致读取任意文件、执行系统命令、探测内网端口、攻击内网网站等危害。</p>
 <p>关于：[XXE-PHP Audit Basic](<a href="https://singlemindedt.github.io/2020/02/29/XXE-PHP">https://singlemindedt.github.io/2020/02/29/XXE-PHP</a> Audit Basic/)</p>
 <p>++++</p>
-<p>参考：<a href="https://www.runoob.com/xml/xml-syntax.html" target="_blank" rel="noopener">菜鸟教程</a></p>
+<p>参考：<a href="https://www.runoob.com/xml/xml-syntax.html" target="_blank" rel="noopener">菜鸟教程</a>等；</p>
 
     </article>
     <!-- license  -->
@@ -523,7 +525,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">March 1st 2020, 10:00:08 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">March 2nd 2020, 9:29:43 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">March 2nd 2020, 9:54:45 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
