@@ -198,7 +198,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?https://singlemindedt.github.io/";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
     <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'https://singlemindedt.github.io/', 'auto');
+        ga('send', 'pageview');
+    </script>
     
 </head>
 
@@ -346,12 +367,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/" >
+        <a class="abstract-title" href = "/2020/02/29/XXE-PHP Audit Basic/" >
             
-                <span>XXE-PHP DOMDocument</span>
+                <span>XXE-PHP Audit Basic</span>
         </a>
         <div class="abstract-content">
-            
+            搭建XXE-PHP Audit Basic 环境XXE-PHP Audit Basic1.
+
+GitHub项目页Vulnspy提供了在线运行环境，单击Vsplate GO&gt;按钮可以创建在线环境，直接在上面操作即可；
+
++++2.
+
+将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；
+
+
+开启Phpstudy2018的Apache和MySql服务;
+
+访问http://127.0.0.1/phpaudit-XXE-master/ 即可；
+
+
+
+XXE漏洞(XML External Entity,XML外部实体注入...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -375,27 +411,19 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/29/XXE-PHP Audit Basic/" >
+        <a class="abstract-title" href = "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >
             
-                <span>XXE-PHP Audit Basic</span>
+                <span>XXE-PHP Audit Basic详解</span>
         </a>
         <div class="abstract-content">
-            搭建XXE-PHP Audit Basic 环境XXE-PHP Audit Basic1.
+            [TOC][5]:()
 
-GitHub项目页Vulnspy提供了在线运行环境，单击Vsplate GO&gt;按钮可以创建在线环境，直接在上面操作即可；
+1.DOMDocument.php点开链接，有如下xml代码：
 
-+++2.
-
-将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；
-
-
-开启Phpstudy2018的Apache和MySql服务;
-
-访问http://127.0.0.1/phpaudit-XXE-master/ 即可；
-
-
-
-XXE漏洞(XML External Entity,XML外部实体注入...
+简单的定义了一个外部实体content，通过file协议来读取服务器端本机的文件（此处读取的文件为etc/passwd）；
+PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使用PHP解析，故还可利用PHP伪协议;
+在使用file://协议时，有以下几种格式：
+123456789101112file：//host/path* Linux file:///etc/passwd*  Unix file://localhost/etc/fstab file:///localhos...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -464,7 +492,9 @@ su/sudo(受限的su,更安全；授权许可的su,配置文件/etc/sudoers)
 shell编程
  Python表达式中，可以使用（ ）控制运算符的优先顺序。
 
+ userdel myname 注：删除用户myname，但不删除其home目录及文件；
 
+ userdel -r myname 注：删除用户mynamt，其home目录及其他文件一并删除...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -628,10 +658,11 @@ shell编程
                 <span>移动应用开发</span>
         </a>
         <div class="abstract-content">
-            安装打包APK基本控件字符串统一修改res-&gt;values-&gt;strings.xml统一修改，防止之后修改任务量巨大的问题（其他文件字符串部分通过调用strings.xml文件内容实现，如： android:label=”@string/app_name”）+++++==Android中的三个重要文件==
+            [TOC]
+安装打包APK基本控件字符串统一修改res-&gt;values-&gt;strings.xml统一修改，防止之后修改任务量巨大的问题（其他文件字符串部分通过调用strings.xml文件内容实现，如： android:label=”@string/app_name”）+++++==Android中的三个重要文件==
 1.Activity是一个类；
 2.Layout文件xml文件；
-3.Manifest配置文件+++++==Andeoid中的View组件==1.TextView2.Button3.Edittext4.图片视图组件ImageView5.单选按钮组件RadioGroup6.复...
+3.Manifest配置文件+++++==Andeoid中的View组件==1.TextView2.Button3.Edittext4.图片视图组件ImageView5.单选按钮组件RadioGr...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -639,6 +670,41 @@ shell编程
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/20</span>
             </div>
             <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/19/sqli-labs闯关记录/" >
+            
+                <span>sqli-labs-Page-1-Less-1</span>
+        </a>
+        <div class="abstract-content">
+            [TOC]
+Page-1(Basic Challenges)
+Less-1（get方式-基于单引号-string型）根据页面提示：
+1Please input the ID as parameter with numeric value
+
+尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;再添加一个单引号看看：
+1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for th...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
+    
+</div>
             
         </div>
     </article>
@@ -663,41 +729,6 @@ Less-1（GET方式-基于单引号-string型）根据页面提示：
 
 再添加一个单引号看看：
 1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/19/sqli-labs闯关记录/" >
-            
-                <span>sqli-labs-Page-1-Less-1</span>
-        </a>
-        <div class="abstract-content">
-            [TOC]
-Page-1(Basic Challenges)
-Less-1（get方式-基于单引号-string型）根据页面提示：
-1Please input the ID as parameter with numeric value
-
-尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;再添加一个单引号看看：
-1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for th...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1929,9 +1960,215 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 67
+        Total : 79
         </div>
         <!-- search  -->
         
@@ -1947,17 +2184,77 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2020/05/11/简单逆向/" >简单逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2020/05/10/利用永恒之蓝获取meterpretershell/" >利用永恒之蓝获取meterpretershell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/PHP-Audit-Labs/" >PHP-Audit-Labs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2020/04/29/PHP代码审计实例/" >PHP代码审计实例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2020/04/09/sqli-labs-Page-1-Less-9/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2020/04/08/sqli-labs-Page-1-Less-8/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/2020/04/06/sqli-labs-Page-1-Less-7/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/sqli-labs-Page-1-Less-6/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2020/03/15/sqli-labs-Page-1-Less-5/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/2020-03-11-Linux-的节点-inode/" >Linux 的节点 inode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/2020-03-03-渗透测试基础/" >渗透测试基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/2020-03-1-XML&DTD/" >XML & DTD</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/" >XXE-PHP DOMDocument</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
@@ -1992,17 +2289,17 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -2012,7 +2309,7 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -2106,12 +2403,12 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
@@ -2121,17 +2418,22 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -2142,11 +2444,6 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -2261,7 +2558,7 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -2271,12 +2568,12 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
@@ -2294,17 +2591,15 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
-    
         <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
     
         <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
         <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
@@ -2313,6 +2608,8 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
     
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
@@ -2328,19 +2625,25 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
         <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
     
-        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
+    
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
+    
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
-    
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
@@ -2377,11 +2680,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
-    
         <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
@@ -2397,9 +2700,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
-    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     

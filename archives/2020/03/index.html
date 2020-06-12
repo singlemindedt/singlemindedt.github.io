@@ -198,7 +198,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?https://singlemindedt.github.io/";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
     <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'https://singlemindedt.github.io/', 'auto');
+        ga('send', 'pageview');
+    </script>
     
 </head>
 
@@ -339,6 +360,131 @@
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
             <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/29/sqli-labs-Page-1-Less-6/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            Less-6(GET方式-双注入-双引号-string型)此题在上一题的基础上只是更改了闭合类型（由单引号改为双引号），其他不变，可以用Less-5的方法解决；
+举例：判断库名长度；
+
+正确回显，说明判断正确，库名长度确实为8；
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/15/sqli-labs-Page-1-Less-5/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            [TOC]
+Less-5(GET方式-双注入-单引号-string型)此题和之前不太一样，当你输入信息是并不返回结果，只返回You are in..........或是语法错误；如下：[50]:()
++++[51]:()说明没有显示位，无法使用联合查询；
+方法1：布尔盲注(boolean-based blind)布尔型注入：正确有回显，错误无回显，逐字爆破；利用二分法提高爆破效率;
+
+爆库名
+
+猜测库名长度：?id=1&#39; and (length(database()))&gt;9 --+[60]:()
+
+无回显，说明错误；?id=1&#39; and (length(databa...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/11/2020-03-11-Linux-的节点-inode/" >
+            
+                <span>Linux 的节点 inode</span>
+        </a>
+        <div class="abstract-content">
+            WHO?文件数据储存在硬盘中，硬盘最小的储存单元为“扇区”（一个扇区512字节）。操作系统读取硬盘时，为提高读取效率，一次性读取多个扇区，这些扇区组成“块”(即block，是文件存取的最小单位，一般为4KB，即连续8个扇区组成一个block；)文件都储存在“块”中，那么还必须找到一个地方储存文件的元信息，比如文件的创建者、文件的创建日期、文件的大小等等。这种储存文件元信息的区域就叫做inode，中文译名为”索引节点”。每一个文件都有对应的inode，里面包含了与该文件有关的一些信息。每个存储设备(如硬盘)或存储设备的分区被格式化为文件系统后，有两部分内容，一部分为inode，另一部分为b...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/03/2020-03-03-渗透测试基础/" >
+            
+                <span>渗透测试基础</span>
+        </a>
+        <div class="abstract-content">
+            order  by：@@@1.前期交互阶段(确定渗透测试的范围和目标)2.情报搜集阶段40%-60%all time
+
+目标选择
+隐私收集
+踩点工作
+验证目标的安全机制
+
+3.威胁建模阶段(分析，确定最佳攻击方式，确定安全威胁)4.漏洞分析阶段三种机制：测试、验证、研究；5.渗透攻击阶段&amp;后渗透攻击阶段(客户关心的价值)6.报告阶段https://www.offensive-security.com/reports/penetration-testing-sample-report-2013.pdf
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
     
     
     
@@ -1601,9 +1747,215 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 67
+        Total : 79
         </div>
         <!-- search  -->
         
@@ -1619,17 +1971,77 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2020/05/11/简单逆向/" >简单逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2020/05/10/利用永恒之蓝获取meterpretershell/" >利用永恒之蓝获取meterpretershell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/PHP-Audit-Labs/" >PHP-Audit-Labs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2020/04/29/PHP代码审计实例/" >PHP代码审计实例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2020/04/09/sqli-labs-Page-1-Less-9/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2020/04/08/sqli-labs-Page-1-Less-8/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/2020/04/06/sqli-labs-Page-1-Less-7/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/sqli-labs-Page-1-Less-6/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2020/03/15/sqli-labs-Page-1-Less-5/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/2020-03-11-Linux-的节点-inode/" >Linux 的节点 inode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/2020-03-03-渗透测试基础/" >渗透测试基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/2020-03-1-XML&DTD/" >XML & DTD</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/" >XXE-PHP DOMDocument</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
@@ -1664,17 +2076,17 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -1684,7 +2096,7 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -1778,12 +2190,12 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
@@ -1793,17 +2205,22 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -1814,11 +2231,6 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -1933,7 +2345,7 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -1943,12 +2355,12 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
@@ -1966,17 +2378,15 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
-    
         <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
     
         <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
         <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
@@ -1985,6 +2395,8 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
     
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
@@ -2000,19 +2412,25 @@ XML文档可看作是一种树结构，由树根—&gt;树叶；
     
         <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
     
-        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
+    
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
+    
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
-    
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
@@ -2049,11 +2467,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
-    
         <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
@@ -2069,9 +2487,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
-    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     

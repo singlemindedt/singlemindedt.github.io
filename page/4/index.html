@@ -196,7 +196,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?https://singlemindedt.github.io/";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
     <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'https://singlemindedt.github.io/', 'auto');
+        ga('send', 'pageview');
+    </script>
     
 </head>
 
@@ -359,21 +380,232 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/12/密码学复习/" >
+        <a class="abstract-title" href = "/2019/12/24/RSA算法分析/" >
             
-                <span>序列密码(流密码)</span>
+                <span>RSA算法分析</span>
         </a>
         <div class="abstract-content">
-            序列密码(流密码)对称密码体制；一次只对明文消息的单个字符(通常是二进制1位)进行加解密变换；具有算法实现简单、速度快、错误传播少等特点；
-“一次一密”明显缺陷：密钥需要和明文一样长，使密钥的分发和管理困难；故：序列密码设计的思路：从一个短的密钥产生一个随机的密钥序列(由于密钥序列使随机的，计算能力有限的攻击者无法从已知的密钥序列片段中获得其他密钥序列位任何有用信息)
-定义明文消息按字符(如二元数字)逐字符的加密；序列密码的加密用一个随机序列(密钥流)与明文序列按位叠加产生密文，用同一随机序列与密文序列叠加来恢复明文；
-原理
-分类序列密码通常划分为两类：1.同步序列密码2.自同步序列密码...
+            快速幂算法 加解密都用到了幂运算 1234567891011def FastMod(x, n, m):   a = 1   b = x   while True:       temp = n       if n % 2 == 1 :           a = a * b % m       b = b * b % m       n = n//2       if temp &lt; 1 :           return a
+生成n位的素数产生的素数越大，安全性越好
+1234567891011def genPrime(b=1024):    while True:       ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/12</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/23/安装gmpy2/" >
+            
+                <span>安装gmpy2</span>
+        </a>
+        <div class="abstract-content">
+            在Windows上安装需要非官方的预编译二进制文件，网址：https://www.lfd.uci.edu/~gohlke/pythonlibs/找GMPY，是按照字母序排的，选择适合自己版本的gmpy2的whl文件进行下载，我选的：gmpy2‑2.0.8‑cp38‑cp38‑win_amd64.whl保存在了E盘，安装：
+PyCharm读取本地包：右击pycharm中项目管理器中本项目目录下的venv文件夹，单击在资源管理器中打开；用记事本打开pyvenv.cfg，将里面的include-system-site-packages = false改为include-system-site-...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/21/php2/" >
+            
+                <span>php2</span>
+        </a>
+        <div class="abstract-content">
+            php2题目分析：打开链接只有一句：Can you anthenticate to this website?尝试访问index.php，失败；访问index.phps,成功；得到以下源码：
+12345678910111213&lt;?phpif("admin"===$_GET[id]) &#123;  echo("&lt;p&gt;not allowed!&lt;/p&gt;");  exit();&#125;$_GET[id] = urldecode($_GET[id]);if($_GET[id] == "admin")&#123;  echo "&lt;p&gt;Access gr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/21/web2/" >
+            
+                <span>web2</span>
+        </a>
+        <div class="abstract-content">
+            web2题目分析：根据题目要求需要解密；
+12345678910111213141516171819202122232425262728293031&lt;?php$miwen="a1zLbgQsCESEIqRLwuQAyMwLyq2L5VwBxqGA3RQAyumZ0tmMvSGM2ZwB4tws";function encode($str)&#123;    $_o=strrev($str);//strrev() 函数反转字符串;语法:strrev(string)    // echo $_o;            for($_0=0;$_0&lt;strlen($_o);$_0+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/20/不可征服/" >
+            
+                <span>不可征服</span>
+        </a>
+        <div class="abstract-content">
+            《不可征服》
+作者：威廉亨利
+透过覆盖我的夜色,
+我看见黑暗层层叠叠。
+我感谢上天赐予我,
+不可征服的灵魂。
+就算被地狱紧紧拽住,
+我也从未退避哀求。
+遭受命运的重重打击，
+我满头鲜血，却头颅高昂。
+在愤怒和悲伤的尘世外,
+耸立的不过是恐怖的影子,
+面对未来的威胁,
+我无所畏惧。
+无论命运之门多么狭窄，
+无论承受怎样的惩罚，
+我是我命运的主宰,
+我是我灵魂的统帅。
+Invictus
+Out of the night that covers me
+Black as the pit from pole to pole
+I thank whatever gods may be
+For my u...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "essay">essay</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/19/公钥密码体制/" >
+            
+                <span>公钥密码体制</span>
+        </a>
+        <div class="abstract-content">
+            原因对称加密体制的不足：
+
+密钥的分配和管理
+
+签名和认证
+公钥加密体制1.发送方A查找接收方B的公钥
+
+A采用公钥加密算法以B的公钥加密明文消息
+
+A通过不安全信道将密文发送给B
+
+B收到密文后用自己的私钥解密获取明文
+
+
+
+关键：单向陷门函数单向陷门函数𝒇：
+
+给出𝑓定义域中的任意元素𝑥,计算𝑓(𝑥)是容易的
+给出𝑦=𝑓(𝑥)中的𝑦，计算𝑥：
+若知道设计函数𝑓时结合进去的某种信息（称为陷门），则𝑥容易计算；
+若不知道该陷门信息，则𝑥难以计算一个公钥密码应满足：
+
+
+解密算法D与加密算法E互逆，即对于所有明文𝑀都有，𝑫(𝑬(𝑴,𝑲𝒆),𝑲𝒅)＝...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/19</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/18/分组密码/" >
+            
+                <span>分组密码</span>
+        </a>
+        <div class="abstract-content">
+            概念将明文划分成长为𝑚(如𝑚=64或128)的分组𝑃＝(𝑝0, 𝑝1, 𝑝2, ….,𝑝(𝑚−1))，各明文分组分别在长为t的密钥𝐾＝(𝑘0, 𝑘1, 𝑘2, ….,𝑘(𝑡−1)) 的控制下变换成长为𝑛的密文分组𝐶＝(𝑐0, 𝑐1, 𝑐2, …,𝑐_(𝑛−1))。(一般 𝑚=𝑛)
+
+特点速度快、安全性较高、易于标准化和便于软硬件实现构造伪随机数生成器、序列密码、消息认证码和Hash函数的方法
+设计要求1.分组长度要足够大假设𝑛为分组长度，则要使2𝑛足够大，防止明文穷举攻击2.密钥量要足够大防止密钥穷举攻击3.密码变换要足够复杂使攻击者除穷...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/18</span>
             </div>
             <!-- tags  -->
             
@@ -392,102 +624,25 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/12/hexo卡通挂件踩坑记/" >
+        <a class="abstract-title" href = "/2019/12/18/baby-web/" >
             
-                <span>hexo卡通挂件踩坑记</span>
+                <span>baby_web+FlatScience</span>
         </a>
         <div class="abstract-content">
-            添加卡通人物：
-1.安装hexo-helper-live2d1nmp install -save hexo-helper-live2d
+            [TOC]
+baby_web题目提示：想想初始页面是哪个
+实际操作：考虑到可能是页面302重定向抓包得到flag
 
-2.安装live2d1nmp install live2d-widget-model-tororo
 
-注意：可能出现报错可以尝试更新nmp版本：
-1nmp install -g nmp
+FlatScience实际操作点进去有好多链接，下载PDF，跳回等；  查看robots.txt(robots.txt:是搜索引擎中访问网站的时候要查看的第一个文件。robots.txt文件告诉蜘蛛程序在服务器上什么文件是可以被查看的。)访问:http://111.198.29.45:34978/robots.txt
+123User-agent: *Disallow: /login.phpDisallow: /admin.php
 
-3.配置在hexo站点配置文件_config.yml，或者主题配置文件_config.yml中添加如下配置
-123456789101112131415161718192021#宠物live2d:  enable: true  scriptFrom: local  pl...
+访问login.php:得到了一个登陆页...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/网络安全复习/" >
-            
-                <span>网络安全复习</span>
-        </a>
-        <div class="abstract-content">
-            网络安全概述1.网络安全的威胁来源（分类）信息泄露、信息破坏、拒绝服务
-2.CIA三元组与网络安全基本需求网络安全的基本属性（CIA三元组）：机密性、完整性、可用性五个属性：CIA+可靠性+不可抵赖性八个属性：五+隐私性+可说明性+可审计性
-3.网络攻击类型（主动/被动）1.阻断攻击（DoS）2.截取攻击3.篡改攻击4.伪造攻击5.重放攻击
-4.OSI安全体系（安全服务与安全机制）安全策略指在一个特定的环境里（安全区域），为保证提供一定级别的安全保护所必须遵守的一系列条列、规则。
-安全服务指用于提高网络中信息传输、存储和处理过程安全的服务。5个安全服务：认证：提供对通信中对等实体和数据来...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "notes">notes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/Bug/" >
-            
-                <span>Bug</span>
-        </a>
-        <div class="abstract-content">
-            bug题目分析：给出一个登录页面;首先随便注册一个用户；
-
-登录；
-发现只有Manage是不能普通用户使用的；
-
-最后发现还有个Finpwd，找回密码之前应该会验证身份，应该是突破口；
-实际操作：先以smtsec找回密码，发现直接给了一个newpwd输入框；应该是需要抓包修改用户身份；
-
-修改为admin，提示修改成功；
-
-以admin身份登录成功；但是Manage还是不能使用提示IP not allowed!应该要改为本地登录；在请求头中加入X-Forwarded-For: 127.0.0.1进行ip伪造；得到如下页面；
-
-查看源码，看到提示：
-
-看到filemanage想到可能do为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/18</span>
             </div>
             <!-- tags  -->
             
@@ -506,29 +661,26 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/NaNNaNNaNNaN-Batman/" >
+        <a class="abstract-title" href = "/2019/12/16/Python笔记1/" >
             
-                <span>NaNNaNNaNNaN-Batman</span>
+                <span>Python笔记1</span>
         </a>
         <div class="abstract-content">
-            NaNNaNNaNNaN-Batman题目分析：下载附件，得到web100的文本，打开是乱码，大概看了下，将后缀改为HTML，在浏览器里打开，得到一个OK输入框；
-
-但是输入没有任何响应；回头再看看代码；
-
-  可以很明显看到,’’是一个变量，而它的内容就是后面一长串字符(三行绿色部分即’’中间部分)；最后eval()函数执行_;
-**eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。**此处，eval()并未执行$()函数，而是执行了字符串，导致乱码?:).为了能看到正常源码，将eval()改为alert()；
-**alert() 方法用于显示带有一条指定...
+            报误：SyntaxError: unexpected EOF while parsing一般是最后一行括号没补全，或者写了for循环没写循环体，因为解释器到底了度没找到它要找到的东西
+Python逻辑运算符and or not　　优先级：() &gt; not &gt; and &gt; orhttps://www.cnblogs.com/zhangyanran/p/9896070.html
+Python lower() 方法转换字符串中所有大写字符为小写。语法lower()方法语法：str.lower()
+ord() 函数是 chr() 函数（对于8位的ASCII字符串）或 unich...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
     
 </div>
             
@@ -541,173 +693,31 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/Training-WWW-Robots/" >
+        <a class="abstract-title" href = "/2019/12/16/upload/" >
             
-                <span>Training-WWW-Robots</span>
+                <span>upload</span>
         </a>
         <div class="abstract-content">
-            Training-WWW-Robots知识点补充：  robots.txt是一个协议，而不是一个命令。robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。robots.txt文件告诉蜘蛛程序在服务器上什么文件是可以被查看的。  当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。百度官方建议，仅当您的网站包含不希望被搜索引擎收录的内容时，才需要使用robots.txt文件。如果您希望搜索引擎收录网站上所有内容...
+            upload初探  根据题目upload猜测可能为文件上传漏洞，先注册为会员(username:111111;password:111111);
+登录就出现了上传文件的页面如下：
+
+尝试上传文件，发现只有jpg格式的文件可以上传尝试上传php.jpg
+1&lt;?php echo phpinfo();?&gt;
+
+burpsuite抓包改后缀名为php得到结果回应为文件格式错误，应该是服务器端的检查，而非客户端Js过滤；
+分析：题目限制了上传文件的后缀名必须为jpg，但并没有对文件内容有所检查；图片马的方法不可行，上传成功后并没有目录，同时无法上传.htaccess对图片马解析；
+参阅相...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/Mfw/" >
-            
-                <span>Mfw</span>
-        </a>
-        <div class="abstract-content">
-            Mfw题目分析：打开链接，几个目录都看了下，发现：
-
-可能存在git源码泄露，尝试访问.git目录：
-
-实际操作：利用Githack得到网站源码(直接将GitHack.py拖入cmd,输入执行命令)：
-
-在GitHack目录下可以看到网站源码文件夹：
-
-在flag.php中只有如下内容：
-1234&lt;?php// TODO// $FLAG = '';?&gt;
-
-是将flag.php中的内容注释了，不显在网页上。
-
-在index.php中发现关键代码：
-
-12345678910111213&lt;?phpif (isset($_GET['page'])) &#123;    $pag...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/Lottery/" >
-            
-                <span>Lottery!</span>
-        </a>
-        <div class="abstract-content">
-            Lottery！题目分析：随便输入7个数字得到以下结果，并且每次的winning numbers都是不同的，应该为随机数；根据Claim Your Prize中的提示，需要花费$9990000才能买到flag，如果一直猜数字获得余额不太现实，
-实际操作:用burpsuite对输入彩票数字验证过程抓包，得到api.php;
-
-  不过还是不太清楚怎么搞，看了下wp，说是git源码泄露：在运行git init初始化代码库的时候，会在当前目录下面产生一个.git的隐藏文件，用来记录代码的变更记录等等。在发布代码的时候，把.git这个目录没有删除，直接发布了。使用这个文件，可以用来恢复源代码。
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/09/ics-04/" >
-            
-                <span>ics-04</span>
-        </a>
-        <div class="abstract-content">
-            ics-04问题分析：  本题和之前几题使用了相同的页面，根据提示漏洞位置应该在登录和注册上，随便注册都能成功，但是登录时提示“普通用户登录成功，没什么用”；
-
-尝试sql注入，这两个地方并没有什么注入点，看到还有个“忘记密码？”，可以正常使用找回密码，尝试sql注入；利用sqlmap检测，发现存在漏洞；
-
-构造命令猜解数据库名：–dbs 枚举数据库管理系统数据库1sqlmap -u "http://111.198.29.45:33931/findpwd.php" --data="username=1" --dbs
-
-
-
-得到库名结果；
-库名
-
-对每个数据库进行表名猜解；1sqlmap ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/02/sqli-labs环境搭建/" >
-            
-                <span>sqli-labs环境搭建</span>
-        </a>
-        <div class="abstract-content">
-            1.由于版本支持等问题，此次环境安装建议下载Phpstudy2018版本，解压安装(可自定义安装目录)；
-2.下载sqli-labs文件，Github下载解压至Phpstudy2018\PHPTutorial\WWW目录下；
-3.更改数据库密码，E:\PhpStudy2018\PHPTutorial\WWW\sqli-labs-master\sqli-labs-master\sql-connections\db-creds,自己任意设置；
-4.开启Phpstudy2018的Apache和MySql服务;
-5.基本配置完成，打开 http://127.0.0.1/sqli-labs-mas...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
     
 </div>
             
@@ -717,7 +727,7 @@ height:50vh;
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/3/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/page/3/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -2029,9 +2039,215 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 67
+        Total : 79
         </div>
         <!-- search  -->
         
@@ -2047,17 +2263,77 @@ height:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2020/05/11/简单逆向/" >简单逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2020/05/10/利用永恒之蓝获取meterpretershell/" >利用永恒之蓝获取meterpretershell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/PHP-Audit-Labs/" >PHP-Audit-Labs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2020/04/29/PHP代码审计实例/" >PHP代码审计实例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2020/04/09/sqli-labs-Page-1-Less-9/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2020/04/08/sqli-labs-Page-1-Less-8/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/2020/04/06/sqli-labs-Page-1-Less-7/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/sqli-labs-Page-1-Less-6/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2020/03/15/sqli-labs-Page-1-Less-5/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/2020-03-11-Linux-的节点-inode/" >Linux 的节点 inode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/2020-03-03-渗透测试基础/" >渗透测试基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/2020-03-1-XML&DTD/" >XML & DTD</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/" >XXE-PHP DOMDocument</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
@@ -2092,17 +2368,17 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -2112,7 +2388,7 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -2206,12 +2482,12 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
@@ -2221,17 +2497,22 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -2242,11 +2523,6 @@ height:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -2361,7 +2637,7 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -2371,12 +2647,12 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
@@ -2394,17 +2670,15 @@ height:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
-    
         <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
     
         <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
         <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
@@ -2413,6 +2687,8 @@ height:50vh;
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
     
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
@@ -2428,19 +2704,25 @@ height:50vh;
     
         <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
     
-        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
+    
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
+    
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
-    
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
@@ -2477,11 +2759,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
-    
         <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
@@ -2497,9 +2779,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
-    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     

@@ -1,0 +1,2515 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Smtsec">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Smtsec">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Smtsec&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?https://singlemindedt.github.io/";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'https://singlemindedt.github.io/', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Smtsec&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>Smtsec's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4k</span>Reading time: <span class="post-count reading-time">14 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/05/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="P2P-networking-based-internet-of-things-IoT-sensor-node-authentication-by-Blockchain-基于P2P网络的物联网（IoT）传感器节点区块链认证"><a href="#P2P-networking-based-internet-of-things-IoT-sensor-node-authentication-by-Blockchain-基于P2P网络的物联网（IoT）传感器节点区块链认证" class="headerlink" title="P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)"></a>P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>传感器节点在物联网环境中起着重要作用，每个传感器都是对等网络。由于物理尺寸有限，物联网 传感器节点必须具有轻量认证协议。物联网（IoT）是各种技术的集合 元素。期望异构终端，网络和应用程序之间的互通。他们会加速 通过物联网平台的开放。结果，物联网将出现许多技术和管理安全威胁 环境。传感器节点协议必须轻巧且安全。由于物联网设备有多种用途，因此 需要性能的设备，具有可正常工作的高性能芯片组的操作系统，大多数密码协议。但是，转 点亮/熄灭IoT设备执行简单的任务，例如基于不运行OS的低性能芯片组。如果有 不支持加密协议或证书，则容易受到攻击，并且性能不足以处理。因此， 本文提出了一种基于区块链的物联网设备，以获取更安全的身份验证方案。</p>
+<p><strong>Keywords</strong>： P2P networking . Sensor network . Secure IoT . Node authentication . Light-weight protocol . Network security</p>
+<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h3><p>物联网（IoT）服务容易受到各种攻击 物联网技术的本质带来的安全威胁。特别是，它具有有限的硬件规格，例如低功耗 消耗，少量内存，低内存等， 并且往往分布在难以管理的环境中，这可能会带来各种安全威胁 包括物理攻击的因素。这些特征可以 导致物联网服务安全运行中的致命错误 平台或基于错误信息提供服务， 导致物联网服务平台失去其功能[1]。 </p>
+<p>近年来，预计互操作性 异构终端，网络和应用程序之间 将通过物联网平台的开放而加速， 导致各种技术和行政安全 威胁。物联网环境中可能发生的安全威胁 继承现有威胁中可能发生的威胁 ICT（信息和通信技术）环境。机密性，完整性和可用性（CIA）可以 通常被视为对合法商品的使用和交付的威胁 服务，通常被称为CIA，这三个主要 信息安全的组成部分[2]。表1显示了 物联网每个组件中可能发生的安全威胁[3]。 因此，物联网设备需要一种访问控制方法来保护设备免受单个用户的平台内身份验证以及未经授权的用户对设备的任意访问。 各种环境和各种物联网的服务平台 服务平台和平台应用程序服务[4-6]。</p>
+<p>当前物联网环境中可能发生的安全问题 [3]。 已经开发出各种认证协议，直到 最近。 但是，大多数提议的身份验证协议都用于跟踪位置跟踪攻击的位置。 一个 重播攻击或欺骗攻击易受欺骗攻击 [3]。 许多网站都有弱点和侵犯隐私的行为。 研究人员 正在发现它[5]。 因此，这项研究工作提出了 基于区块链的对等身份验证方案 使用加密算法进行链接和保护。 每个块 具有哈希指针，通常作为指向前一个的符号链接 块，时间戳和交易数据[11]。 根据设计， 区块链固有地抗拒更改数据。</p>
+<p>从技术上讲，区块链可以充当“一个开放的，分布式的分类帐，可以高效，可验证且永久地记录双方之间的交易”。 [12]用作 分散的分类帐，传统上，区块链由 对等网络节点共同遵守协议 用于验证新块。记录后，任何给定的数据 如果没有全部更改，则无法追溯更改块 随后的块和网络多数的冲突[13]。 区块链比非区块链算法更安全[26]。 但是，需要在性能和安全性之间进行权衡。 如果安全交易比效率更重要，那么 区块链是物联网通信的最佳解决方案。 其余研究组织如下。第二节 讨论无线方面一些当前存在的协议 传感器网络（WSN）第3和4节介绍了详细信息 提出的算法。第5节描述了结论 和未来的工作。</p>
+<h3 id="2-Related-work"><a href="#2-Related-work" class="headerlink" title="2 Related work"></a>2 Related work</h3><h4 id="2-1-Wireless-sensor-networks"><a href="#2-1-Wireless-sensor-networks" class="headerlink" title="2.1 Wireless sensor networks"></a>2.1 Wireless sensor networks</h4><p>WSN可以广泛应用于实时等领域 交通监控，军事数据收集，地震活动 分散度测量和时间污染测量。 由于WSN由超小型传感器组成，因此存在一些限制，例如存储内存，计算量和能量 通讯半径。 提供安全的无线通信是一个非常重要的问题，因为传感器可能会暴露在恶劣的环境中，容易拦截无线 通讯，恶意攻击者可以篡改 消息或尝试重传攻击[10]。</p>
+<p>安全的WSN通信的各个方面 研究。 WSN非常容易受到传感器节点（SN）的硬件设备以及节点检测，损坏，窃听， 拒绝服务攻击和路由攻击（例如，漏洞和蠕虫漏洞）取决于无线网络的特征[1]。</p>
+<p>由于传感器节点的性质有限，因此不容易 应用现有的WSN安全技术。 因此， 正在研究加权密钥分发和认证方案，以实现消息等安全因素 完整性，机密性和节点身份验证。</p>
+<p>应用轻量级公钥有两种方法 具有大量现有计算以适合 传感器节点和μ-TESLA（定时的“微型”版本， 高效，流式，容错认证协议） 和LEAP（轻量级可扩展身份验证协议） 低计算能力和安全密钥分发的SPINS（安全网络加密协议）[24]设计 [22]。 </p>
+<p>PIKE（密钥建立同行机构）[25]具有 提出了一种确保网络安全的密钥分配方案 基于对称密钥的安全性基于对称密钥的公开。 另外，不需要密钥的基于ID的方案 分布以及在消息传输频率上具有优势的问题也在研究中。</p>
+<p>由于无线通信的本质，WSN的缺点是容易窃听消息[7]。 因此，为了防止这种情况，有必要通过加密和交换数据来确保机密性。</p>
+<p>为了生成认证密钥，所有SN进行通信 直接与基站（BS）。 其实很难 与SN和BS直接通信。 </p>
+<p>如果能量有限的节点尝试通信 直接与远程BS进行通信，则能耗为 通过发送和接收身份验证消息而增加。 消耗这种能量的节点不能 长期参与交流[10]。</p>
+<h3 id="2-2-Light-weight-sensor-networks-protocols"><a href="#2-2-Light-weight-sensor-networks-protocols" class="headerlink" title="2.2 Light-weight sensor networks protocols"></a>2.2 Light-weight sensor networks protocols</h3><p>有一些基于轻量级公钥的协议，并且 它们是由μ-TESLA[21]，LEAP [22]和SPINS [23]设计的 具有较低的计算能力和安全的密钥分发。 传感器节点在物联网环境中起着重要作用。 传感器 节点是物联网的关键。 因此，许多研究人员正在专注于 传感器节点的攻击承受能力和有效的通信 协议。</p>
+<p>物联网存在一些问题，详细信息如下。</p>
+<p> 互联网基于ICT（互联网通信） 技术），这是一种智能环境，可在用户与对象之间以及对象与对象之间传递信息 通过连接工作。</p>
+<p>美国市场研究公司Gartner 选择物联网作为最受关注的技术领域[8]。 物联网是 分为三大类：设备（终端/传感器） 区域，网络（有线/无线）区域和服务接口 （平台/应用程序）区域。 设备区域传输数据 从特定对象收集并提取到另一个对象 使用嵌入在对象中的通信功能。 网络区域是一个有线/无线通道，用于 传输/接收用户与 对象，对象到对象。 服务接口区域处理数据以生成信息，并控制和管理 各种设备。</p>
+<h3 id="2-3-Vulnerability-on-IoT"><a href="#2-3-Vulnerability-on-IoT" class="headerlink" title="2.3 Vulnerability on IoT"></a>2.3 Vulnerability on IoT</h3><p>虚假攻击是指攻击者伪装成 传感器网络中的合法服务器以及客户端 发出身份验证请求，继续执行协议， 非法获取传感器或传感器的认证密钥 用户。重传攻击是指在认证过程中，实体之间的认证过程中使用的组件 传感器网络将在后续的身份验证过程中存储和重用[9]。</p>
+<p> 身份验证密钥猜测攻击是对 攻击者窃听或伪装传感器网络中用户到传感器与传感器到传感器之间的身份验证过程，存储发送和接收的元素，并找到与最终商定的密钥相同的密钥 认证密钥[22]。 </p>
+<p>拒绝服务攻击是指攻击者进行的攻击 参与身份验证过程并拦截 即使传感器或用户请求身份验证也可以做出响应， 从而拒绝身份验证服务。 </p>
+<p>隐私侵害是一种侵犯隐私的行为，它通过从发送的元素中暴露出参与通信的主体 并在传感器上的身份验证过程中收到 网络。</p>
+<h3 id="2-4Attack-model（攻击模型-）"><a href="#2-4Attack-model（攻击模型-）" class="headerlink" title="2.4Attack model（攻击模型 ）"></a>2.4Attack model（攻击模型 ）</h3><p>本研究中的攻击模型可以是DoS攻击。 在DoS中 攻击，攻击者正试图逃避或冒充 通过发送伪装的假消息来合法的IoT设备 作为合法的物联网设备。 类似的情况可能在 点对点网络也是如此。 例如，合法的物联网 连接到其他物联网设备的节点设备，其中一些 可能是合法的，而其他人可能是恶意的。 这可能 最终导致网络拥塞并拒绝某些物联网 设备访问一些数据流。 问题是 将影响物联网设备的认证过程。 因此，与集中式系统相比，攻击者 正在处理所有都具有的物联网设备 区块链的当前状态。 因此，可以得出结论 DoS攻击很难通过对等网络进行，以损害整个网络的安全性 物联网数量众多导致网络和区块链 设备。</p>
+<h3 id="3-Blockchain-based-sensor-node-authentication"><a href="#3-Blockchain-based-sensor-node-authentication" class="headerlink" title="3 Blockchain-based sensor node authentication"></a>3 Blockchain-based sensor node authentication</h3><p>作者应该有足够的背景信息来 提供本文中所建议方法的更多接受</p>
+<h4 id="3-1-Blockchain"><a href="#3-1-Blockchain" class="headerlink" title="3.1 Blockchain"></a>3.1 Blockchain</h4><p>因为任何参与使用区块链的人 可以输入，更改或删除数据，TTP（信任第三方） 不需要存在就可以在不诚实的网络各方之间进行交易。为了验证这种交易，使用共识算法，可以保证存储在其中的数据的可靠性 经过授权用户之间特定机制操作后的区块链。从而安全地更新和维护 区块链的状态，确保 区块链图1将电子硬币定义为 数字签名。每个成员将硬币转发到下一个 通过数字签名先前交易的哈希值和 下一个成员的公共密钥，将它们添加到 硬币。收款人可以验证签名以验证 成员资格[14]。区块链如图1所示。 当前块的值，数字签名，哈希值 对等网络。应用（2020）13：579–589 581 当前块，块标题和Merkle根以及块 数据由交易组成。</p>
+<p>问题是收件人无法验证其中之一 业主不是双花硬币。常见的解决方案是 介绍一个可靠的中央机构，薄荷，交易 双重支出。每次交易后必须返回 硬币造币厂。 </p>
+<p>我们相信不会发行新硬币，只会发行硬币 由Mint1直接发行的将被重复使用。与问题 这个解决方案是整个瞬时系统的命运。 公司需要经营造币厂，并将其全部通过 交易通过银行进行。收件人以前没有签署过先前的会员交易。制作的唯一方法 确保没有涉及所有交易的交易。基于薄荷 模型，薄荷知道所有交易。我决定到达 第一。为了在没有可信任方的情况下实现这一目标，公开宣布了他们收到的订单。在每次交易时，大多数节点都同意这是第一次[14]。</p>
+<p> 构成区块链的区块由区块组成 标头和块体。块头包含哈希 前一个块标题的值，所有块都是 通过链表之类的链表方法连接起来，并且 包括用于共识的任意随机数 调整块生成难度的算法和位。块体可以具有不同的值，具体取决于 他们支持的服务。例如，在比特币中，数字 密码系统，用户之间发生的交易 块体中包含10分钟。区块链可能 成为公共区块链，私有区块链，财团 区块链可以分为三类[15]。每个块体 磷在结构上完全相似。但是，他们 具有不同的概念和功能，并且在每个区块链上定义和实现也有先决条件。 公共区块链是用于普遍使用的区块链 被称为比特币，以及私有区块链或财团 区块链是将区块链用于其他方面的概念 目的。</p>
+<h4 id="3-2-Conventional-IoT-sensor-nodes-authentication-types"><a href="#3-2-Conventional-IoT-sensor-nodes-authentication-types" class="headerlink" title="3.2 Conventional IoT sensor nodes authentication types"></a>3.2 Conventional IoT sensor nodes authentication types</h4><p>在物联网环境中，攻击者伪装成物联网 具有各种攻击（例如攻击，重用攻击， 和DoS攻击被允许访问内部 物联网环境。 </p>
+<p>在现有的物联网环境中，有五种不同的 身份验证协议的类型。 表1显示了优点 每种认证技术的利弊[15]。</p>
+<h4 id="3-2-1-ID-based-authentication"><a href="#3-2-1-ID-based-authentication" class="headerlink" title="3.2.1 ID-based authentication"></a>3.2.1 ID-based authentication</h4><p>基于ID的身份验证通过使用用户的电子邮件地址，名称，IP地址提供数字签名和身份验证 作为公钥密码系统。 预分配的密钥不是 需要。 计算量小，密钥长度为 比较短。 但是，它容易受到ID欺骗攻击的攻击。 有赫斯算法，林恩算法，绅士 图1交易中的区块链 1 Mint是基于Debian和Ubuntu的Linux发行版，很容易 采用。 582对等网络 应用 （2020）13：579–589 和Silverberg的算法，以及各种身份验证 方案[15]。</p>
+<h4 id="3-2-2-Certificate-based-authentication"><a href="#3-2-2-Certificate-based-authentication" class="headerlink" title="3.2.2 Certificate-based authentication"></a>3.2.2 Certificate-based authentication</h4><p>一种使用数字签名进行认证的方法 公钥密码系统，将用于电子签名的信息记录在证书中，并根据该信息执行身份验证。 在韩国，有关 已通过《数字签名法》准备了发行系统和授权证书的管理 成立于1999年，并颁发了证书 由根CA进行最高级别的认证 机构通过五个授权的认证机构。 在外面 在整个国家，Verisign的设备认证服务包括 个人设备，电缆调制解调器设备认证，以及 WiMAX行业认证。 另外，基于证书 身份验证技术正在VoIP，网络监控摄像头等中使用，并且该领域正在逐步扩大。</p>
+<p>基于证书的身份验证技术提供了很高的 通过强大的身份验证功能实现安全性并提供不可否认性。 但是，设备证书处理 软件和算法需要很高的计算吞吐量。 因此，它不适合用于低功耗，低性能的物联网设备。</p>
+<h4 id="3-2-3-Cryptography-protocol-based"><a href="#3-2-3-Cryptography-protocol-based" class="headerlink" title="3.2.3 Cryptography protocol based"></a>3.2.3 Cryptography protocol based</h4><h4 id="3-2-4-MAC-address-based-authentication"><a href="#3-2-4-MAC-address-based-authentication" class="headerlink" title="3.2.4 MAC address based authentication"></a>3.2.4 MAC address based authentication</h4><h4 id="3-2-5-ID-password-based-authentication"><a href="#3-2-5-ID-password-based-authentication" class="headerlink" title="3.2.5 ID/password-based authentication"></a>3.2.5 ID/password-based authentication</h4><h3 id="4-Proposed-P2P-networking-based-IoT-sensor-authentication-by-Blockchain"><a href="#4-Proposed-P2P-networking-based-IoT-sensor-authentication-by-Blockchain" class="headerlink" title="4 Proposed P2P networking based IoT sensor authentication by Blockchain"></a>4 Proposed P2P networking based IoT sensor authentication by Blockchain</h3><h4 id="4-1-Requirements"><a href="#4-1-Requirements" class="headerlink" title="4.1 Requirements"></a>4.1 Requirements</h4><h4 id="4-2-Device-authentication-method"><a href="#4-2-Device-authentication-method" class="headerlink" title="4.2 Device authentication method"></a>4.2 Device authentication method</h4><h4 id="4-3-Hacking-scenario-on-IoT-authentication"><a href="#4-3-Hacking-scenario-on-IoT-authentication" class="headerlink" title="4.3 Hacking scenario on IoT authentication"></a>4.3 Hacking scenario on IoT authentication</h4><h5 id="4-3-1-Jamming-attack-assumption"><a href="#4-3-1-Jamming-attack-assumption" class="headerlink" title="4.3.1 Jamming attack assumption"></a>4.3.1 Jamming attack assumption</h5><h4 id="4-4-Proposed-IoT-authentication-by-Blockchain"><a href="#4-4-Proposed-IoT-authentication-by-Blockchain" class="headerlink" title="4.4 Proposed IoT authentication by Blockchain"></a>4.4 Proposed IoT authentication by Blockchain</h4><h4 id="4-5-Proposed-IoT-multiple-level-node-authentication-model"><a href="#4-5-Proposed-IoT-multiple-level-node-authentication-model" class="headerlink" title="4.5 Proposed IoT multiple-level node authentication model"></a>4.5 Proposed IoT multiple-level node authentication model</h4><h3 id="5-Conclusions"><a href="#5-Conclusions" class="headerlink" title="5 Conclusions"></a>5 Conclusions</h3>
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
+            <p>原文链接：<a href="https://singlemindedt.github.io/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/">https://singlemindedt.github.io/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/</a>
+            <p>发表日期：<a href="https://singlemindedt.github.io/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/">May 7th 2020, 11:37:08 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/">May 7th 2020, 11:37:08 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/05/10/利用永恒之蓝获取meterpretershell/" title= "利用永恒之蓝获取meterpretershell">
+                    <div class="nextTitle">利用永恒之蓝获取meterpretershell</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/05/03/PHP-Audit-Labs/" title= "PHP-Audit-Labs">
+                    <div class="prevTitle">PHP-Audit-Labs</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:singlemindedt@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/singlemindedt" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P2P-networking-based-internet-of-things-IoT-sensor-node-authentication-by-Blockchain-基于P2P网络的物联网（IoT）传感器节点区块链认证"><span class="toc-number">1.</span> <span class="toc-text">P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">1.2.</span> <span class="toc-text">1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-work"><span class="toc-number">1.3.</span> <span class="toc-text">2 Related work</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Wireless-sensor-networks"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 Wireless sensor networks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Light-weight-sensor-networks-protocols"><span class="toc-number">1.4.</span> <span class="toc-text">2.2 Light-weight sensor networks protocols</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Vulnerability-on-IoT"><span class="toc-number">1.5.</span> <span class="toc-text">2.3 Vulnerability on IoT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4Attack-model（攻击模型-）"><span class="toc-number">1.6.</span> <span class="toc-text">2.4Attack model（攻击模型 ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Blockchain-based-sensor-node-authentication"><span class="toc-number">1.7.</span> <span class="toc-text">3 Blockchain-based sensor node authentication</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Blockchain"><span class="toc-number">1.7.1.</span> <span class="toc-text">3.1 Blockchain</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Conventional-IoT-sensor-nodes-authentication-types"><span class="toc-number">1.7.2.</span> <span class="toc-text">3.2 Conventional IoT sensor nodes authentication types</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-ID-based-authentication"><span class="toc-number">1.7.3.</span> <span class="toc-text">3.2.1 ID-based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-Certificate-based-authentication"><span class="toc-number">1.7.4.</span> <span class="toc-text">3.2.2 Certificate-based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-Cryptography-protocol-based"><span class="toc-number">1.7.5.</span> <span class="toc-text">3.2.3 Cryptography protocol based</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-MAC-address-based-authentication"><span class="toc-number">1.7.6.</span> <span class="toc-text">3.2.4 MAC address based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-ID-password-based-authentication"><span class="toc-number">1.7.7.</span> <span class="toc-text">3.2.5 ID/password-based authentication</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-P2P-networking-based-IoT-sensor-authentication-by-Blockchain"><span class="toc-number">1.8.</span> <span class="toc-text">4 Proposed P2P networking based IoT sensor authentication by Blockchain</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Requirements"><span class="toc-number">1.8.1.</span> <span class="toc-text">4.1 Requirements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Device-authentication-method"><span class="toc-number">1.8.2.</span> <span class="toc-text">4.2 Device authentication method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Hacking-scenario-on-IoT-authentication"><span class="toc-number">1.8.3.</span> <span class="toc-text">4.3 Hacking scenario on IoT authentication</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-Jamming-attack-assumption"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">4.3.1 Jamming attack assumption</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-Proposed-IoT-authentication-by-Blockchain"><span class="toc-number">1.8.4.</span> <span class="toc-text">4.4 Proposed IoT authentication by Blockchain</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-Proposed-IoT-multiple-level-node-authentication-model"><span class="toc-number">1.8.5.</span> <span class="toc-text">4.5 Proposed IoT multiple-level node authentication model</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Conclusions"><span class="toc-number">1.9.</span> <span class="toc-text">5 Conclusions</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 79
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2020/05/11/简单逆向/" >简单逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2020/05/10/利用永恒之蓝获取meterpretershell/" >利用永恒之蓝获取meterpretershell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/PHP-Audit-Labs/" >PHP-Audit-Labs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2020/04/29/PHP代码审计实例/" >PHP代码审计实例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2020/04/09/sqli-labs-Page-1-Less-9/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2020/04/08/sqli-labs-Page-1-Less-8/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/2020/04/06/sqli-labs-Page-1-Less-7/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/sqli-labs-Page-1-Less-6/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2020/03/15/sqli-labs-Page-1-Less-5/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/2020-03-11-Linux-的节点-inode/" >Linux 的节点 inode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/2020-03-03-渗透测试基础/" >渗透测试基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/2020-03-1-XML&DTD/" >XML & DTD</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/操作系统安全/" >操作系统安全</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href= "/2020/02/28/Linux操作系统/" >Linux操作系统</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2020/02/26/sqli-labs-Page-1-Less-4/" >sqli-labs-Page-1-Less-4</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/sqli-labs-Page-1-Less-3/" >sqli-labs-Page-1-Less-3</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/sqli-labs-Page-1-Less-2/" >sqli-labs-Page-1-Less-2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/移动应用开发/" >移动应用开发</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/Magic函数/" >Magic Methods（魔术函数）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span><a class="archive-post-title" href= "/2020/01/01/2020-1-1-diary/" >新年打卡</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2019/12/31/cryptography/" >cryptography</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/29</span><a class="archive-post-title" href= "/2019/12/29/hackme/" >hackme</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2019/12/25/攻防世界-Web/" >攻防世界-Web</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/RSA算法分析/" >RSA算法分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2019/12/23/安装gmpy2/" >安装gmpy2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href= "/2019/12/21/php2/" >php2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href= "/2019/12/21/web2/" >web2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span><a class="archive-post-title" href= "/2019/12/20/不可征服/" >不可征服</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href= "/2019/12/19/公钥密码体制/" >公钥密码体制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/18</span><a class="archive-post-title" href= "/2019/12/18/分组密码/" >分组密码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/18</span><a class="archive-post-title" href= "/2019/12/18/baby-web/" >baby_web+FlatScience</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href= "/2019/12/16/Python笔记1/" >Python笔记1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href= "/2019/12/16/upload/" >upload</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span><a class="archive-post-title" href= "/2019/12/13/安装PyCharm/" >安装PyCharm</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span><a class="archive-post-title" href= "/2019/12/13/cmd下输入python弹出应用商店/" >cmd下输入python弹出应用商店</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/网络安全复习/" >网络安全复习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2019/12/02/sqli-labs环境搭建/" >sqli-labs环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/16</span><a class="archive-post-title" href= "/2019/11/16/凯撒密码/" >C++/Python实现凯撒密码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/10</span><a class="archive-post-title" href= "/2019/10/10/初探栈溢出/" >初探栈溢出</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2019/10/05/ics-05/" >ics-05</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/04</span><a class="archive-post-title" href= "/2019/10/04/正则表达式/" >正则表达式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span><a class="archive-post-title" href= "/2019/09/30/PHP学习/" >PHP学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span><a class="archive-post-title" href= "/2019/09/30/CumtCTF2019华为杯/" >CumtCTF2019华为杯</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/25</span><a class="archive-post-title" href= "/2019/09/25/暴跳老板/" >暴跳老板+Flag在哪？+美味饼干</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href= "/2019/09/24/最大子段和/" >最大子段和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href= "/2019/09/24/汽水瓶/" >汽水瓶</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href= "/2019/09/24/最长公共子序列/" >最长公共子序列</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href= "/2019/09/24/文件包含漏洞/" >文件包含漏洞</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-NewsCenter/" >NewsCenter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-ics-06/" >ics-06</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/攻防世界之Web高手进阶-cat/" >Cat</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2019/09/09/pygame_install/" >Win10安装pygame</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2019/09/09/Byte_CTF/" >Byte CTF 字节跳动网络安全攻防大赛</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2019/09/08/CTF中常见编码总结/" >CTF中常见编码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2019/09/05/攻防世界之Web新手（7-12）/" >攻防世界之Web新手（7-12）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2019/09/04/images/" >Images</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2019/09/04/攻防世界之Web新手（1-6）/" >攻防世界之Web新手（1-6）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2019/09/03/代码审计ONE/" >代码审计</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/算法作业one/" >小雏鸟的成人式2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/31</span><a class="archive-post-title" href= "/2019/08/31/hello-world/" >Hello World</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
+    
+        <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
+    
+        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
+    
+        <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
+    
+        <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
+    
+        <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
+    
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
+    
+        <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
+    
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
+    
+        <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
+    
+        <span class="sidebar-category-name" data-categories="notes"><span class="iconfont-archer">&#xe60a;</span>notes</span>
+    
+        <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
+    
+        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
+    
+        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
+    
+        <span class="sidebar-category-name" data-categories="notes/密码学"><span class="iconfont-archer">&#xe60a;</span>notes/密码学</span>
+    
+        <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
+    
+        <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
+    
+        <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="代码审计"><span class="iconfont-archer">&#xe60a;</span>代码审计</span>
+    
+        <span class="sidebar-category-name" data-categories="代码审计/php"><span class="iconfont-archer">&#xe60a;</span>代码审计/php</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Smtsec"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+

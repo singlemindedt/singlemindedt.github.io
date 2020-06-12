@@ -198,7 +198,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?https://singlemindedt.github.io/";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
     <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'https://singlemindedt.github.io/', 'auto');
+        ga('send', 'pageview');
+    </script>
     
 </head>
 
@@ -266,7 +287,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">192</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">3.3k</span>Reading time: <span class="post-count reading-time">15 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,19 +416,20 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h1 id="打包APK"><a href="#打包APK" class="headerlink" title="打包APK"></a>打包APK</h1><h1 id="基本控件"><a href="#基本控件" class="headerlink" title="基本控件"></a>基本控件</h1><h3 id="字符串统一修改"><a href="#字符串统一修改" class="headerlink" title="字符串统一修改"></a>字符串统一修改</h3><p>res-&gt;values-&gt;strings.xml统一修改，防止之后修改任务量巨大的问题（其他文件字符串部分通过调用strings.xml文件内容实现，如： android:label=”@string/app_name”）<br>+++++<br>==Android中的三个重要文件==</p>
+        <p>[TOC]</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h1 id="打包APK"><a href="#打包APK" class="headerlink" title="打包APK"></a>打包APK</h1><h1 id="基本控件"><a href="#基本控件" class="headerlink" title="基本控件"></a>基本控件</h1><h3 id="字符串统一修改"><a href="#字符串统一修改" class="headerlink" title="字符串统一修改"></a>字符串统一修改</h3><p>res-&gt;values-&gt;strings.xml统一修改，防止之后修改任务量巨大的问题（其他文件字符串部分通过调用strings.xml文件内容实现，如： android:label=”@string/app_name”）<br>+++++<br>==Android中的三个重要文件==</p>
 <h2 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1.Activity"></a>1.Activity</h2><p>是一个类；</p>
 <h2 id="2-Layout文件"><a href="#2-Layout文件" class="headerlink" title="2.Layout文件"></a>2.Layout文件</h2><p>xml文件；</p>
 <h2 id="3-Manifest"><a href="#3-Manifest" class="headerlink" title="3.Manifest"></a>3.Manifest</h2><p><intent-filter>配置文件<br>+++++<br>==Andeoid中的View组件==<br>1.TextView<br>2.Button<br>3.Edittext<br>4.图片视图组件ImageView<br>5.单选按钮组件RadioGroup<br>6.复选框组件CheckBox</intent-filter></p>
 <h2 id="4-界面布局"><a href="#4-界面布局" class="headerlink" title="4.界面布局"></a>4.界面布局</h2><p>（布局管理器）</p>
 <ul>
-<li><p>1.线性布局管理器LinearLayout</p>
-<p>:smile:</p>
-<p><strong>Weight用法 ：0dp、WrapContent、match_parent</strong></p>
-</li>
-<li><p>2.相对布局管理器RelativeLayout*</p>
-<p>:smile:</p>
-</li>
+<li>1.线性布局管理器LinearLayout:smile:</li>
+</ul>
+<p>  <strong>Weight用法 ：0dp、WrapContent、match_parent</strong></p>
+<ul>
+<li>2.相对布局管理器RelativeLayout*:smile:</li>
+</ul>
+<ul>
 <li><p>3.框架布局管理器FrameLayout</p>
 </li>
 <li><p>4.表格布局管理器TableLayout</p>
@@ -415,6 +437,211 @@ height:50vh;
 <li><p>5.网格布局管理器GridLayout<br>（ConstraintLayout管理器）</p>
 <h1 id="第4章-Activity"><a href="#第4章-Activity" class="headerlink" title="第4章 Activity"></a>第4章 Activity</h1></li>
 </ul>
+<p>Activity类是与用户具体的交互界面；</p>
+<p><code>R.java</code>是项目中所有资源的索引文件，资源以（资源id，值）形式存放在对应的内部类中；</p>
+<p>Activity生命周期；</p>
+<p>+++</p>
+<h1 id="1-第一个Android应用"><a href="#1-第一个Android应用" class="headerlink" title="1. 第一个Android应用"></a>1. 第一个Android应用</h1><ol>
+<li><p>文件中的所有Activity都需要在AndroidManifest.xml文件中注册一下才可使用；</p>
+</li>
+<li><p>在MainActivity里查看布局文件，可直接按住Ctrl点击layout文件名，直接转到相应文件；</p>
+</li>
+</ol>
+<h1 id="2-UI组件"><a href="#2-UI组件" class="headerlink" title="2. UI组件"></a>2. UI组件</h1><h2 id="2-1布局管理器"><a href="#2-1布局管理器" class="headerlink" title="2-1布局管理器"></a>2-1布局管理器</h2><p>代码区域：<strong>res</strong>-&gt;<strong>layout</strong>-&gt;<strong>activity_main.xml</strong></p>
+<h3 id="线性布局"><a href="#线性布局" class="headerlink" title="线性布局"></a>线性布局</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".MainActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--+id即表示创建一个id--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--orientation="vertical"表示水平方向排列 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--layout_marginTop="20dp"间距 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--gravity="center"本布局内新建布局位置为中间--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/ll_1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#000000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"200dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:paddingRight</span>=<span class="string">"20dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:paddingLeft</span>=<span class="string">"20dp"</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">android:paddingBottom</span>=<span class="string">"20dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:paddingTop</span>=<span class="string">"20dp"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"200dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#DFB761D6"</span></span></span><br><span class="line"><span class="tag">            /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">"#0066FF"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_marginLeft</span>=<span class="string">"15dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_marginRight</span>=<span class="string">"15dp"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#8BC34A"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#00BCD4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--layout_weight="1"将剩余内容按权重平分--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#0066FF"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginLeft</span>=<span class="string">"15dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginRight</span>=<span class="string">"15dp"</span></span></span><br><span class="line"><span class="tag">        &gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#8BC34A"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#00BCD4"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="相对布局"><a href="#相对布局" class="headerlink" title="相对布局"></a>相对布局</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--+id即表示创建一个id,其后跟的名字是自定义的；--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--layout_alignParentBottom="true"与父空间底部对齐--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--layout_toRightOf="@id/view_2"使view_3处于view_2的右边--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--各种布局可嵌套使用 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--layout_below="@id/view_3"使线性布局的ll_1位于view_3的下方 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--layout_marginLeft="20dp"设置view_5的左外边距为20dp --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:id</span>=<span class="string">"@+id/view_1"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_height</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:background</span>=<span class="string">"#03A9F4"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/view_2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#CDDC39"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_alignParentLeft</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/view_3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_toRightOf</span>=<span class="string">"@id/view_2"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/ll_1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@id/view_3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#673AB7"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:padding</span>=<span class="string">"15dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#FF5722"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RelativeLayout</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#4CAF50"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:padding</span>=<span class="string">"10dp"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/view_4"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:background</span>=<span class="string">"#009688"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/view_5"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:background</span>=<span class="string">"#FFEB3B"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_toRightOf</span>=<span class="string">"@id/view_4"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_marginLeft</span>=<span class="string">"20dp"</span>/&gt;</span></span><br><span class="line">                </span><br><span class="line">            </span><br><span class="line">        <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android:layout_below属性会将当前控件的顶部置于给定ID的控件之下，但并不会与给定ID的控件对齐，默认会放在父控件的最左边；</span><br><span class="line">可通过android:layout_alignLeft、android:layout_alignRight等对齐属性改变当前控件</span><br></pre></td></tr></table></figure>
+
+<h3 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h3><p>主界面创建Button组件：</p>
+<p>新建TextViewActivity界面，并在Manifest中注册：</p>
+<p>在MainActivity中声明，并为Button设置事件监听机制（点击按钮，界面会由MainActivity跳转到TextViewActivity）；</p>
+<p>在activity_text_view.xml布局文件中添加几个TextView以满足不同效果，效果图及代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:padding</span>=<span class="string">"20dp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#00BCD4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span>/&gt;</span></span><br><span class="line">        //text="@string/tv_test1"引用之前在values下的strings中的名字，则会显示对应编辑的文字内容</span><br><span class="line">        //也可以直接写文字内容android:text="小黑戴白帽"</span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"100dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:maxLines</span>=<span class="string">"1"</span>//一行显示</span></span><br><span class="line"><span class="tag">        <span class="attr">android:ellipsize</span>=<span class="string">"end"</span>//多余内容在结尾处以省略号形式展示</span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#F44336"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"34dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:drawableRight</span>=<span class="string">"@drawable/ic_launcher_foreground"</span>//引用图标（图片中不太明显，白色<span class="attr">Android</span>机器人图标）</span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#673AB7"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_5"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test5"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#4CAF50"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_6"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test6"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#3F51B5"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span>/&gt;</span></span><br><span class="line">    //跑马灯</span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_7"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/tv_test7"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#2196F3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:singleLine</span>=<span class="string">"true"</span>//单行</span></span><br><span class="line"><span class="tag">        <span class="attr">android:ellipsize</span>=<span class="string">"marquee"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:marqueeRepeatLimit</span>=<span class="string">"marquee_forever"</span>//循环次数</span></span><br><span class="line"><span class="tag">        <span class="attr">android:focusable</span>=<span class="string">"true"</span>//获取焦点</span></span><br><span class="line"><span class="tag">        <span class="attr">android:focusableInTouchMode</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>下划线、中划线等操作需要在TextView中编辑代码实现：</p>
+<p>注：strings.xml中的内容：</p>
+<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><ul>
+<li>文字大小、颜色</li>
+<li>自定义背景形状</li>
+<li>自定义按压效果</li>
+<li>点击事件</li>
+</ul>
+<p>流程：</p>
+<ol>
+<li><p>在activity_main.xml中创建控件后，需要在MainActivity.java中声明控件，并在protected void onCreate()函数中明确控件id；</p>
+</li>
+<li><p>添加事件监听，跳转语句，新建演示Button的活动页面（ButtonActivity）；</p>
+</li>
+<li><p>在Manifest中注册，Androidstudio已经帮我们自动生成；</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".ButtonActivity"</span>&gt;</span><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中”.”的含义指<strong>包名</strong>，即package=”com.example.helloworld”，从文件夹上也可看出ButtonActivity属于com.example.helloworld这个包；</p>
+<ol start="4">
+<li>设置Button控件大小、颜色、背景等属性</li>
+<li>自定义控件形状</li>
+</ol>
+<ul>
+<li><p>在drawable文件下新建DrawableResourceFile文件，并将Root element参数修改为shape；</p>
+</li>
+<li><p>修改新建的bg_btn2.xml文件内容，将形状设为圆角</p>
+</li>
+<li><p>在activity_button.xml中修改btn_2的背景为</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:background="@drawable/bg_btn2"</span><br></pre></td></tr></table></figure>
+
+<p>实际上就是把背景换为带圆角的形状；</p>
+</li>
+</ul>
+<ol start="6">
+<li>新建一个Button只有描边，里面是白色</li>
+</ol>
+<ul>
+<li><p>在drawable文件下新建DrawableResourceFile文件，并将Root element参数修改为shape；（或者直接复制刚才的bg_btn2.xml，将名字改为bg_btn3.xml）</p>
+</li>
+<li><p>修改新建的bg_btn3.xml文件内容，删除实体属性</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">solid</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:color</span>=<span class="string">"#4CAF50"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>增加描边</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">stroke</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:width</span>=<span class="string">"1dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:color</span>=<span class="string">"#4CAF50"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在activity_button.xml中修改btn_3的背景为</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:background="@drawable/bg_btn3"</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="7">
+<li>设置按压效果（触摸变色）</li>
+</ol>
+<ul>
+<li><p>在activity_button.xml中新建控件btn_4设置基本属性</p>
+</li>
+<li><p>在drawable文件下新建DrawableResourceFile文件，并将Root element参数修改为selector；</p>
+</li>
+<li><p>修改新建的bg_btn4.xml文件内容，设置按压情况属性和伟岸压下属性</p>
+</li>
+<li><p>在activity_button.xml中修改btn_4的背景为</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:background="@drawable/bg_btn4"</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="8">
+<li>点击事件</li>
+</ol>
+<ul>
+<li><p>直接在刚创建的Button4里编辑，添加</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:onClick="showToast"</span><br></pre></td></tr></table></figure>
+
+<p>即添加了一个showToast方法；</p>
+</li>
+<li><p>在ButtonActivity.java中添加showToast方法的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showToast</span><span class="params">(View view)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">Toast.makeText(<span class="keyword">this</span>,<span class="string">"btn4被点击了"</span>,Toast.LENGTH_SHORT).show();<span class="comment">//弹出提示信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>此时运行模拟器已经能出现事件响应了，点击Button4会出现提示“btn4被点击了”；</p>
+<ol start="9">
+<li>事件点击2（常用）</li>
+</ol>
+<ul>
+<li><p>直接在ButtonActivity.java添加代码以实现</p>
+</li>
+<li><p>以Button3为例，因为要使用Button3，故需声明控件，设置控件id（以被找到）</p>
+</li>
+<li><p>添加事件监听代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mBtn3.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        Toast.makeText(ButtonActivity.<span class="keyword">this</span>,<span class="string">"btn3被点击了"</span>,Toast.LENGTH_SHORT).show();<span class="comment">//弹出提示信息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>其中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Toast.makeText(ButtonActivity.<span class="keyword">this</span>,<span class="string">"btn3被点击了"</span>,Toast.LENGTH_SHORT).show();<span class="comment">//弹出提示信息</span></span><br></pre></td></tr></table></figure>
+
+<p>该方法与之前btn4的基本一致，只是修改了this的指向；</p>
+<ol start="10">
+<li>给textview设置点击事件</li>
+</ol>
+<ul>
+<li>先在activity_Button.xml中创建一个textview控件</li>
+<li>之后过程与“点击事件2”方法一致</li>
+</ul>
+<p>ButtonActivity.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.helloworld;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> androidx.appcompat.app.AppCompatActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ButtonActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Button mBtn3;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> TextView mTv1;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_button);</span><br><span class="line">        mBtn3=findViewById(R.id.btn_3);</span><br><span class="line">        mBtn3.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(ButtonActivity.<span class="keyword">this</span>,<span class="string">"btn3被点击了"</span>,Toast.LENGTH_SHORT).show();<span class="comment">//弹出提示信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mTv1=findViewById(R.id.tv_1);</span><br><span class="line">        mTv1.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(ButtonActivity.<span class="keyword">this</span>,<span class="string">"tv1被点击了"</span>,Toast.LENGTH_SHORT).show();<span class="comment">//弹出提示信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showToast</span><span class="params">(View view)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    Toast.makeText(<span class="keyword">this</span>,<span class="string">"btn4被点击了"</span>,Toast.LENGTH_SHORT).show();<span class="comment">//弹出提示信息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>MainActivity.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.helloworld;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> androidx.appcompat.app.AppCompatActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="comment">//Button的包，若没有则在private Button mBtnTextView;中点击button按住Alt+Enter</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Button mBtnTextView; <span class="comment">//声明Button，（mBtnTextView为设置的变量名，Android规范第一个字母小写）因为我们在activity_main.xml中创建了一个Button；</span></span><br><span class="line">    <span class="keyword">private</span> Button mBtnButton;<span class="comment">//声明空间Button</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        <span class="comment">//代码只能添加在上面两行的后面，否则程序异常退出</span></span><br><span class="line">        mBtnTextView=findViewById(R.id.btn_textview);<span class="comment">//在布局文件中找到对应Button组件的id；</span></span><br><span class="line">        mBtnTextView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//事件监听，点击按钮时跳转到TextView演示界面</span></span><br><span class="line">                Intent intent=<span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,TextViewActivity.class);<span class="comment">//指定跳转目标</span></span><br><span class="line">                startActivity(intent);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mBtnButton=findViewById(R.id.btn_button);</span><br><span class="line">        mBtnButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//跳转到Button演示界面</span></span><br><span class="line">                Intent intent=<span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,ButtonActivity.class);<span class="comment">//指定跳转目标</span></span><br><span class="line">                startActivity(intent);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>activity_button.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:padding</span>=<span class="string">"10dp"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/btn_1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"40dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"按钮1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#FFC107"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/btn_2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"40dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"按钮2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"@drawable/bg_btn2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@+id/btn_1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"10dp"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/btn_3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"40dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"按钮3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#4CAF50"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@id/btn_2"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"10dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"@drawable/bg_btn3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/btn_4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"40dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"按钮4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#E91E63"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@id/btn_3"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"10dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"@drawable/bg_btn4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:onClick</span>=<span class="string">"showToast"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#F44336"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"文字1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@id/btn_4"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"40dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#CDDC39"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  android:layout_below="@+id/btn_1"//使btn_2位于btn_1的下方</span></span><br><span class="line"><span class="comment">        android:layout_marginTop="10dp"//使btn_2的上方间距10dp</span></span><br><span class="line"><span class="comment">        android:gravity="center"//内容对其方式，设为center，即“文字1”剧中显示</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p>完整代码：</p>
+<p><a href="https://download.csdn.net/download/qq_40638006/12363386" target="_blank" rel="noopener">https://download.csdn.net/download/qq_40638006/12363386</a></p>
+<p>+++</p>
+<h3 id="EditText"><a href="#EditText" class="headerlink" title="EditText"></a>EditText</h3><ul>
+<li>常用属性</li>
+<li>监听事件</li>
+<li>制作登陆界面</li>
+</ul>
+<p>流程：</p>
+<ul>
+<li><p>在activity_main.xml中创建Button，设置id为btn_edittext;</p>
+</li>
+<li><p>在MainActivity.java中注册；</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Button mBtnEditTxet;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>找到控件id</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mBtnEditTxet=findViewById(R.id.btn_edittext);<span class="comment">//在布局文件中找到对应Button组件的id；</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置监听事件</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mBtnEditTxet.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;<span class="comment">//事件监听</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//跳转到EditText演示界面</span></span><br><span class="line">               </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在onClick方法中填写跳转内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//跳转到EditText演示界面</span></span><br><span class="line">    Intent intent=<span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,EditTextActivity.class);<span class="comment">//指定跳转目标</span></span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时的EditTextActivity我们还没有创建，故需要新建一个；新建的Activity都需要在manifest中声明一下，Android studio已经帮我们自动声明了；</p>
+<ul>
+<li>在对应的布局文件activity_edit_text.xml中设计布局EditText样式属性</li>
+<li>由于目前版本默认输入框为一根横线，为好看起见我们利用之前Button中的方法也将其设置为圆角或描边样式</li>
+</ul>
+<p>直接拷贝一份之前的bg_btn3.xml文件，修改名称为bg_username.xml;</p>
+<p>然后再EditText控件中修改background即可；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:background=<span class="string">"@drawable/bg_username"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置图标</li>
+</ul>
+<p>新建drawable文件目录，命名为drawable-xxhdpi;</p>
+<p>(注意：1. 若新建后未显示文件夹，则将文件模式改为Project；</p>
+<ol start="2">
+<li>图片用png格式，jpg格式图片不能设为透明；</li>
+<li>新建的drawable-xxhdpi文件应该位于res目录下与drawable目录等级平行，否则当我们引用图标时会报错，不能检索；)</li>
+</ol>
+<ul>
+<li>创建login_Button，命名为btn_login</li>
+</ul>
+<p>可以调用之前创建的按压背景效果；</p>
+<ul>
+<li>给login_Button添加点击事件监听</li>
+</ul>
+<p>在EditTextActivity.java中注册，找id，设置点击事件（与之前一样）；</p>
+<p>（tip:当包不存在时，同时点击Alt+Enter可自动添加包）</p>
+<p>此处给login_Button设置一个简单的消息提示框，使用Toast方法；</p>
+<ul>
+<li>尝试给EditText设置一个输入文字动态监听</li>
+</ul>
+<p>同样在EditTextActivity.java中注册，找id，设置动态变化监听；</p>
+<p>因为监听形式不一样，此处使用<code>addTextChangedListener</code>方法；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">mEtUserName=findViewById(R.id.et_1);</span><br><span class="line">       mEtUserName.addTextChangedListener(<span class="keyword">new</span> TextWatcher() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeTextChanged</span><span class="params">(CharSequence s, <span class="keyword">int</span> start, <span class="keyword">int</span> count, <span class="keyword">int</span> after)</span> </span>&#123;<span class="comment">//文字改变之前</span></span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTextChanged</span><span class="params">(CharSequence s, <span class="keyword">int</span> start, <span class="keyword">int</span> before, <span class="keyword">int</span> count)</span> </span>&#123;<span class="comment">//文字改变时</span></span><br><span class="line"></span><br><span class="line">               Log.d(<span class="string">"edittext"</span>,s.toString());</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterTextChanged</span><span class="params">(Editable s)</span> </span>&#123;<span class="comment">//文字改变之后</span></span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>完整代码：</p>
+<p><a href="https://download.csdn.net/download/qq_40638006/12369102" target="_blank" rel="noopener">https://download.csdn.net/download/qq_40638006/12369102</a></p>
+<p>+++</p>
 
     </article>
     <!-- license  -->
@@ -423,7 +650,7 @@ height:50vh;
             <p>Author：<a href="https://singlemindedt.github.io">Smtsec</a>
             <p>原文链接：<a href="https://singlemindedt.github.io/2020/02/20/移动应用开发/">https://singlemindedt.github.io/2020/02/20/移动应用开发/</a>
             <p>发表日期：<a href="https://singlemindedt.github.io/2020/02/20/移动应用开发/">February 20th 2020, 2:53:26 pm</a>
-            <p>更新日期：<a href="https://singlemindedt.github.io/2020/02/20/移动应用开发/">February 27th 2020, 10:43:06 pm</a>
+            <p>更新日期：<a href="https://singlemindedt.github.io/2020/02/20/移动应用开发/">April 28th 2020, 2:31:33 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -440,7 +667,7 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/02/19/sqli-labs-Page-1-Less-1/" title= "sqli-labs-Page-1-Less-1">
+                <a href= "/2020/02/19/sqli-labs闯关记录/" title= "sqli-labs-Page-1-Less-1">
                     <div class="prevTitle">sqli-labs-Page-1-Less-1</div>
                 </a>
             
@@ -564,7 +791,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包APK"><span class="toc-number">2.</span> <span class="toc-text">打包APK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本控件"><span class="toc-number">3.</span> <span class="toc-text">基本控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串统一修改"><span class="toc-number">3.0.1.</span> <span class="toc-text">字符串统一修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Activity"><span class="toc-number">3.1.</span> <span class="toc-text">1.Activity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Layout文件"><span class="toc-number">3.2.</span> <span class="toc-text">2.Layout文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Manifest"><span class="toc-number">3.3.</span> <span class="toc-text">3.Manifest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-界面布局"><span class="toc-number">3.4.</span> <span class="toc-text">4.界面布局</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第4章-Activity"><span class="toc-number">4.</span> <span class="toc-text">第4章 Activity</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包APK"><span class="toc-number">2.</span> <span class="toc-text">打包APK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本控件"><span class="toc-number">3.</span> <span class="toc-text">基本控件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串统一修改"><span class="toc-number">3.0.1.</span> <span class="toc-text">字符串统一修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Activity"><span class="toc-number">3.1.</span> <span class="toc-text">1.Activity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Layout文件"><span class="toc-number">3.2.</span> <span class="toc-text">2.Layout文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Manifest"><span class="toc-number">3.3.</span> <span class="toc-text">3.Manifest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-界面布局"><span class="toc-number">3.4.</span> <span class="toc-text">4.界面布局</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第4章-Activity"><span class="toc-number">4.</span> <span class="toc-text">第4章 Activity</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-第一个Android应用"><span class="toc-number">5.</span> <span class="toc-text">1. 第一个Android应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-UI组件"><span class="toc-number">6.</span> <span class="toc-text">2. UI组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1布局管理器"><span class="toc-number">6.1.</span> <span class="toc-text">2-1布局管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性布局"><span class="toc-number">6.1.1.</span> <span class="toc-text">线性布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对布局"><span class="toc-number">6.1.2.</span> <span class="toc-text">相对布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TextView"><span class="toc-number">6.1.3.</span> <span class="toc-text">TextView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Button"><span class="toc-number">6.1.4.</span> <span class="toc-text">Button</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText"><span class="toc-number">6.1.5.</span> <span class="toc-text">EditText</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1686,9 +1913,215 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 67
+        Total : 79
         </div>
         <!-- search  -->
         
@@ -1704,17 +2137,77 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2020/05/11/简单逆向/" >简单逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2020/05/10/利用永恒之蓝获取meterpretershell/" >利用永恒之蓝获取meterpretershell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2020/05/03/PHP-Audit-Labs/" >PHP-Audit-Labs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2020/04/29/PHP代码审计实例/" >PHP代码审计实例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2020/04/09/sqli-labs-Page-1-Less-9/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2020/04/08/sqli-labs-Page-1-Less-8/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span><a class="archive-post-title" href= "/2020/04/06/sqli-labs-Page-1-Less-7/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/sqli-labs-Page-1-Less-6/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2020/03/15/sqli-labs-Page-1-Less-5/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/2020-03-11-Linux-的节点-inode/" >Linux 的节点 inode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/2020-03-03-渗透测试基础/" >渗透测试基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/2020-03-1-XML&DTD/" >XML & DTD</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/" >XXE-PHP DOMDocument</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
@@ -1749,17 +2242,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
         </li>
     
     
@@ -1769,7 +2262,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -1863,12 +2356,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
@@ -1878,17 +2371,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -1899,11 +2397,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -2018,7 +2511,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -2028,12 +2521,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
@@ -2051,17 +2544,15 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
-    
         <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
     
         <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
     
-        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
         <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
@@ -2070,6 +2561,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
+    
+        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
     
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
@@ -2085,19 +2578,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
     
-        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
+        <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
+    
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
+    
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
-        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
-    
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
     
         <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
     
@@ -2134,11 +2633,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
-    
         <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
         <span class="sidebar-category-name" data-categories="CTF/攻防世界"><span class="iconfont-archer">&#xe60a;</span>CTF/攻防世界</span>
     
@@ -2154,9 +2653,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
-    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
+    
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
     
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
     
