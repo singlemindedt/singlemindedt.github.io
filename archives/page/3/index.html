@@ -367,6 +367,47 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/20/sqli-labs-Page-1-Less-2/" >
+            
+                <span>sqli-labs-Page-1-Less-2</span>
+        </a>
+        <div class="abstract-content">
+            Less-2（GET方式-基于整型）
+根据页面提示：
+1Please input the ID as parameter with numeric value
+
+
+尝试通过get方式输入ID和数值参数：?id=1
+
+可以看到给出了相应的login name 和password;
+
+再添加一个单引号看看：?id=1’
+
+
+12错误信息： You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/02/20/移动应用开发/" >
             
                 <span>移动应用开发</span>
@@ -394,18 +435,20 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/19/sqli-labs闯关记录/" >
+        <a class="abstract-title" href = "/2020/02/19/sqli-labs-Page-1-Less-1/" >
             
                 <span>sqli-labs-Page-1-Less-1</span>
         </a>
         <div class="abstract-content">
             [TOC]
 Page-1(Basic Challenges)
-Less-1（get方式-基于单引号-string型）根据页面提示：
+Less-1（GET方式-基于单引号-string型）根据页面提示：
 1Please input the ID as parameter with numeric value
 
-尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;再添加一个单引号看看：
-1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for th...
+尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;
+
+再添加一个单引号看看：
+1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -429,20 +472,18 @@ Less-1（get方式-基于单引号-string型）根据页面提示：
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/19/sqli-labs-Page-1-Less-1/" >
+        <a class="abstract-title" href = "/2020/02/19/sqli-labs闯关记录/" >
             
                 <span>sqli-labs-Page-1-Less-1</span>
         </a>
         <div class="abstract-content">
             [TOC]
 Page-1(Basic Challenges)
-Less-1（GET方式-基于单引号-string型）根据页面提示：
+Less-1（get方式-基于单引号-string型）根据页面提示：
 1Please input the ID as parameter with numeric value
 
-尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;
-
-再添加一个单引号看看：
-1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for ...
+尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;再添加一个单引号看看：
+1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for th...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -674,49 +715,6 @@ Meow实际操作：利用foremost meow.png提取，得到一个png和一个zip
         <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Misc">Misc</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/25/攻防世界-Web/" >
-            
-                <span>攻防世界-Web</span>
-        </a>
-        <div class="abstract-content">
-            目录
-[TOC]
-
-攻防世界新手练习区view_source题目描述：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。打开链接如下：
-
-方法1试试右键的确不管用了，直接F12，找到flag
-
-方法2另外还可以通过view-source：url查看源代码：
-
-方法3其实还可以禁用Js代码，这样右键就可以用了：
-
-
-get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方法，你知道是哪两种吗？
-知识补充：两种 HTTP 请求方法：GET 和 POST在客户机和服务器之间进行请求-响应时，两种最常被用到的方法是：GET 和 
-12345POST。&#12...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Web">Web</a>
     
 </div>
             
@@ -2143,9 +2141,82 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 79
+        Total : 80
         </div>
         <!-- search  -->
         
@@ -2158,6 +2229,11 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span><a class="archive-post-title" href= "/2020/06/12/网络攻击与防御复习知识点总结/" >网络攻击与防御复习</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2226,12 +2302,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
@@ -2380,12 +2456,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -2395,12 +2471,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
@@ -2410,12 +2486,12 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
         </li>
     
     
@@ -2535,22 +2611,22 @@ get_post题目描述：X老师告诉小宁同学HTTP通常使用两种请求方�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
