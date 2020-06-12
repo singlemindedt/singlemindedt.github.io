@@ -352,6 +352,29 @@
   </entry>
   
   <entry>
+    <title>XXE-PHP Audit Basic</title>
+    <link href="https://singlemindedt.github.io/2020/02/29/XXE-PHP%20Audit%20Basic/"/>
+    <id>https://singlemindedt.github.io/2020/02/29/XXE-PHP Audit Basic/</id>
+    <published>2020-02-29T10:20:08.000Z</published>
+    <updated>2020-03-02T13:25:17.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="搭建XXE-PHP-Audit-Basic-环境"><a href="#搭建XXE-PHP-Audit-Basic-环境" class="headerlink" title="搭建XXE-PHP Audit Basic 环境"></a>搭建XXE-PHP Audit Basic 环境</h1><p><a href="https://github.com/vulnspy/phpaudit-XXE" target="_blank" rel="noopener">XXE-PHP Audit Basic</a><br>1.</p><ul><li>GitHub项目页Vulnspy提供了在线运行环境，单击<code>Vsplate GO&gt;</code>按钮可以创建在线环境，直接在上面操作即可；</li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SUD1.png" alt="36SUD1.png"><br>+++<br>2.</p><ul><li>将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；</li></ul><ul><li><p>开启Phpstudy2018的Apache和MySql服务;</p></li><li><p>访问<a href="http://127.0.0.1/phpaudit-XXE-master/" target="_blank" rel="noopener">http://127.0.0.1/phpaudit-XXE-master/</a> 即可；</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SNuR.png" alt="36SNuR.png"></p><p><font color="#ff000" face="黑体" size="4">XXE漏洞(XML External Entity,XML外部实体注入攻击)：如果可以上传XML文档或者在XML文档中添加恶意内容，通过易受攻击的代码、依赖项，攻击者就能够攻击含有缺陷的XML处理器。</font></p><p>关于<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML/">XML</a>,相关<a href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/">题目</a> :smile:</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;搭建XXE-PHP-Audit-Basic-环境&quot;&gt;&lt;a href=&quot;#搭建XXE-PHP-Audit-Basic-环境&quot; class=&quot;headerlink&quot; title=&quot;搭建XXE-PHP Audit Basic 环境&quot;&gt;&lt;/a&gt;搭建XXE-PHP Audi
+      
+    
+    </summary>
+    
+    
+      <category term="XXE" scheme="https://singlemindedt.github.io/tags/XXE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>XXE-PHP Audit Basic详解</title>
     <link href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP%20Audit%20Basic%E8%AF%A6%E8%A7%A3/"/>
     <id>https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/</id>
@@ -367,29 +390,6 @@
         &lt;p&gt;[TOC]&lt;br&gt;[5]:()&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/04/27/JfuUZn.png&quot; alt=&quot;JfuUZn.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-DOMDocument-php&quot;&gt;&lt;a href=&quot;#1-
-      
-    
-    </summary>
-    
-    
-      <category term="XXE" scheme="https://singlemindedt.github.io/tags/XXE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XXE-PHP Audit Basic</title>
-    <link href="https://singlemindedt.github.io/2020/02/29/XXE-PHP%20Audit%20Basic/"/>
-    <id>https://singlemindedt.github.io/2020/02/29/XXE-PHP Audit Basic/</id>
-    <published>2020-02-29T10:20:08.000Z</published>
-    <updated>2020-03-02T13:25:17.798Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="搭建XXE-PHP-Audit-Basic-环境"><a href="#搭建XXE-PHP-Audit-Basic-环境" class="headerlink" title="搭建XXE-PHP Audit Basic 环境"></a>搭建XXE-PHP Audit Basic 环境</h1><p><a href="https://github.com/vulnspy/phpaudit-XXE" target="_blank" rel="noopener">XXE-PHP Audit Basic</a><br>1.</p><ul><li>GitHub项目页Vulnspy提供了在线运行环境，单击<code>Vsplate GO&gt;</code>按钮可以创建在线环境，直接在上面操作即可；</li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SUD1.png" alt="36SUD1.png"><br>+++<br>2.</p><ul><li>将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；</li></ul><ul><li><p>开启Phpstudy2018的Apache和MySql服务;</p></li><li><p>访问<a href="http://127.0.0.1/phpaudit-XXE-master/" target="_blank" rel="noopener">http://127.0.0.1/phpaudit-XXE-master/</a> 即可；</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SNuR.png" alt="36SNuR.png"></p><p><font color="#ff000" face="黑体" size="4">XXE漏洞(XML External Entity,XML外部实体注入攻击)：如果可以上传XML文档或者在XML文档中添加恶意内容，通过易受攻击的代码、依赖项，攻击者就能够攻击含有缺陷的XML处理器。</font></p><p>关于<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML/">XML</a>,相关<a href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/">题目</a> :smile:</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;搭建XXE-PHP-Audit-Basic-环境&quot;&gt;&lt;a href=&quot;#搭建XXE-PHP-Audit-Basic-环境&quot; class=&quot;headerlink&quot; title=&quot;搭建XXE-PHP Audit Basic 环境&quot;&gt;&lt;/a&gt;搭建XXE-PHP Audi
       
     
     </summary>
