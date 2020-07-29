@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://singlemindedt.github.io/"/>
-  <updated>2020-06-12T09:07:20.241Z</updated>
+  <updated>2020-06-20T16:17:18.697Z</updated>
   <id>https://singlemindedt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pycharm开发flask指定ip、端口无效</title>
+    <link href="https://singlemindedt.github.io/2020/06/21/pycharm%E5%BC%80%E5%8F%91flask%E6%8C%87%E5%AE%9Aip%E3%80%81%E7%AB%AF%E5%8F%A3%E6%97%A0%E6%95%88/"/>
+    <id>https://singlemindedt.github.io/2020/06/21/pycharm开发flask指定ip、端口无效/</id>
+    <published>2020-06-20T16:16:09.000Z</published>
+    <updated>2020-06-20T16:17:18.697Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/JENREY/article/details/86699817?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">pycharm开发flask指定ip、端口无效</a></p><p><a href="https://www.cnblogs.com/xiaodai0/p/10460751.html" target="_blank" rel="noopener">python—–flask项目端口设置无效</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/JENREY/article/details/86699817?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLea
+      
+    
+    </summary>
+    
+    
+      <category term="flask" scheme="https://singlemindedt.github.io/tags/flask/"/>
+    
+  </entry>
   
   <entry>
     <title>网络攻击与防御复习</title>
@@ -49,7 +72,7 @@
     <link href="https://singlemindedt.github.io/2020/05/29/P2P%20networking%20based%20internet%20of%20things%20(IoT)%20sensor%20node%20authentication%20by%20Blockchain(%E5%9F%BA%E4%BA%8EP2P%E7%BD%91%E7%BB%9C%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88IoT%EF%BC%89%E4%BC%A0%E6%84%9F%E5%99%A8%E8%8A%82%E7%82%B9%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AE%A4%E8%AF%81)/"/>
     <id>https://singlemindedt.github.io/2020/05/29/P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)/</id>
     <published>2020-05-29T10:20:08.000Z</published>
-    <updated>2020-06-12T09:52:14.231Z</updated>
+    <updated>2020-07-29T11:05:24.949Z</updated>
     
     <content type="html"><![CDATA[<h2 id="P2P-networking-based-internet-of-things-IoT-sensor-node-authentication-by-Blockchain-基于P2P网络的物联网（IoT）传感器节点区块链认证"><a href="#P2P-networking-based-internet-of-things-IoT-sensor-node-authentication-by-Blockchain-基于P2P网络的物联网（IoT）传感器节点区块链认证" class="headerlink" title="P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)"></a>P2P networking based internet of things (IoT) sensor node authentication by Blockchain(基于P2P网络的物联网（IoT）传感器节点区块链认证)</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>传感器节点在物联网环境中起着重要作用，每个传感器都是对等网络。由于物理尺寸有限，物联网 传感器节点必须具有轻量认证协议。物联网（IoT）是各种技术的集合 元素。期望异构终端，网络和应用程序之间的互通。他们会加速 通过物联网平台的开放。结果，物联网将出现许多技术和管理安全威胁 环境。传感器节点协议必须轻巧且安全。由于物联网设备有多种用途，因此 需要性能的设备，具有可正常工作的高性能芯片组的操作系统，大多数密码协议。但是，转 点亮/熄灭IoT设备执行简单的任务，例如基于不运行OS的低性能芯片组。如果有 不支持加密协议或证书，则容易受到攻击，并且性能不足以处理。因此， 本文提出了一种基于区块链的物联网设备，以获取更安全的身份验证方案。</p><p><strong>Keywords</strong>： P2P networking . Sensor network . Secure IoT . Node authentication . Light-weight protocol . Network security</p><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h3><p>物联网（IoT）服务容易受到各种攻击 物联网技术的本质带来的安全威胁。特别是，它具有有限的硬件规格，例如低功耗 消耗，少量内存，低内存等， 并且往往分布在难以管理的环境中，这可能会带来各种安全威胁 包括物理攻击的因素。这些特征可以 导致物联网服务安全运行中的致命错误 平台或基于错误信息提供服务， 导致物联网服务平台失去其功能[1]。 </p><p>近年来，预计互操作性 异构终端，网络和应用程序之间 将通过物联网平台的开放而加速， 导致各种技术和行政安全 威胁。物联网环境中可能发生的安全威胁 继承现有威胁中可能发生的威胁 ICT（信息和通信技术）环境。机密性，完整性和可用性（CIA）可以 通常被视为对合法商品的使用和交付的威胁 服务，通常被称为CIA，这三个主要 信息安全的组成部分[2]。表1显示了 物联网每个组件中可能发生的安全威胁[3]。 因此，物联网设备需要一种访问控制方法来保护设备免受单个用户的平台内身份验证以及未经授权的用户对设备的任意访问。 各种环境和各种物联网的服务平台 服务平台和平台应用程序服务[4-6]。</p><p>当前物联网环境中可能发生的安全问题 [3]。 已经开发出各种认证协议，直到 最近。 但是，大多数提议的身份验证协议都用于跟踪位置跟踪攻击的位置。 一个 重播攻击或欺骗攻击易受欺骗攻击 [3]。 许多网站都有弱点和侵犯隐私的行为。 研究人员 正在发现它[5]。 因此，这项研究工作提出了 基于区块链的对等身份验证方案 使用加密算法进行链接和保护。 每个块 具有哈希指针，通常作为指向前一个的符号链接 块，时间戳和交易数据[11]。 根据设计， 区块链固有地抗拒更改数据。</p><p>从技术上讲，区块链可以充当“一个开放的，分布式的分类帐，可以高效，可验证且永久地记录双方之间的交易”。 [12]用作 分散的分类帐，传统上，区块链由 对等网络节点共同遵守协议 用于验证新块。记录后，任何给定的数据 如果没有全部更改，则无法追溯更改块 随后的块和网络多数的冲突[13]。 区块链比非区块链算法更安全[26]。 但是，需要在性能和安全性之间进行权衡。 如果安全交易比效率更重要，那么 区块链是物联网通信的最佳解决方案。 其余研究组织如下。第二节 讨论无线方面一些当前存在的协议 传感器网络（WSN）第3和4节介绍了详细信息 提出的算法。第5节描述了结论 和未来的工作。</p><h3 id="2-Related-work"><a href="#2-Related-work" class="headerlink" title="2 Related work"></a>2 Related work</h3><h4 id="2-1-Wireless-sensor-networks"><a href="#2-1-Wireless-sensor-networks" class="headerlink" title="2.1 Wireless sensor networks"></a>2.1 Wireless sensor networks</h4><p>WSN可以广泛应用于实时等领域 交通监控，军事数据收集，地震活动 分散度测量和时间污染测量。 由于WSN由超小型传感器组成，因此存在一些限制，例如存储内存，计算量和能量 通讯半径。 提供安全的无线通信是一个非常重要的问题，因为传感器可能会暴露在恶劣的环境中，容易拦截无线 通讯，恶意攻击者可以篡改 消息或尝试重传攻击[10]。</p><p>安全的WSN通信的各个方面 研究。 WSN非常容易受到传感器节点（SN）的硬件设备以及节点检测，损坏，窃听， 拒绝服务攻击和路由攻击（例如，漏洞和蠕虫漏洞）取决于无线网络的特征[1]。</p><p>由于传感器节点的性质有限，因此不容易 应用现有的WSN安全技术。 因此， 正在研究加权密钥分发和认证方案，以实现消息等安全因素 完整性，机密性和节点身份验证。</p><p>应用轻量级公钥有两种方法 具有大量现有计算以适合 传感器节点和μ-TESLA（定时的“微型”版本， 高效，流式，容错认证协议） 和LEAP（轻量级可扩展身份验证协议） 低计算能力和安全密钥分发的SPINS（安全网络加密协议）[24]设计 [22]。 </p><p>PIKE（密钥建立同行机构）[25]具有 提出了一种确保网络安全的密钥分配方案 基于对称密钥的安全性基于对称密钥的公开。 另外，不需要密钥的基于ID的方案 分布以及在消息传输频率上具有优势的问题也在研究中。</p><p>由于无线通信的本质，WSN的缺点是容易窃听消息[7]。 因此，为了防止这种情况，有必要通过加密和交换数据来确保机密性。</p><p>为了生成认证密钥，所有SN进行通信 直接与基站（BS）。 其实很难 与SN和BS直接通信。 </p><p>如果能量有限的节点尝试通信 直接与远程BS进行通信，则能耗为 通过发送和接收身份验证消息而增加。 消耗这种能量的节点不能 长期参与交流[10]。</p><h3 id="2-2-Light-weight-sensor-networks-protocols"><a href="#2-2-Light-weight-sensor-networks-protocols" class="headerlink" title="2.2 Light-weight sensor networks protocols"></a>2.2 Light-weight sensor networks protocols</h3><p>有一些基于轻量级公钥的协议，并且 它们是由μ-TESLA[21]，LEAP [22]和SPINS [23]设计的 具有较低的计算能力和安全的密钥分发。 传感器节点在物联网环境中起着重要作用。 传感器 节点是物联网的关键。 因此，许多研究人员正在专注于 传感器节点的攻击承受能力和有效的通信 协议。</p><p>物联网存在一些问题，详细信息如下。</p><p> 互联网基于ICT（互联网通信） 技术），这是一种智能环境，可在用户与对象之间以及对象与对象之间传递信息 通过连接工作。</p><p>美国市场研究公司Gartner 选择物联网作为最受关注的技术领域[8]。 物联网是 分为三大类：设备（终端/传感器） 区域，网络（有线/无线）区域和服务接口 （平台/应用程序）区域。 设备区域传输数据 从特定对象收集并提取到另一个对象 使用嵌入在对象中的通信功能。 网络区域是一个有线/无线通道，用于 传输/接收用户与 对象，对象到对象。 服务接口区域处理数据以生成信息，并控制和管理 各种设备。</p><h3 id="2-3-Vulnerability-on-IoT"><a href="#2-3-Vulnerability-on-IoT" class="headerlink" title="2.3 Vulnerability on IoT"></a>2.3 Vulnerability on IoT</h3><p>虚假攻击是指攻击者伪装成 传感器网络中的合法服务器以及客户端 发出身份验证请求，继续执行协议， 非法获取传感器或传感器的认证密钥 用户。重传攻击是指在认证过程中，实体之间的认证过程中使用的组件 传感器网络将在后续的身份验证过程中存储和重用[9]。</p><p> 身份验证密钥猜测攻击是对 攻击者窃听或伪装传感器网络中用户到传感器与传感器到传感器之间的身份验证过程，存储发送和接收的元素，并找到与最终商定的密钥相同的密钥 认证密钥[22]。 </p><p>拒绝服务攻击是指攻击者进行的攻击 参与身份验证过程并拦截 即使传感器或用户请求身份验证也可以做出响应， 从而拒绝身份验证服务。 </p><p>隐私侵害是一种侵犯隐私的行为，它通过从发送的元素中暴露出参与通信的主体 并在传感器上的身份验证过程中收到 网络。</p><h3 id="2-4Attack-model（攻击模型-）"><a href="#2-4Attack-model（攻击模型-）" class="headerlink" title="2.4Attack model（攻击模型 ）"></a>2.4Attack model（攻击模型 ）</h3><p>本研究中的攻击模型可以是DoS攻击。 在DoS中 攻击，攻击者正试图逃避或冒充 通过发送伪装的假消息来合法的IoT设备 作为合法的物联网设备。 类似的情况可能在 点对点网络也是如此。 例如，合法的物联网 连接到其他物联网设备的节点设备，其中一些 可能是合法的，而其他人可能是恶意的。 这可能 最终导致网络拥塞并拒绝某些物联网 设备访问一些数据流。 问题是 将影响物联网设备的认证过程。 因此，与集中式系统相比，攻击者 正在处理所有都具有的物联网设备 区块链的当前状态。 因此，可以得出结论 DoS攻击很难通过对等网络进行，以损害整个网络的安全性 物联网数量众多导致网络和区块链 设备。</p><h3 id="3-Blockchain-based-sensor-node-authentication"><a href="#3-Blockchain-based-sensor-node-authentication" class="headerlink" title="3 Blockchain-based sensor node authentication"></a>3 Blockchain-based sensor node authentication</h3><p>作者应该有足够的背景信息来 提供本文中所建议方法的更多接受</p><h4 id="3-1-Blockchain"><a href="#3-1-Blockchain" class="headerlink" title="3.1 Blockchain"></a>3.1 Blockchain</h4><p>因为任何参与使用区块链的人 可以输入，更改或删除数据，TTP（信任第三方） 不需要存在就可以在不诚实的网络各方之间进行交易。为了验证这种交易，使用共识算法，可以保证存储在其中的数据的可靠性 经过授权用户之间特定机制操作后的区块链。从而安全地更新和维护 区块链的状态，确保 区块链图1将电子硬币定义为 数字签名。每个成员将硬币转发到下一个 通过数字签名先前交易的哈希值和 下一个成员的公共密钥，将它们添加到 硬币。收款人可以验证签名以验证 成员资格[14]。区块链如图1所示。 当前块的值，数字签名，哈希值 对等网络。应用（2020）13：579–589 581 当前块，块标题和Merkle根以及块 数据由交易组成。</p><p>问题是收件人无法验证其中之一 业主不是双花硬币。常见的解决方案是 介绍一个可靠的中央机构，薄荷，交易 双重支出。每次交易后必须返回 硬币造币厂。 </p><p>我们相信不会发行新硬币，只会发行硬币 由Mint1直接发行的将被重复使用。与问题 这个解决方案是整个瞬时系统的命运。 公司需要经营造币厂，并将其全部通过 交易通过银行进行。收件人以前没有签署过先前的会员交易。制作的唯一方法 确保没有涉及所有交易的交易。基于薄荷 模型，薄荷知道所有交易。我决定到达 第一。为了在没有可信任方的情况下实现这一目标，公开宣布了他们收到的订单。在每次交易时，大多数节点都同意这是第一次[14]。</p><p> 构成区块链的区块由区块组成 标头和块体。块头包含哈希 前一个块标题的值，所有块都是 通过链表之类的链表方法连接起来，并且 包括用于共识的任意随机数 调整块生成难度的算法和位。块体可以具有不同的值，具体取决于 他们支持的服务。例如，在比特币中，数字 密码系统，用户之间发生的交易 块体中包含10分钟。区块链可能 成为公共区块链，私有区块链，财团 区块链可以分为三类[15]。每个块体 磷在结构上完全相似。但是，他们 具有不同的概念和功能，并且在每个区块链上定义和实现也有先决条件。 公共区块链是用于普遍使用的区块链 被称为比特币，以及私有区块链或财团 区块链是将区块链用于其他方面的概念 目的。</p><h4 id="3-2-Conventional-IoT-sensor-nodes-authentication-types"><a href="#3-2-Conventional-IoT-sensor-nodes-authentication-types" class="headerlink" title="3.2 Conventional IoT sensor nodes authentication types"></a>3.2 Conventional IoT sensor nodes authentication types</h4><p>在物联网环境中，攻击者伪装成物联网 具有各种攻击（例如攻击，重用攻击， 和DoS攻击被允许访问内部 物联网环境。 </p><p>在现有的物联网环境中，有五种不同的 身份验证协议的类型。 表1显示了优点 每种认证技术的利弊[15]。</p><h4 id="3-2-1-ID-based-authentication"><a href="#3-2-1-ID-based-authentication" class="headerlink" title="3.2.1 ID-based authentication"></a>3.2.1 ID-based authentication</h4><p>基于ID的身份验证通过使用用户的电子邮件地址，名称，IP地址提供数字签名和身份验证 作为公钥密码系统。 预分配的密钥不是 需要。 计算量小，密钥长度为 比较短。 但是，它容易受到ID欺骗攻击的攻击。 有赫斯算法，林恩算法，绅士 图1交易中的区块链 1 Mint是基于Debian和Ubuntu的Linux发行版，很容易 采用。 582对等网络 应用 （2020）13：579–589 和Silverberg的算法，以及各种身份验证 方案[15]。</p><h4 id="3-2-2-Certificate-based-authentication"><a href="#3-2-2-Certificate-based-authentication" class="headerlink" title="3.2.2 Certificate-based authentication"></a>3.2.2 Certificate-based authentication</h4><p>一种使用数字签名进行认证的方法 公钥密码系统，将用于电子签名的信息记录在证书中，并根据该信息执行身份验证。 在韩国，有关 已通过《数字签名法》准备了发行系统和授权证书的管理 成立于1999年，并颁发了证书 由根CA进行最高级别的认证 机构通过五个授权的认证机构。 在外面 在整个国家，Verisign的设备认证服务包括 个人设备，电缆调制解调器设备认证，以及 WiMAX行业认证。 另外，基于证书 身份验证技术正在VoIP，网络监控摄像头等中使用，并且该领域正在逐步扩大。</p><p>基于证书的身份验证技术提供了很高的 通过强大的身份验证功能实现安全性并提供不可否认性。 但是，设备证书处理 软件和算法需要很高的计算吞吐量。 因此，它不适合用于低功耗，低性能的物联网设备。</p><h4 id="3-2-3-Cryptography-protocol-based"><a href="#3-2-3-Cryptography-protocol-based" class="headerlink" title="3.2.3 Cryptography protocol based"></a>3.2.3 Cryptography protocol based</h4><h4 id="3-2-4-MAC-address-based-authentication"><a href="#3-2-4-MAC-address-based-authentication" class="headerlink" title="3.2.4 MAC address based authentication"></a>3.2.4 MAC address based authentication</h4><h4 id="3-2-5-ID-password-based-authentication"><a href="#3-2-5-ID-password-based-authentication" class="headerlink" title="3.2.5 ID/password-based authentication"></a>3.2.5 ID/password-based authentication</h4><h3 id="4-Proposed-P2P-networking-based-IoT-sensor-authentication-by-Blockchain"><a href="#4-Proposed-P2P-networking-based-IoT-sensor-authentication-by-Blockchain" class="headerlink" title="4 Proposed P2P networking based IoT sensor authentication by Blockchain"></a>4 Proposed P2P networking based IoT sensor authentication by Blockchain</h3><h4 id="4-1-Requirements"><a href="#4-1-Requirements" class="headerlink" title="4.1 Requirements"></a>4.1 Requirements</h4><h4 id="4-2-Device-authentication-method"><a href="#4-2-Device-authentication-method" class="headerlink" title="4.2 Device authentication method"></a>4.2 Device authentication method</h4><h4 id="4-3-Hacking-scenario-on-IoT-authentication"><a href="#4-3-Hacking-scenario-on-IoT-authentication" class="headerlink" title="4.3 Hacking scenario on IoT authentication"></a>4.3 Hacking scenario on IoT authentication</h4><h5 id="4-3-1-Jamming-attack-assumption"><a href="#4-3-1-Jamming-attack-assumption" class="headerlink" title="4.3.1 Jamming attack assumption"></a>4.3.1 Jamming attack assumption</h5><h4 id="4-4-Proposed-IoT-authentication-by-Blockchain"><a href="#4-4-Proposed-IoT-authentication-by-Blockchain" class="headerlink" title="4.4 Proposed IoT authentication by Blockchain"></a>4.4 Proposed IoT authentication by Blockchain</h4><h4 id="4-5-Proposed-IoT-multiple-level-node-authentication-model"><a href="#4-5-Proposed-IoT-multiple-level-node-authentication-model" class="headerlink" title="4.5 Proposed IoT multiple-level node authentication model"></a>4.5 Proposed IoT multiple-level node authentication model</h4><h3 id="5-Conclusions"><a href="#5-Conclusions" class="headerlink" title="5 Conclusions"></a>5 Conclusions</h3>]]></content>
     
@@ -352,29 +375,6 @@
   </entry>
   
   <entry>
-    <title>XXE-PHP Audit Basic</title>
-    <link href="https://singlemindedt.github.io/2020/02/29/XXE-PHP%20Audit%20Basic/"/>
-    <id>https://singlemindedt.github.io/2020/02/29/XXE-PHP Audit Basic/</id>
-    <published>2020-02-29T10:20:08.000Z</published>
-    <updated>2020-03-02T13:25:17.798Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="搭建XXE-PHP-Audit-Basic-环境"><a href="#搭建XXE-PHP-Audit-Basic-环境" class="headerlink" title="搭建XXE-PHP Audit Basic 环境"></a>搭建XXE-PHP Audit Basic 环境</h1><p><a href="https://github.com/vulnspy/phpaudit-XXE" target="_blank" rel="noopener">XXE-PHP Audit Basic</a><br>1.</p><ul><li>GitHub项目页Vulnspy提供了在线运行环境，单击<code>Vsplate GO&gt;</code>按钮可以创建在线环境，直接在上面操作即可；</li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SUD1.png" alt="36SUD1.png"><br>+++<br>2.</p><ul><li>将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；</li></ul><ul><li><p>开启Phpstudy2018的Apache和MySql服务;</p></li><li><p>访问<a href="http://127.0.0.1/phpaudit-XXE-master/" target="_blank" rel="noopener">http://127.0.0.1/phpaudit-XXE-master/</a> 即可；</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SNuR.png" alt="36SNuR.png"></p><p><font color="#ff000" face="黑体" size="4">XXE漏洞(XML External Entity,XML外部实体注入攻击)：如果可以上传XML文档或者在XML文档中添加恶意内容，通过易受攻击的代码、依赖项，攻击者就能够攻击含有缺陷的XML处理器。</font></p><p>关于<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML/">XML</a>,相关<a href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/">题目</a> :smile:</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;搭建XXE-PHP-Audit-Basic-环境&quot;&gt;&lt;a href=&quot;#搭建XXE-PHP-Audit-Basic-环境&quot; class=&quot;headerlink&quot; title=&quot;搭建XXE-PHP Audit Basic 环境&quot;&gt;&lt;/a&gt;搭建XXE-PHP Audi
-      
-    
-    </summary>
-    
-    
-      <category term="XXE" scheme="https://singlemindedt.github.io/tags/XXE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>XXE-PHP Audit Basic详解</title>
     <link href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP%20Audit%20Basic%E8%AF%A6%E8%A7%A3/"/>
     <id>https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/</id>
@@ -390,6 +390,29 @@
         &lt;p&gt;[TOC]&lt;br&gt;[5]:()&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/04/27/JfuUZn.png&quot; alt=&quot;JfuUZn.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-DOMDocument-php&quot;&gt;&lt;a href=&quot;#1-
+      
+    
+    </summary>
+    
+    
+      <category term="XXE" scheme="https://singlemindedt.github.io/tags/XXE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XXE-PHP Audit Basic</title>
+    <link href="https://singlemindedt.github.io/2020/02/29/XXE-PHP%20Audit%20Basic/"/>
+    <id>https://singlemindedt.github.io/2020/02/29/XXE-PHP Audit Basic/</id>
+    <published>2020-02-29T10:20:08.000Z</published>
+    <updated>2020-03-02T13:25:17.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="搭建XXE-PHP-Audit-Basic-环境"><a href="#搭建XXE-PHP-Audit-Basic-环境" class="headerlink" title="搭建XXE-PHP Audit Basic 环境"></a>搭建XXE-PHP Audit Basic 环境</h1><p><a href="https://github.com/vulnspy/phpaudit-XXE" target="_blank" rel="noopener">XXE-PHP Audit Basic</a><br>1.</p><ul><li>GitHub项目页Vulnspy提供了在线运行环境，单击<code>Vsplate GO&gt;</code>按钮可以创建在线环境，直接在上面操作即可；</li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SUD1.png" alt="36SUD1.png"><br>+++<br>2.</p><ul><li>将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；</li></ul><ul><li><p>开启Phpstudy2018的Apache和MySql服务;</p></li><li><p>访问<a href="http://127.0.0.1/phpaudit-XXE-master/" target="_blank" rel="noopener">http://127.0.0.1/phpaudit-XXE-master/</a> 即可；</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SNuR.png" alt="36SNuR.png"></p><p><font color="#ff000" face="黑体" size="4">XXE漏洞(XML External Entity,XML外部实体注入攻击)：如果可以上传XML文档或者在XML文档中添加恶意内容，通过易受攻击的代码、依赖项，攻击者就能够攻击含有缺陷的XML处理器。</font></p><p>关于<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML/">XML</a>,相关<a href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/">题目</a> :smile:</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;搭建XXE-PHP-Audit-Basic-环境&quot;&gt;&lt;a href=&quot;#搭建XXE-PHP-Audit-Basic-环境&quot; class=&quot;headerlink&quot; title=&quot;搭建XXE-PHP Audit Basic 环境&quot;&gt;&lt;/a&gt;搭建XXE-PHP Audi
       
     
     </summary>
@@ -454,29 +477,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>sqli-labs-Page-1-Less-3</title>
-    <link href="https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/"/>
-    <id>https://singlemindedt.github.io/2020/02/25/sqli-labs-Page-1-Less-3/</id>
-    <published>2020-02-25T02:25:38.000Z</published>
-    <updated>2020-02-27T01:15:51.677Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Less-3-（GET方式-基于单引号变形-string型）"><a href="#Less-3-（GET方式-基于单引号变形-string型）" class="headerlink" title="Less-3 （GET方式-基于单引号变形-string型）"></a>Less-3 （GET方式-基于单引号变形-string型）</h2><p><img src="https://s2.ax1x.com/2020/02/25/3YwyNj.png" alt="3YwyNj.png"><br>根据页面提示：</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please input <span class="keyword">the</span> ID <span class="keyword">as</span> parameter <span class="keyword">with</span> <span class="keyword">numeric</span> <span class="built_in">value</span></span><br></pre></td></tr></table></figure><ul><li>尝试通过get方式输入ID和数值参数：<br><font color="#ff000" face="黑体" size="4">?id=1</font></li></ul><p><img src="https://s2.ax1x.com/2020/02/25/3YwRg0.png" alt="3YwRg0.png"><br>成功得到查询结果；</p><hr><ul><li>添加单引号：<br><font color="#ff000" face="黑体" size="4">?id=1’</font></li></ul><p><img src="https://s2.ax1x.com/2020/02/25/3Yw23q.png" alt="3Yw23q.png"><br>得到报错信息，即我们所输入的单引号与查询语句格式不匹配，从报错信息还可以看出可能与’）‘有关，猜测可能为单引号多余或者闭合格式为（’‘）造成；</p><hr><ul><li>加入注释符：<br><font color="#ff000" face="黑体" size="4">?id=1’–+</font></li></ul><p><img src="https://s2.ax1x.com/2020/02/25/3Yw64s.png" alt="3Yw64s.png"><br>可以看出还是回显报错信息，并且错误之处还是在单引号附近；</p><hr><ul><li>加单引号+）+注释符</li></ul><p><font color="#ff000" face="黑体" size="4">?id=1’）–+</font></p><p><img src="https://s2.ax1x.com/2020/02/25/3Y6wJe.png" alt="3Y6wJe.png"><br>看到成功得到查询内容，所以该处的闭合方式为<strong>(‘’)</strong>;</p><hr><ul><li>尝试输入<font color="#ff000" face="黑体" size="4">?id=1’）and 1=2–+</font></li></ul><p><img src="https://s2.ax1x.com/2020/02/25/3YREfU.png" alt="3YREfU.png"><br>可以看到既无报错信息也没有回显任何内容，说明我们所输入的语法是对的，在1=2上存在逻辑错误，即<code>SELECT * FROM users WHERE id=(&#39;1&#39;)and 1=2--+&#39;) LIMIT 0,1</code>；</p><hr><ul><li>尝试输入<font color="#ff000" face="黑体" size="4">?id=1’）and 1=1–+</font></li></ul><p><img src="https://s2.ax1x.com/2020/02/25/3YRel4.png" alt="3YRel4.png"><br>成功得到查询内容，说明此处确为<strong>(‘’)字符型注入；</strong></p><hr><hr><p>==猜解数据库内容==<br>猜解过程与Page-1-Less-1基本相同，只是在原来的基础上加一个“)”，此处仅举一例；<br>例：数据库版本，库名：<br><font color="#ff000" face="黑体" size="4">?id=-1’) union select 1,version(),database() –+</font></p><p><img src="https://s2.ax1x.com/2020/02/25/3YTkz6.png" alt="3YTkz6.png"><br>成功得到结果；</p><hr><ul><li>查看源码：<br>可以看到查询语句的格式为：<code>SELECT * FROM users WHERE id=(&#39;$id&#39;) LIMIT 0,1</code></li></ul><hr><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//including the Mysql connect parameters.</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">"../sql-connections/sql-connect.php"</span>);</span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// take the variables</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'id'</span>]))</span><br><span class="line">&#123;</span><br><span class="line">$id=$_GET[<span class="string">'id'</span>];</span><br><span class="line"><span class="comment">//logging the connection parameters to a file for analysis.</span></span><br><span class="line">$fp=fopen(<span class="string">'result.txt'</span>,<span class="string">'a'</span>);</span><br><span class="line">fwrite($fp,<span class="string">'ID:'</span>.$id.<span class="string">"\n"</span>);</span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// connectivity </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$sql=<span class="string">"SELECT * FROM users WHERE id=('$id') LIMIT 0,1"</span>;</span><br><span class="line">$result=mysql_query($sql);</span><br><span class="line">$row = mysql_fetch_array($result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($row)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;font size='5' color= '#99FF00'&gt;"</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">'Your Login name:'</span>. $row[<span class="string">'username'</span>];</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">'Your Password:'</span> .$row[<span class="string">'password'</span>];</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;/font&gt;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;font color= "#FFFF00"&gt;'</span>;</span><br><span class="line">print_r(mysql_error());</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;/font&gt;"</span>;  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123; <span class="keyword">echo</span> <span class="string">"Please input the ID as parameter with numeric value"</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Less-3-（GET方式-基于单引号变形-string型）&quot;&gt;&lt;a href=&quot;#Less-3-（GET方式-基于单引号变形-string型）&quot; class=&quot;headerlink&quot; title=&quot;Less-3 （GET方式-基于单引号变形-string型）&quot;&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="SQL" scheme="https://singlemindedt.github.io/tags/SQL/"/>
     
   </entry>
   

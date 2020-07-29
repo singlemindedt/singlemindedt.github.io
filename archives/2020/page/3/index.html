@@ -367,6 +367,57 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/25/sqli-labs-Page-1-Less-3/" >
+            
+                <span>sqli-labs-Page-1-Less-3</span>
+        </a>
+        <div class="abstract-content">
+            Less-3 （GET方式-基于单引号变形-string型）根据页面提示：
+1Please input the ID as parameter with numeric value
+
+
+尝试通过get方式输入ID和数值参数：?id=1
+
+成功得到查询结果；
+
+
+添加单引号：?id=1’
+
+得到报错信息，即我们所输入的单引号与查询语句格式不匹配，从报错信息还可以看出可能与’）‘有关，猜测可能为单引号多余或者闭合格式为（’‘）造成；
+
+
+加入注释符：?id=1’–+
+
+可以看出还是回显报错信息，并且错误之处还是在单引号附近；
+
+
+加单引号+）+注释符
+
+?id=1’）–+
+看到成功得到查询内...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/02/20/sqli-labs-Page-1-Less-2/" >
             
                 <span>sqli-labs-Page-1-Less-2</span>
@@ -414,10 +465,66 @@
         </a>
         <div class="abstract-content">
             [TOC]
-安装打包APK基本控件字符串统一修改res-&gt;values-&gt;strings.xml统一修改，防止之后修改任务量巨大的问题（其他文件字符串部分通过调用strings.xml文件内容实现，如： android:label=”@string/app_name”）+++++==Android中的三个重要文件==
-1.Activity是一个类；
-2.Layout文件xml文件；
-3.Manifest配置文件+++++==Andeoid中的View组件==1.TextView2.Button3.Edittext4.图片视图组件ImageView5.单选按钮组件RadioGr...
+
+题型：
+选择题20 x 1
+程序填空题3 x 10
+简答题 4 x 5(原理性)
+编程题 2 x 15
+
++++
+重点：第四章：Activity
+
+
++++
+
++++
+
+
+显示启动/隐式启动、
+
+
++++
+
++++
+
++++
+
+
+
+创建流程、
+
+
+
+生命周期、
+
+
+
+
+随着Activity自身状态的变化，Android系统会调用不同的事件回调函数(7个)：
+
+
+
+activity之间数据的传递
+
+
+
+intent的作用、组成部分7个
+
+
+
+
+
+
+
+
+
+
+布局
+布局管理（第3、5章）
+线性、相对、Constraintlayout布局管理器
+事件监听
+基于监听的事件处理（使用匿...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -425,6 +532,41 @@
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/20</span>
             </div>
             <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/19/sqli-labs闯关记录/" >
+            
+                <span>sqli-labs-Page-1-Less-1</span>
+        </a>
+        <div class="abstract-content">
+            [TOC]
+Page-1(Basic Challenges)
+Less-1（get方式-基于单引号-string型）根据页面提示：
+1Please input the ID as parameter with numeric value
+
+尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;再添加一个单引号看看：
+1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for th...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
+    
+</div>
             
         </div>
     </article>
@@ -449,41 +591,6 @@ Less-1（GET方式-基于单引号-string型）根据页面提示：
 
 再添加一个单引号看看：
 1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/19/sqli-labs闯关记录/" >
-            
-                <span>sqli-labs-Page-1-Less-1</span>
-        </a>
-        <div class="abstract-content">
-            [TOC]
-Page-1(Basic Challenges)
-Less-1（get方式-基于单引号-string型）根据页面提示：
-1Please input the ID as parameter with numeric value
-
-尝试通过get方式输入ID和数值参数：[3]:(3)可以看到给出了相应的login name 和password;再添加一个单引号看看：
-1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for th...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -550,41 +657,6 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/unserialize3/" >
-            
-                <span>unserialize3</span>
-        </a>
-        <div class="abstract-content">
-            根据题目及下面的代码：定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变量序列化。根据？code= 猜测可能为将序列化结果输入在?code=后POST请求；
-12345678910&lt;?phpclass xctf&#123; public $flag = '111';public function __wakeup()&#123;exit('bad requests');&#125;&#125;$a=new xctf();print(serialize($a));?&gt;
-
-运行结果:
-1O:4:"xctf":1:&#123;s:4:"...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防世界">攻防世界</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2020/02/13/PHP序列化与发序列化/" >
             
                 <span>PHP序列化与反序列化</span>
@@ -608,6 +680,41 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/13/unserialize3/" >
+            
+                <span>unserialize3</span>
+        </a>
+        <div class="abstract-content">
+            根据题目及下面的代码：定义了类xctf，其中有flag变量，并调用了_wakeup()，则考虑实例化xctf类并将其变量序列化。根据？code= 猜测可能为将序列化结果输入在?code=后POST请求；
+12345678910&lt;?phpclass xctf&#123; public $flag = '111';public function __wakeup()&#123;exit('bad requests');&#125;&#125;$a=new xctf();print(serialize($a));?&gt;
+
+运行结果:
+1O:4:"xctf":1:&#123;s:4:"...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防世界">攻防世界</a>
     
 </div>
             
@@ -2032,112 +2139,9 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 80
+        Total : 81
         </div>
         <!-- search  -->
         
@@ -2150,6 +2154,11 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "/2020/06/21/pycharm开发flask指定ip、端口无效/" >pycharm开发flask指定ip、端口无效</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2223,12 +2232,12 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
@@ -2263,22 +2272,22 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs-Page-1-Less-1/" >sqli-labs-Page-1-Less-1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/sqli-labs闯关记录/" >sqli-labs-Page-1-Less-1</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/unserialize3/" >unserialize3</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/PHP序列化与发序列化/" >PHP序列化与反序列化</a>
         </li>
     
     
@@ -2377,12 +2386,12 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
@@ -2392,22 +2401,17 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/NaNNaNNaNNaN-Batman/" >NaNNaNNaNNaN-Batman</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
         </li>
     
     
@@ -2418,6 +2422,11 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
@@ -2532,7 +2541,7 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
@@ -2547,7 +2556,7 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/VPS/" >VPS</a>
         </li>
     
     
@@ -2569,17 +2578,19 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
         <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
     
-        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
-    
         <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
     
-        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+        <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
         <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
     
@@ -2587,15 +2598,11 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
-        <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
-    
-        <span class="sidebar-tag-name" data-tags="translation"><span class="iconfont-archer">&#xe606;</span>translation</span>
+        <span class="sidebar-tag-name" data-tags="flask"><span class="iconfont-archer">&#xe606;</span>flask</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
@@ -2607,17 +2614,21 @@ _call()：调用对象不存在时使用；（为了避免当调用的方法不�
     
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
+        <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
+    
         <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
     
         <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
-    
-        <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
     
         <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="translation"><span class="iconfont-archer">&#xe606;</span>translation</span>
     
         <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
     
@@ -2656,9 +2667,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
-    
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
         <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
@@ -2668,21 +2679,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
     
-        <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
+        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
     
         <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
-    
-        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
     
         <span class="sidebar-category-name" data-categories="notes/密码学"><span class="iconfont-archer">&#xe60a;</span>notes/密码学</span>
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
-        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
-    
         <span class="sidebar-category-name" data-categories="Writeup/Web"><span class="iconfont-archer">&#xe60a;</span>Writeup/Web</span>
     
+        <span class="sidebar-category-name" data-categories="cryptography"><span class="iconfont-archer">&#xe60a;</span>cryptography</span>
+    
         <span class="sidebar-category-name" data-categories="算法"><span class="iconfont-archer">&#xe60a;</span>算法</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF/hackme"><span class="iconfont-archer">&#xe60a;</span>CTF/hackme</span>
     
         <span class="sidebar-category-name" data-categories="CTF/Web"><span class="iconfont-archer">&#xe60a;</span>CTF/Web</span>
     
