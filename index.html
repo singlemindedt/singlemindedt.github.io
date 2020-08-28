@@ -460,8 +460,10 @@ height:50vh;
 1127.0.0.1/xssgame-master/level1.php?name=&lt;script&gt;alert(1)&lt;/script&gt;
 
 成功；
-第2关keyword变量通过GET方式传入，赋值给$str变量，然后带入到&lt;h2&gt;标签中和&lt;input&gt;标签；&lt;h2&gt;标签经过了htmlspecialchars($str)编码，&lt;input&gt;标签没有任何过滤，所以尝试在&lt;input&gt;标签中闭合双引号&quot;，来触发事件。
-1http://127.0.0.1/xssgame...
+查看源码：
+1GET方式将name的值传给`$str`变量，且未作任何过滤限制；
+
+第2关keyword变量通过GET方式传入，赋值给$str变量，然后带入到&lt;h2&gt;标签中和&lt;input&gt;标签；&lt;h2&gt;标签经过了htmlspecialchars($str)编码，&lt;input&gt;标签没有任何过滤，所以尝试对&lt;input&gt;标签进行闭...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
