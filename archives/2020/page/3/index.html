@@ -367,53 +367,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/08/sqli-labs-Page-1-Less-8/" >
-            
-                <span>sqli-labs-Page-1-Less-8</span>
-        </a>
-        <div class="abstract-content">
-            Less-8(GET方式-盲注-布尔型-单引号)
-布尔型注入：正确有回显，错误无回显，逐字爆破；利用二分法提高爆破效率;
-该题完全可以利用之前第五关的任一方法，还可以用上一关的导入木马文件，既然题目有指示那就用布尔盲注好了。
-
-爆库名
-
-猜测库名长度
-1?id=1' and (length(database()))=8 --+
-
-
-正常回显，说明库名长度为8；
-
-首字母1?id=1' and substr(database(),1,1)&lt;'t' --+
-
-
-
-
-正常回显，首字母ASCII码小于t;
-1?id=1' and substr(database(),1,1)='s' --+...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2020/04/06/sqli-labs-Page-1-Less-7/" >
             
                 <span>sqli-labs-Page-1-Less-7</span>
@@ -770,10 +723,46 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
         </div>
     </article>
     
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/02/28/Linux操作系统/" >
+            
+                <span>Linux操作系统</span>
+        </a>
+        <div class="abstract-content">
+            第四讲用户组文件普通用户管理1.添加用户命令:useradd2.更改用户口令命令：passwd
+
+ 在创建Linux分区时,一定要创建两个分区:SWAP/ROOT
+
+3.who -u查已登录到系统的用户进程4.kill -9 进程号
+
+su/sudo(受限的su,更安全；授权许可的su,配置文件/etc/sudoers)
+
+shell编程
+ Python表达式中，可以使用（ ）控制运算符的优先顺序。
+
+ userdel myname 注：删除用户myname，但不删除其home目录及文件；
+
+ userdel -r myname 注：删除用户mynamt，其home目录及其他文件一并删除...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2020/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2020/page/4/">4</a><a class="page-number" href="/archives/2020/page/5/">5</a><a class="extend next" rel="next" href="/archives/2020/page/4/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/archives/2020/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2020/page/4/">4</a><a class="extend next" rel="next" href="/archives/2020/page/4/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -2399,120 +2388,9 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 91
+        Total : 90
         </div>
         <!-- search  -->
         
@@ -2579,11 +2457,6 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/31</span><a class="archive-post-title" href= "/2020/07/31/Docker-notes1/" >Docker-notes1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/30</span><a class="archive-post-title" href= "/2020/07/30/沙箱/" >沙箱</a>
         </li>
     
     
@@ -2663,12 +2536,12 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
@@ -2832,11 +2705,6 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
         </li>
     
@@ -2847,7 +2715,7 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Training-WWW-Robots/" >Training-WWW-Robots</a>
         </li>
     
     
@@ -2858,6 +2726,11 @@ PHP中可以通过FILE协议、HTTP协议和FTP协议读取文件；xml文件使
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
