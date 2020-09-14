@@ -367,6 +367,93 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/11/cookie/" >
+            
+                <span>cookie、session、token</span>
+        </a>
+        <div class="abstract-content">
+            🐖：
+HTTP为无状态协议,即本次请求和上一次的请求不存在关联性；
+
+比如：我在www.a.com/login.php里面登陆了，我在www.a.com/index.php 也希望是登陆状态，但是，这是2个不同的页面，也就是2个不同的HTTP请求，这2个HTTP请求是无状态的，也就是无关联的，所以无法单纯的在index.php中读取到它在login.php中已经登陆了！—3
+
+1.session理解：存储会话控制机制,连接标志；
+类似于一个状态列表，存储于服务器中；
+目的：为无状态的HTTP提供的持久机制；
+服务器一般使用cookie来实现session，cookie包含session...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note">note</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/10/CD/" >
+            
+                <span>命令行下常用文件操作命令</span>
+        </a>
+        <div class="abstract-content">
+            [TOC]
+1、进入盘符1234直接输入对应目标盘字母加：eg:进入F盘f:F:
+
+2、进入指定目录12345cd 目录名（一级目录）cd 目录路径如打开某一级目录文件则无需cd,eg:XXX.txt
+
++++
+3、利用/d参数直接进入某盘下某目录12eg:进入F盘下tools目录cd /d f:\tools
+
++++
+4、返回上级目录1cd ..
+
+5、返回当前盘根目录12cd /cd \
+
+6、dir命令查看该目录下文件及子目录列表详细信息12dirdir /a *
+
+7、ls列出当前目录下所有一级目录1ls
+
+8、通过在命令后加/?查看命令用法1dir/?
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "命令">命令</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "note">note</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/08/24/目录穿越漏洞/" >
             
                 <span>目录穿越漏洞</span>
@@ -683,79 +770,6 @@ html注释
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "notes">notes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/31/Docker-notes1/" >
-            
-                <span>Docker-notes1</span>
-        </a>
-        <div class="abstract-content">
-            
-喜欢钻研和分享；
-
-
-只要学不死就往死里学;
-
-概念
-Problems：
-
-我在我的电脑上可以运行？？？
-配置应用环境麻烦，且不可跨平台
-
-
-打包项目带上环境（镜像）–&gt;（Docker仓库=商店）–&gt;下载我们发布的镜像，可直接运行！
-思想来源：集装箱jre:多个应用（端口冲突），交叉；核心：隔离，每个集装箱都是互相隔离的；通过隔离机制可将服务器利用到极致！
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "notes">notes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/30/沙箱/" >
-            
-                <span>沙箱</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Definition">Definition</a>
     
 </div>
             
@@ -2392,9 +2406,100 @@ Problems：
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 91
+        Total : 92
         </div>
         <!-- search  -->
         
@@ -2407,6 +2512,16 @@ Problems：
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/11</span><a class="archive-post-title" href= "/2020/09/11/cookie/" >cookie、session、token</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2020/09/10/CD/" >命令行下常用文件操作命令</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2535,12 +2650,12 @@ Problems：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/XXE-PHP Audit Basic/" >XXE-PHP Audit Basic</a>
+            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "/2020/02/29/2020-02-29-XXE-PHP Audit Basic详解/" >XXE-PHP Audit Basic详解</a>
         </li>
     
     
@@ -2689,17 +2804,22 @@ Problems：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/hexo卡通挂件踩坑记/" >hexo卡通挂件踩坑记</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/密码学复习/" >序列密码(流密码)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/网络安全复习/" >网络安全复习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
         </li>
     
     
@@ -2714,22 +2834,17 @@ Problems：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Bug/" >Bug</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Lottery/" >Lottery!</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/Mfw/" >Mfw</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2019/12/09/ics-04/" >ics-04</a>
         </li>
     
     
@@ -2844,17 +2959,12 @@ Problems：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/加密算法/" >加密算法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/xxe/" >xxe</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2019/09/01/反序列化/" >反序列化</a>
         </li>
     
     
@@ -2877,53 +2987,53 @@ Problems：
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
+    
+        <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
         <span class="sidebar-tag-name" data-tags="notes"><span class="iconfont-archer">&#xe606;</span>notes</span>
     
         <span class="sidebar-tag-name" data-tags="Diary"><span class="iconfont-archer">&#xe606;</span>Diary</span>
     
-        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
-    
         <span class="sidebar-tag-name" data-tags="Misc"><span class="iconfont-archer">&#xe606;</span>Misc</span>
-    
-        <span class="sidebar-tag-name" data-tags="XML"><span class="iconfont-archer">&#xe606;</span>XML</span>
-    
-        <span class="sidebar-tag-name" data-tags="DTD"><span class="iconfont-archer">&#xe606;</span>DTD</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
         <span class="sidebar-tag-name" data-tags="wp"><span class="iconfont-archer">&#xe606;</span>wp</span>
     
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
         <span class="sidebar-tag-name" data-tags="DVWA"><span class="iconfont-archer">&#xe606;</span>DVWA</span>
     
-        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+        <span class="sidebar-tag-name" data-tags="命令"><span class="iconfont-archer">&#xe606;</span>命令</span>
+    
+        <span class="sidebar-tag-name" data-tags="note"><span class="iconfont-archer">&#xe606;</span>note</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="环境变量"><span class="iconfont-archer">&#xe606;</span>环境变量</span>
     
-        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
-    
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
+        <span class="sidebar-tag-name" data-tags="XXE"><span class="iconfont-archer">&#xe606;</span>XXE</span>
+    
         <span class="sidebar-tag-name" data-tags="flask"><span class="iconfont-archer">&#xe606;</span>flask</span>
+    
+        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
         <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
-        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+        <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
     
         <span class="sidebar-tag-name" data-tags="essay"><span class="iconfont-archer">&#xe606;</span>essay</span>
     
         <span class="sidebar-tag-name" data-tags="re"><span class="iconfont-archer">&#xe606;</span>re</span>
     
         <span class="sidebar-tag-name" data-tags="密码学"><span class="iconfont-archer">&#xe606;</span>密码学</span>
-    
-        <span class="sidebar-tag-name" data-tags="攻防世界"><span class="iconfont-archer">&#xe606;</span>攻防世界</span>
-    
-        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
-    
-        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
     
         <span class="sidebar-tag-name" data-tags="环境安装"><span class="iconfont-archer">&#xe606;</span>环境安装</span>
     
@@ -2935,13 +3045,17 @@ Problems：
     
         <span class="sidebar-tag-name" data-tags="Definition"><span class="iconfont-archer">&#xe606;</span>Definition</span>
     
-        <span class="sidebar-tag-name" data-tags="XSS"><span class="iconfont-archer">&#xe606;</span>XSS</span>
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
     
         <span class="sidebar-tag-name" data-tags="security"><span class="iconfont-archer">&#xe606;</span>security</span>
     
         <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="translation"><span class="iconfont-archer">&#xe606;</span>translation</span>
+    
+        <span class="sidebar-tag-name" data-tags="XSS"><span class="iconfont-archer">&#xe606;</span>XSS</span>
     
         <span class="sidebar-tag-name" data-tags="逆向"><span class="iconfont-archer">&#xe606;</span>逆向</span>
     
@@ -2982,9 +3096,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
-    
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="summary"><span class="iconfont-archer">&#xe60a;</span>summary</span>
     
         <span class="sidebar-category-name" data-categories="Writeup"><span class="iconfont-archer">&#xe60a;</span>Writeup</span>
     
@@ -2994,11 +3108,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="notes/Python"><span class="iconfont-archer">&#xe60a;</span>notes/Python</span>
     
-        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
+        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
     
         <span class="sidebar-category-name" data-categories="notes/密码学"><span class="iconfont-archer">&#xe60a;</span>notes/密码学</span>
     
-        <span class="sidebar-category-name" data-categories="SQL"><span class="iconfont-archer">&#xe60a;</span>SQL</span>
+        <span class="sidebar-category-name" data-categories="essay"><span class="iconfont-archer">&#xe60a;</span>essay</span>
     
         <span class="sidebar-category-name" data-categories="密码学"><span class="iconfont-archer">&#xe60a;</span>密码学</span>
     
